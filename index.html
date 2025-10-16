@@ -1,0 +1,1197 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Oct 13 2025 13:50:24 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="68dd31afbc83b25a8a0bfe14" data-wf-site="68dd31aebc83b25a8a0bfd82">
+<head>
+  <meta charset="utf-8">
+  <title>IntelTree</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
+  <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="2330ff9f-f1ed-9407-7bd2-a9ebbefc55bb"] {opacity:0;}}</style>
+  <style>
+    /* Custom styles for increased hero section height */
+    header.section {
+      min-height: 90vh;
+      background-image: none !important;
+      background: black !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+      position: relative;
+      overflow: visible !important;
+    }
+    
+    /* Fill grey gap with black overlay after hero */
+    header.section::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 0px;
+      background: black !important;
+      z-index: 1 !important;
+      pointer-events: none;
+    }
+    
+    /* Make sure next section content is above the overlay */
+    header.section + section.section {
+      position: relative;
+      z-index: 2;
+      background: black !important;
+    }
+    
+    /* Hero video and content positioning */
+    header.section .w-layout-vflex {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+    }
+    
+    header.section .background-video-2 {
+      position: relative !important;
+      z-index: 1 !important;
+    }
+    
+    header.section .w-background-video video {
+      z-index: 1 !important;
+    }
+    
+    /* Video blur gradient overlay */
+    header.section .background-video-2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 30%, rgba(0, 0, 0, 0.3) 60%, rgba(0, 0, 0, 0.7) 85%, rgba(0, 0, 0, 1) 100%);
+      pointer-events: none;
+      z-index: 5;
+      backdrop-filter: blur(3px);
+    }
+    
+    header.section .heading {
+      position: relative;
+      z-index: 10;
+      color: white;
+    }
+    
+    /* Remove height from the empty container at bottom of header */
+    header.section > .container:last-child {
+      height: 0 !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: none;
+    }
+    
+    /* UnicornStudio animation background fixes */
+    #what-we-deliver-section {
+      position: relative;
+      overflow: visible !important;
+      background: black !important;
+    }
+    
+    #what-we-deliver-section > section {
+      background: black !important;
+      margin-top: -150px !important;
+      padding-top: 0 !important;
+    }
+    
+    /* Restore hero section background */
+    header.section {
+      background: black !important;
+    }
+    
+    .unicorn-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    #what-we-deliver-section .section,
+    #what-we-deliver-section .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Logo reveal from background animation */
+    @keyframes revealFromBackground {
+      0% {
+        opacity: 0;
+        filter: brightness(0.3);
+        transform: scale(0.8);
+      }
+      100% {
+        opacity: 1;
+        filter: brightness(1);
+        transform: scale(1);
+      }
+    }
+    
+    .div-block img {
+      animation: revealFromBackground 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    .div-block img:nth-child(1) { animation-delay: 0.1s; }
+    .div-block img:nth-child(2) { animation-delay: 0.2s; }
+    .div-block img:nth-child(3) { animation-delay: 0.3s; }
+    .div-block img:nth-child(4) { animation-delay: 0.4s; }
+    .div-block img:nth-child(5) { animation-delay: 0.5s; }
+    .div-block img:nth-child(6) { animation-delay: 0.6s; }
+    
+    .div-block.in-view img {
+      animation-play-state: running;
+    }
+    
+    .nav_logo-icon {
+      width: 100px !important;
+      height: 100px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    .nav_logo {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      margin-top: -60px !important;
+    }
+    
+    .nav_logo [data-brand-name="true"] {
+      display: none !important;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["PT Serif:400,400italic,700,700italic","Manrope:regular","Montserrat Alternates:regular"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+  <script type="text/javascript">!function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const logoContainer = document.querySelector('.div-block');
+      
+      if (!logoContainer) return;
+      
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.3
+      });
+      
+      observer.observe(logoContainer);
+    });
+    
+    // Logo hover animation replay
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLogo = document.querySelector('.nav_logo');
+      const logoSvg = document.querySelector('#inteltree-logo');
+      
+      if (navLogo && logoSvg) {
+        navLogo.addEventListener('mouseenter', function() {
+          // Get all animate elements in the logo
+          const animations = logoSvg.querySelectorAll('animate');
+          
+          // Restart each animation
+          animations.forEach(function(anim) {
+            anim.beginElement();
+          });
+        });
+      }
+    });
+    
+    // Button hover glow effect
+    function btnMove(e) {
+      const btn = e.currentTarget;
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      btn.style.setProperty('--x', x + 'px');
+      btn.style.setProperty('--y', y + 'px');
+      
+      // Show bottom shine and glow on hover
+      const shine = btn.querySelector('.bottom-shine');
+      const glow = btn.closest('div').querySelector('.bottom-glow');
+      if (shine) {
+        shine.style.left = '0';
+        shine.style.right = '0';
+      }
+      if (glow) {
+        glow.style.opacity = '1';
+      }
+    }
+    
+    // Add mouse leave handlers
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('mouseleave', function() {
+          const shine = this.querySelector('.bottom-shine');
+          const glow = this.closest('div').querySelector('.bottom-glow');
+          if (shine) {
+            shine.style.left = '50%';
+            shine.style.right = '50%';
+          }
+          if (glow) {
+            glow.style.opacity = '0';
+          }
+        });
+      });
+    });
+  </script>
+  <style>
+    .glow::before {
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      left: var(--x, 50%);
+      top: var(--y, 50%);
+      transform: translate(-50%, -50%) scale(0.95);
+      opacity: var(--o, 0);
+      transition: opacity 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
+      <div class="nav_left">
+        <a href="#" class="nav_logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_large margin-bottom_none">IntelTree</div>
+        </a>
+        <nav role="navigation" class="nav_menu w-nav-menu">
+          <ul role="list" class="nav_menu-list w-list-unstyled">
+            <li class="nav_menu-list-item">
+              <div data-delay="0" data-hover="false" class="nav_dropdown-menu w-dropdown">
+                <div class="nav_link w-dropdown-toggle">
+                  <div>Services</div>
+                  <div class="nav-caret w-icon-dropdown-toggle"></div>
+                </div>
+                <nav class="mega-nav_dropdown-list w-dropdown-list">
+                  <div class="mega-nav_dropdown-list-wrapper">
+                    <ul role="list" class="grid_3-col tablet-1-col gap-medium margin-bottom_none w-list-unstyled">
+                      <li id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c1a-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d15-c8cc8d01">
+                        <div class="w-layout-grid grid_3-col tablet-1-col gap-small">
+                          <div>
+                            <div class="eyebrow">Web Solutions</div>
+                            <ul role="list" class="mega-nav_list w-list-unstyled">
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c25-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d20-c8cc8d01">
+                                    <div><strong>Website Design</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Bespoke, responsive sites for all needs.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c30-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d2b-c8cc8d01">
+                                    <div><strong>App Development</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Custom apps, robust and scalable.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c3b-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d36-c8cc8d01">
+                                    <div><strong>AI Integration</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Enhance efficiency with AI-driven tools.</div>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <div class="eyebrow">Business Tools</div>
+                            <ul role="list" class="mega-nav_list w-list-unstyled">
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c4a-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d45-c8cc8d01">
+                                    <div><strong>CRM Systems</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Streamline client and sales management.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c55-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d50-c8cc8d01">
+                                    <div><strong>E-commerce</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Secure, scalable online storefronts.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c60-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d5b-c8cc8d01">
+                                    <div><strong>Automation</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Automate workflows, increase productivity.</div>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div>
+                            <div class="eyebrow">Expertise</div>
+                            <ul role="list" class="mega-nav_list w-list-unstyled">
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c6f-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d6a-c8cc8d01">
+                                    <div><strong>Consulting</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Strategic digital transformation guidance.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c7a-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d75-c8cc8d01">
+                                    <div><strong>Support</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Continuous technical assistance.</div>
+                                  </div>
+                                </a>
+                              </li>
+                              <li class="margin-bottom_none">
+                                <a href="#" class="mega-nav_link-item w-inline-block">
+                                  <div class="icon is-medium"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 32 32" fill="currentColor">
+                                      <path d="m25.7 9.3l-7-7A.9.9 0 0 0 18 2H8a2.006 2.006 0 0 0-2 2v24a2.006 2.006 0 0 0 2 2h16a2.006 2.006 0 0 0 2-2V10a.9.9 0 0 0-.3-.7M18 4.4l5.6 5.6H18ZM24 28H8V4h8v6a2.006 2.006 0 0 0 2 2h6Z" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                  <div id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c85-4d562d54" class="w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d80-c8cc8d01">
+                                    <div><strong>Training</strong></div>
+                                    <div class="paragraph_small text-color_secondary">Upskill teams with expert-led sessions.</div>
+                                  </div>
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                      <li id="w-node-_7433720f-7db7-ce79-1492-2e74223a9c8b-4d562d54" class="flex_horizontal w-node-_8dd35a4e-e6b8-9134-0e04-fe0bc8cc8d86-c8cc8d01">
+                        <a href="#" class="card-link is-inverse flex-child_expand w-inline-block">
+                          <div class="card_body">
+                            <div class="heading_h3">Elevate your business online</div>
+                            <p class="paragraph_small text-color_inverse-secondary">Explore tailored web solutions, advanced integrations, and dedicated support designed for your business growth.</p>
+                            <div class="margin_top-auto">
+                              <div class="button-group">
+                                <div class="text-button is-secondary">
+                                  <div>Discover</div>
+                                  <div class="button_icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 16 16" fill="none">
+                                      <path d="M2 8H14.5M14.5 8L8.5 2M14.5 8L8.5 14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                                    </svg></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="#" class="nav_link w-inline-block">
+                <div>About</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="#" class="nav_link w-inline-block">
+                <div>Blog</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <div data-delay="0" data-hover="false" class="nav_dropdown-menu w-dropdown">
+                <div class="nav_link w-dropdown-toggle">
+                  <div>Support</div>
+                  <div class="nav-caret w-icon-dropdown-toggle"></div>
+                </div>
+                <div class="nav_dropdown-list w-dropdown-list">
+                  <div class="nav-menu_dropdown-list-wrapper">
+                    <ul role="list" class="flex_vertical margin-bottom_none w-list-unstyled">
+                      <li class="margin-bottom_none">
+                        <a href="#" class="nav_dropdown-link w-inline-block">
+                          <div class="button_label">Contact</div>
+                        </a>
+                      </li>
+                      <li class="margin-bottom_none">
+                        <a href="#" class="nav_dropdown-link w-inline-block">
+                          <div class="button_label">Help</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav_right">
+        <div class="button-group margin-top_none">
+          <div style="position: relative; display: inline-block;">
+            <button style="position: relative; z-index: 10; overflow: hidden; transition: transform 0.15s ease-out; color: white; background: rgba(23, 23, 23, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 12px 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); cursor: pointer; font-weight: 600; --x: 50%; --y: 50%; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+              <span style="position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 8px;">Start<svg style="width: 20px; height: 20px; transition: transform 0.2s ease-out;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" onmouseenter="this.style.transform='translateX(2px)'" onmouseleave="this.style.transform='translateX(0)'">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+                </svg></span>
+              <span class="bottom-shine" style="pointer-events: none; position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px; background: linear-gradient(to right, transparent, white, transparent); opacity: 0.8; transition: left 0.5s ease-out, right 0.5s ease-out;"></span>
+              <span class="glow" style="pointer-events: none; position: absolute; inset: 0; z-index: -1;" aria-hidden="true"></span>
+            </button>
+            <span class="bottom-glow" style="pointer-events: none; position: absolute; bottom: -12px; left: 50%; z-index: 0; height: 24px; width: 176px; transform: translateX(-50%); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease-out; background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+      <div class="nav_mobile-menu-button w-nav-button">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+              <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+              <line x1="1" y1="5" x2="23" y2="5"></line>
+              <line x1="1" y1="19" x2="23" y2="19"></line>
+            </g>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+  <header class="section">
+    <div class="w-layout-vflex flex-block">
+      <div data-poster-url="videos/1006-poster-00001.jpg" data-video-urls="videos/1006-transcode.mp4,videos/1006-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" id="herovid" class="background-video-2 w-background-video w-background-video-atom"><video id="f213775c-785b-a1d9-607a-7c0690f32f20-video" autoplay="" loop="" style="background-image:url(&quot;videos/1006-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+          <source src="videos/1006-transcode.mp4" data-wf-ignore="true">
+          <source src="videos/1006-transcode.webm" data-wf-ignore="true">
+        </video><noscript>
+          <style>
+  [data-wf-bgvideo-fallback-img] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    [data-wf-bgvideo-fallback-img] {
+      position: absolute;
+      z-index: -100;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }</style><img data-wf-bgvideo-fallback-img="true" src="videos/1006-poster-00001.jpg" alt="">
+        </noscript>
+        <div aria-live="polite"><button type="button" data-w-bg-video-control="true" aria-controls="f213775c-785b-a1d9-607a-7c0690f32f20-video" class="w-backgroundvideo-backgroundvideoplaypausebutton w-background-video--control"><span><img src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628299f8aa233b83918e24fd_Pause.svg" loading="lazy" alt="Pause video"></span><span hidden=""><img loading="lazy" alt="Play video" src="https://uploads-ssl.webflow.com/6022af993a6b2191db3ed10c/628298b20ae0236682d4b87f_Play-24.svg"></span></button></div>
+        <div style="position: relative; z-index: 10; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; gap: 24px;">
+          <h1 class="heading" style="margin: 0; font-size: 72px; font-weight: 700; line-height: 1.2;">Your Vision, <br>Expertly Crafted</h1>
+          <p style="color: rgba(255,255,255,0.9); font-size: 18px; max-width: 600px; margin: 0; line-height: 1.8; font-weight: 400; letter-spacing: 0.3px;">Web development, AI integration, and digital transformation for UK leaders. From concept to launch, we deliver bespoke solutions that drive measurable results.</p>
+          <div style="margin-top: 16px;">
+            <div style="display: inline-block;">
+              <style>
+                .text-stroke-hero { -webkit-text-stroke: 1px rgba(255,255,255,0.6); text-stroke: 1px rgba(255,255,255,0.6); } 
+                .text-stroke-anim-hero { -webkit-text-stroke: 1px #000; text-stroke: 1px #000; } 
+                .text-transparent { color: transparent; }
+                .select-none-hero { user-select: none; -webkit-user-select: none; }
+              </style>
+              <button style="position: relative; padding: 0 0 10px 0; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.3); outline: none; cursor: pointer; font-family: Manrope, sans-serif; text-transform: uppercase; letter-spacing: 3px; font-size: 24px; font-weight: 700; display: inline-block;" data-text="Get Started">
+                <span class="actual-text text-transparent text-stroke-hero select-none-hero" style="display: inline-block;">Get Started</span>
+                <span aria-hidden="true" class="hover-text select-none-hero" style="pointer-events: none; position: absolute; top: 0; left: 0; width: 0; overflow: hidden; border-right: 0px solid #000; transition: width 0.5s, border-width 0s; white-space: nowrap;">
+                  <span class="text-transparent text-stroke-anim-hero">Get Started</span>
+                </span>
+              </button>
+              <script>
+                const btnHero = document.currentScript.previousElementSibling; 
+                const hoverTextHero = btnHero.querySelector('.hover-text'); 
+                btnHero.addEventListener('mouseenter', () => { 
+                  hoverTextHero.style.width = '100%'; 
+                  hoverTextHero.style.borderRightWidth = '3px';
+                  hoverTextHero.style.filter = 'drop-shadow(0 0 20px rgba(0,0,0,0.6))'; 
+                }); 
+                btnHero.addEventListener('mouseleave', () => { 
+                  hoverTextHero.style.width = '0%'; 
+                  hoverTextHero.style.borderRightWidth = '0px';
+                  hoverTextHero.style.filter = 'none'; 
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+  </header>
+  <section class="section" id="what-we-deliver-section">
+    <div data-us-project="0WrRbFIPaKoWVkiQWBG0" class="unicorn-bg"></div>
+    <section class="section">
+      <div class="container">
+        <div>
+          <div class="w-layout-grid grid_2-col gap-xxlarge mobile-l-1-col">
+            <div id="w-node-_636154fb-2dbf-f6d3-7966-9d9b7add6e48-7add6e45" class="header margin-bottom_none w-node-fe2d07f5-ecc6-b00b-5ca4-8f07c7e92889-8a0bfe14">
+              <h3 class="heading_h3">Powering the UK’s digital leaders</h3>
+              <p class="subheading">Discover how our bespoke web development and advanced AI solutions drive operational efficiency, digital transformation, and measurable growth for top UK organizations. Our expertise supports businesses, educational institutions, and charities in achieving their unique goals through innovative, tailored technology.</p>
+            </div>
+            <div id="w-node-_2330ff9f-f1ed-9407-7bd2-a9ebbefc55bb-8a0bfe14" data-w-id="2330ff9f-f1ed-9407-7bd2-a9ebbefc55bb" class="div-block"><img src="images/new-crestbourne-design.png" loading="lazy" width="168" alt=""><img src="images/sdhb-no-bg.png" loading="lazy" width="179" alt=""><img src="images/modifex.png" loading="lazy" width="131" alt=""><img src="images/homesnapper112.png" loading="lazy" width="116" alt=""><img src="images/probeit-trans.png" loading="lazy" width="173" sizes="173px" alt="" srcset="images/probeit-trans-p-500.png 500w, images/probeit-trans.png 800w"><img src="images/64c16874-5e40-45d1-8a77-77286d86f51c.png" loading="lazy" width="161" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="w-embed"></div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section" style="background: black; padding: 80px 0 140px 0;">
+      <div class="container">
+        <div class="header is-align-center" style="margin-top: 120px; margin-bottom: 60px;">
+          <div class="eyebrow">Client success stories</div>
+          <h2 class="heading_h1">Trusted by industry leaders</h2>
+          <p class="subheading" style="max-width: 700px; margin: 0 auto;">Discover how our bespoke solutions have transformed businesses across the UK, delivering measurable results through innovative web development and AI integration.</p>
+        </div>
+        
+        <div class="relative sm:p-12 flex pt-10 pr-10 pb-10 pl-30 items-center justify-center">
+          <div class="relative sm:h-96 w-full h-400 max-w-7xl max-h-full">
+            <div class="testimonial-container" style="position: relative; display: flex; justify-content: center; align-items: center; height: 100%; min-height: 400px;">
+              
+              <!-- Testimonial Card 1 -->
+              <div class="glass" style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255,255,255,0.1), transparent); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); display: flex; justify-content: center; align-items: center; transition: 0.5s; border-radius: 1rem; margin: 0 -50px; backdrop-filter: blur(10px); transform: rotate(-10deg); --r: -10;">
+                <div class="absolute inset-4 rounded-xl bg-white text-neutral-900 shadow-2xl ring-1 ring-black/5 overflow-hidden">
+                  <div class="p-6">
+                    <!-- Quote badge -->
+                    <div class="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-neutral-100 ring-1 ring-black/5 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-neutral-700">
+                        <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                        <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                      </svg>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-neutral-900 mb-4">
+                      "IntelTree transformed our digital presence with a bespoke platform that perfectly captures our brand. Their attention to detail and technical expertise exceeded all expectations."
+                    </p>
+
+                    <!-- Author row -->
+                    <div class="pt-3 border-t border-neutral-200 flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <div class="h-6 w-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold">JM</div>
+                        <div>
+                          <div class="text-xs font-medium text-neutral-900">James Morrison</div>
+                          <div class="text-xs text-neutral-500">CEO, Crestbourne School</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-amber-400">
+                          <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                        </svg>
+                        <span class="text-xs font-medium">5.0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial Card 2 -->
+              <div class="glass" style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255,255,255,0.08), transparent); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); display: flex; justify-content: center; align-items: center; transition: 0.5s; border-radius: 1rem; margin: 0 -50px; backdrop-filter: blur(10px); transform: rotate(-6deg); --r: -6;">
+                <div class="absolute inset-4 rounded-xl bg-white/90 text-neutral-900 shadow-xl ring-1 ring-black/5 backdrop-blur overflow-hidden">
+                  <div class="p-6">
+                    <!-- Quote badge -->
+                    <div class="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-neutral-100 ring-1 ring-black/5 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-neutral-700">
+                        <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                        <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                      </svg>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-neutral-900 mb-4">
+                      "The AI integration IntelTree built for us has revolutionized our workflow. What used to take hours now happens automatically, freeing our team to focus on strategic initiatives."
+                    </p>
+
+                    <!-- Author row -->
+                    <div class="pt-3 border-t border-neutral-200 flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <div class="h-6 w-6 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold">SH</div>
+                        <div>
+                          <div class="text-xs font-medium text-neutral-900">Sarah Hughes</div>
+                          <div class="text-xs text-neutral-500">Director, Modifex Ltd</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-amber-400">
+                          <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                        </svg>
+                        <span class="text-xs font-medium">5.0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial Card 3 -->
+              <div class="glass" style="position: relative; width: 340px; height: 340px; background: linear-gradient(rgba(255,255,255,0.06), transparent); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25); display: flex; justify-content: center; align-items: center; transition: 0.5s; border-radius: 1rem; margin: 0 -50px; backdrop-filter: blur(10px); transform: rotate(6deg); --r: 6;">
+                <div class="absolute inset-4 rounded-xl bg-white/80 text-neutral-900 shadow-lg ring-1 ring-black/5 backdrop-blur overflow-hidden">
+                  <div class="p-6">
+                    <!-- Quote badge -->
+                    <div class="inline-flex items-center justify-center h-8 w-8 rounded-lg bg-neutral-100 ring-1 ring-black/5 mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 text-neutral-700">
+                        <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                        <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path>
+                      </svg>
+                    </div>
+
+                    <p class="text-sm leading-relaxed text-neutral-900 mb-4">
+                      "Working with IntelTree was seamless from start to finish. They delivered a robust, scalable solution that not only met our requirements but positioned us for future growth."
+                    </p>
+
+                    <!-- Author row -->
+                    <div class="pt-3 border-t border-neutral-200 flex items-center justify-between">
+                      <div class="flex items-center gap-2">
+                        <div class="h-6 w-6 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-bold">DP</div>
+                        <div>
+                          <div class="text-xs font-medium text-neutral-900">David Patterson</div>
+                          <div class="text-xs text-neutral-500">Founder, ProbeIT Solutions</div>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-amber-400">
+                          <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                        </svg>
+                        <span class="text-xs font-medium">5.0</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <style>
+      /* Testimonial cards hover animation */
+      .testimonial-container:hover .glass {
+        transform: rotate(0deg) !important;
+        margin: 0 -30px !important;
+      }
+      
+      /* Tailwind-like utility classes for testimonials */
+      .absolute { position: absolute; }
+      .relative { position: relative; }
+      .inset-4 { top: 1rem; right: 1rem; bottom: 1rem; left: 1rem; }
+      .inline-flex { display: inline-flex; }
+      .flex { display: flex; }
+      .items-center { align-items: center; }
+      .justify-center { justify-content: center; }
+      .justify-between { justify-content: space-between; }
+      .gap-1 { gap: 0.25rem; }
+      .gap-2 { gap: 0.5rem; }
+      .h-4 { height: 1rem; }
+      .h-6 { height: 1.5rem; }
+      .h-8 { height: 2rem; }
+      .w-4 { width: 1rem; }
+      .w-6 { width: 1.5rem; }
+      .w-8 { width: 2rem; }
+      .rounded-lg { border-radius: 0.5rem; }
+      .rounded-xl { border-radius: 0.75rem; }
+      .rounded-full { border-radius: 9999px; }
+      .border-t { border-top-width: 1px; }
+      .border-neutral-200 { border-color: #e5e5e5; }
+      .bg-neutral-100 { background-color: #f5f5f5; }
+      .bg-white { background-color: #ffffff; }
+      .bg-white\/90 { background-color: rgba(255, 255, 255, 0.9); }
+      .bg-white\/80 { background-color: rgba(255, 255, 255, 0.8); }
+      .ring-1 { box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05); }
+      .ring-black\/5 { --tw-ring-color: rgba(0, 0, 0, 0.05); }
+      .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+      .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+      .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); }
+      .backdrop-blur { backdrop-filter: blur(12px); }
+      .overflow-hidden { overflow: hidden; }
+      .p-6 { padding: 1.5rem; }
+      .pt-3 { padding-top: 0.75rem; }
+      .mb-4 { margin-bottom: 1rem; }
+      .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+      .text-xs { font-size: 0.75rem; line-height: 1rem; }
+      .font-medium { font-weight: 500; }
+      .font-bold { font-weight: 700; }
+      .leading-relaxed { line-height: 1.625; }
+      .text-neutral-900 { color: #171717; }
+      .text-neutral-700 { color: #404040; }
+      .text-neutral-500 { color: #737373; }
+      .text-white { color: #ffffff; }
+      .text-amber-400 { color: #fbbf24; }
+      .bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--tw-gradient-stops)); }
+      .from-blue-500 { --tw-gradient-from: #3b82f6; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(59, 130, 246, 0)); }
+      .to-purple-600 { --tw-gradient-to: #9333ea; }
+      .from-emerald-500 { --tw-gradient-from: #10b981; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(16, 185, 129, 0)); }
+      .to-teal-600 { --tw-gradient-to: #0d9488; }
+      .from-orange-500 { --tw-gradient-from: #f97316; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(249, 115, 22, 0)); }
+      .to-red-600 { --tw-gradient-to: #dc2626; }
+      
+      /* Responsive adjustments for testimonials */
+      @media (max-width: 1024px) {
+        .glass {
+          width: 300px !important;
+          height: 300px !important;
+          margin: 0 -40px !important;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .testimonial-container {
+          flex-direction: column !important;
+          gap: 2rem;
+        }
+        .glass {
+          transform: rotate(0deg) !important;
+          margin: 0 auto !important;
+          width: 100% !important;
+          max-width: 340px !important;
+        }
+      }
+    </style>
+    
+    <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc34f-93acc34e" class="container w-node-af32da60-29d0-b608-2154-e872cdc995e7-8a0bfe14">
+      <div class="header is-align-center">
+        <div class="eyebrow">What we deliver</div>
+        <h2 class="heading_h1">Design. Develop. Transform. Excel.</h2>
+      </div>
+      <div class="w-layout-grid grid_1-col">
+        <div class="w-layout-grid grid_2-col gap-small">
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc352-93acc34e" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995a9-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M9.24998 18.7103C6.60958 17.6271 4.75 15.0307 4.75 12C4.75 8.96938 6.60958 6.37304 9.24997 5.28979" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                    <path d="M14.75 5.28979C17.3904 6.37303 19.25 8.96938 19.25 12.0001C19.25 15.0307 17.3904 17.6271 14.75 18.7103" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                    <path d="M4 19.2501L8.99998 19.2501C9.13805 19.2501 9.24998 19.1381 9.24998 19.0001L9.24997 14" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                    <path d="M20 4.75L15 4.75003C14.8619 4.75003 14.75 4.86196 14.75 5.00003L14.75 10.0001" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc35b-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995a6-8a0bfe14">
+                  <div class="paragraph_large">Bespoke websites for every ambition.</div>
+                  <p class="paragraph_small text-color_secondary">We create visually striking, fully responsive websites engineered to reflect your brand and drive measurable results.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc360-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995b6" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995b6-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc366-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995b3-8a0bfe14">
+                  <div class="paragraph_large">Comprehensive full stack solutions.</div>
+                  <p class="paragraph_small text-color_secondary">Our team architects robust, scalable platforms—ranging from simple sites to intricate, enterprise-grade systems.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc36b-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995c2" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995c2-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+                    <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc372-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995bf-8a0bfe14">
+                  <div class="paragraph_large">AI-powered efficiency, seamlessly integrated.</div>
+                  <p class="paragraph_small text-color_secondary">We embed advanced AI to automate processes, optimize workflows, and unlock new opportunities for your organization.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc377-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995ce" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995ce-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z" stroke="currentColor" stroke-width="1.5"></path>
+                    <path d="M9 12L11 14L15.5 9.5" stroke="currentColor" stroke-width="1.5"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc37e-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995cb-8a0bfe14">
+                  <div class="paragraph_large">Proprietary systems, uniquely yours.</div>
+                  <p class="paragraph_small text-color_secondary">Every solution is custom-built from the ground up, ensuring exclusivity, security, and a true competitive advantage.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc383-93acc34e" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995d9-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M17.3654 5.32894C17.8831 5.54543 18.3534 5.86273 18.7495 6.26274C19.146 6.6625 19.4604 7.13723 19.675 7.65978C19.8895 8.18233 20 8.74246 20 9.30814C20 9.87384 19.8895 10.4339 19.675 10.9565C19.4604 11.4791 19.146 11.9538 18.7495 12.3535L12.0001 19L5.2496 12.3535C4.44951 11.5457 4 10.4501 4 9.3076C4 8.16516 4.44951 7.0695 5.2496 6.26166C6.04975 5.45384 7.13498 5 8.26647 5C9.39804 5 10.4833 5.45384 11.2833 6.26166L12.016 6.99843L12.7158 6.26274C13.112 5.86273 13.5823 5.54543 14.0999 5.32894C14.6176 5.11246 15.1724 5.00103 15.7327 5.00103C16.2929 5.00103 16.8478 5.11246 17.3654 5.32894Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc389-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995d6-8a0bfe14">
+                  <div class="paragraph_large text_all-caps">Clear pricing. Unmatched expertise.</div>
+                  <p class="paragraph_small text-color_secondary">Benefit from transparent, competitive rates while accessing industry-leading design and development talent.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc38e-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995e4" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995e4-8a0bfe14">
+            <div class="card card_body">
+              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
+                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+                    <path d="M4 12C8.41828 12 12 8.41828 12 4C12 8.41828 15.5817 12 20 12C15.5817 12 12 15.5817 12 20C12 15.5817 8.41828 12 4 12Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
+                  </svg></div>
+                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc394-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995e1-8a0bfe14">
+                  <div class="paragraph_large text_all-caps">Proven results. Trusted partnerships.</div>
+                  <p class="paragraph_small text-color_secondary">Hundreds of UK businesses, schools, and charities rely on us for reliable, future-ready digital solutions.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div id="w-node-_26662f2a-cc19-404e-855b-0702bb517b39-bb517b35" class="header max-width_large w-node-cfec5c73-6511-e172-6779-af9d33912839-8a0bfe14">
+        <h2>Features engineered for impact</h2>
+        <p class="paragraph_large text-color_secondary">Discover our core capabilities designed to accelerate business growth. From bespoke web development to advanced AI integration, each feature is meticulously crafted to enhance operational efficiency, drive innovation, and deliver measurable results for organizations across sectors.</p>
+      </div>
+      <div id="w-node-_26662f2a-cc19-404e-855b-0702bb517b3e-bb517b35" class="w-layout-grid grid_2-col tablet-1-col gap-small w-node-cfec5c73-6511-e172-6779-af9d33912852-8a0bfe14">
+        <div id="w-node-_99791e8e-a878-cd38-d966-cbb597f8fd05-bb517b35" class="w-node-cfec5c73-6511-e172-6779-af9d33912845-8a0bfe14">
+          <div class="image-ratio_3x2 margin-bottom_small"><img class="image image_cover" src="images/black-laptop-screen-dark-room-night.jpg" width="608" height="405" alt="[background image] bright office space (for a digital marketing &amp; advertising agency)" sizes="(max-width: 767px) 100vw, 608px" data-aisg-image-id="6f2e7e79-66e3-4c49-8359-781cc7d9acff" loading="lazy" srcset="images/black-laptop-screen-dark-room-night-p-500.jpg 500w, images/black-laptop-screen-dark-room-night-p-800.jpg 800w, images/black-laptop-screen-dark-room-night-p-1080.jpg 1080w, images/black-laptop-screen-dark-room-night-p-1600.jpg 1600w, images/black-laptop-screen-dark-room-night-p-2000.jpg 2000w, images/black-laptop-screen-dark-room-night-p-2600.jpg 2600w, images/black-laptop-screen-dark-room-night-p-3200.jpg 3200w, images/black-laptop-screen-dark-room-night.jpg 5422w"></div>
+          <div class="paragraph_small text-color_secondary">Web development</div>
+          <h3 class="heading_h4">Tailored sites, robust infrastructure</h3>
+          <p id="w-node-_26662f2a-cc19-404e-855b-0702bb517b47-bb517b35" class="w-node-cfec5c73-6511-e172-6779-af9d33912841-8a0bfe14">We deliver custom websites with secure, scalable backends, ensuring seamless user experiences and proprietary solutions. Every project is built from the ground up to meet your unique business requirements and future-proof your digital presence.</p>
+          <div class="button-group">
+            <div style="position: relative; display: inline-block;">
+              <button style="position: relative; z-index: 10; overflow: hidden; transition: transform 0.15s ease-out; color: white; background: rgba(23, 23, 23, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 12px 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); cursor: pointer; font-weight: 600; --x: 50%; --y: 50%; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                <span style="position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 8px;">Learn more<svg style="width: 20px; height: 20px; transition: transform 0.2s ease-out;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" onmouseenter="this.style.transform='translateX(2px)'" onmouseleave="this.style.transform='translateX(0)'">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+                  </svg></span>
+                <span class="bottom-shine" style="pointer-events: none; position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px; background: linear-gradient(to right, transparent, white, transparent); opacity: 0.8; transition: left 0.5s ease-out, right 0.5s ease-out;"></span>
+                <span class="glow" style="pointer-events: none; position: absolute; inset: 0; z-index: -1;" aria-hidden="true"></span>
+              </button>
+              <span class="bottom-glow" style="pointer-events: none; position: absolute; bottom: -12px; left: 50%; z-index: 0; height: 24px; width: 176px; transform: translateX(-50%); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease-out; background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div id="w-node-_0b7922de-f6d9-3525-713c-e8960557b717-bb517b35" class="w-node-cfec5c73-6511-e172-6779-af9d33912851-8a0bfe14">
+          <div class="image-ratio_3x2 margin-bottom_small"><img width="608" height="405" alt="[interface] image of a laptop displaying product interface (for an ai saas company)" src="images/ed16a969-4d2d-4277-b197-848cd4d03230.avif" loading="lazy" data-aisg-image-id="536e7723-0609-4780-96b9-12b8a69550aa" class="image image_cover"></div>
+          <div class="paragraph_small text-color_secondary">AI integration</div>
+          <h3 class="heading_h4">Intelligent automation, seamless processes</h3>
+          <p id="w-node-_0b7922de-f6d9-3525-713c-e8960557b71e-bb517b35" class="w-node-cfec5c73-6511-e172-6779-af9d3391284d-8a0bfe14">Leverage AI to automate complex workflows, minimize manual intervention, and unlock new efficiencies. Our solutions integrate seamlessly with your systems, empowering your team to focus on strategic growth and innovation.</p>
+          <div class="button-group">
+            <div style="position: relative; display: inline-block;">
+              <button style="position: relative; z-index: 10; overflow: hidden; transition: transform 0.15s ease-out; color: white; background: rgba(23, 23, 23, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 12px 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); cursor: pointer; font-weight: 600; --x: 50%; --y: 50%; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                <span style="position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 8px;">See how<svg style="width: 20px; height: 20px; transition: transform 0.2s ease-out;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" onmouseenter="this.style.transform='translateX(2px)'" onmouseleave="this.style.transform='translateX(0)'">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+                  </svg></span>
+                <span class="bottom-shine" style="pointer-events: none; position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px; background: linear-gradient(to right, transparent, white, transparent); opacity: 0.8; transition: left 0.5s ease-out, right 0.5s ease-out;"></span>
+                <span class="glow" style="pointer-events: none; position: absolute; inset: 0; z-index: -1;" aria-hidden="true"></span>
+              </button>
+              <span class="bottom-glow" style="pointer-events: none; position: absolute; bottom: -12px; left: 50%; z-index: 0; height: 24px; width: 176px; transform: translateX(-50%); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease-out; background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="w-layout-grid grid_3-col tablet-1-col gap-small">
+        <div id="w-node-c6bf28ee-7b7a-5371-05a3-3189a6d9fd7a-a6d9fd77" class="w-node-df4fc6c2-52ab-93da-97a4-1d418856dbce-8a0bfe14">
+          <h2>Transform your business. Start today.</h2>
+          <p class="subheading margin-bottom_none">Unlock bespoke web solutions engineered for growth. From intuitive design to advanced AI integration, our team delivers tailored platforms that empower your business to excel in a competitive digital landscape. Experience dedicated support, transparent pricing, and a partnership focused on your long-term success.</p>
+        </div>
+        <div id="w-node-_61d1ddd6-e58a-bb7b-402e-a5ddd1560805-a6d9fd77" class="width_100percent max-width_xsmall w-node-df4fc6c2-52ab-93da-97a4-1d418856dbd4-8a0bfe14">
+          <div class="button-group is-vertical-stretch" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="position: relative; display: inline-block;">
+              <button style="position: relative; z-index: 10; overflow: hidden; transition: transform 0.15s ease-out; color: white; background: rgba(23, 23, 23, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 12px 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); cursor: pointer; font-weight: 600; width: 100%; --x: 50%; --y: 50%; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                <span style="position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 8px; justify-content: center;">Start now<svg style="width: 20px; height: 20px; transition: transform 0.2s ease-out;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" onmouseenter="this.style.transform='translateX(2px)'" onmouseleave="this.style.transform='translateX(0)'">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+                  </svg></span>
+                <span class="bottom-shine" style="pointer-events: none; position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px; background: linear-gradient(to right, transparent, white, transparent); opacity: 0.8; transition: left 0.5s ease-out, right 0.5s ease-out;"></span>
+                <span class="glow" style="pointer-events: none; position: absolute; inset: 0; z-index: -1;" aria-hidden="true"></span>
+              </button>
+              <span class="bottom-glow" style="pointer-events: none; position: absolute; bottom: -12px; left: 50%; z-index: 0; height: 24px; width: 176px; transform: translateX(-50%); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease-out; background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+            </div>
+            <div style="position: relative; display: inline-block;">
+              <button style="position: relative; z-index: 10; overflow: hidden; transition: transform 0.15s ease-out; color: white; background: rgba(23, 23, 23, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 12px; padding: 12px 24px; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08); cursor: pointer; font-weight: 600; width: 100%; --x: 50%; --y: 50%; --o: 0;" onmousemove="btnMove(event)" onmouseenter="this.style.setProperty('--o','1')" onmouseleave="this.style.setProperty('--o','0')" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                <span style="position: relative; z-index: 10; display: inline-flex; align-items: center; gap: 8px; justify-content: center;">Get a quote<svg style="width: 20px; height: 20px; transition: transform 0.2s ease-out;" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" onmouseenter="this.style.transform='translateX(2px)'" onmouseleave="this.style.transform='translateX(0)'">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"></path>
+                  </svg></span>
+                <span class="bottom-shine" style="pointer-events: none; position: absolute; bottom: 0; left: 50%; right: 50%; height: 1px; background: linear-gradient(to right, transparent, white, transparent); opacity: 0.8; transition: left 0.5s ease-out, right 0.5s ease-out;"></span>
+                <span class="glow" style="pointer-events: none; position: absolute; inset: 0; z-index: -1;" aria-hidden="true"></span>
+              </button>
+              <span class="bottom-glow" style="pointer-events: none; position: absolute; bottom: -12px; left: 50%; z-index: 0; height: 24px; width: 176px; transform: translateX(-50%); border-radius: 50%; opacity: 0; transition: opacity 0.3s ease-out; background: radial-gradient(60% 100% at 50% 50%, rgba(255,255,255,.55), rgba(255,255,255,.28) 35%, transparent 70%); filter: blur(10px) saturate(120%);" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container is-small">
+      <div id="w-node-_22c8f393-d39d-048c-ea8b-7b01c2725cf0-c2725ced" class="header is-align-center w-node-_0a1cfb31-a805-330c-20a3-745c14a31fa7-8a0bfe14">
+        <div class="eyebrow">Your questions, expertly answered</div>
+        <h2>Clarity for your next digital move</h2>
+        <p class="subheading">Find comprehensive answers to common questions about our bespoke web development, design, and AI integration services. We provide transparent, detailed insights to help you make informed decisions for your business.</p>
+      </div>
+      <div id="w-node-_41d1ffcd-18e5-6de7-5afe-b5753d4bc0c2-c2725ced" class="flex_vertical gap-medium w-node-_0a1cfb31-a805-330c-20a3-745c14a31fc0-8a0bfe14">
+        <div class="divider">
+          <div id="w-node-_22c8f393-d39d-048c-ea8b-7b01c2725cf9-c2725ced" class="heading_h4 w-node-_0a1cfb31-a805-330c-20a3-745c14a31fa9-8a0bfe14">Which solutions do you provide?</div>
+          <div class="rich-text paragraph_large w-richtext">
+            <p>We offer full-stack web development, custom UI/UX design, and advanced AI integration. Our expertise spans from simple business sites to complex, proprietary platforms, all tailored to your unique requirements for performance and scalability.</p>
+          </div>
+        </div>
+        <div class="divider">
+          <div id="w-node-_3bbdd118-2d16-1d06-1f67-cd66e70178cc-c2725ced" class="heading_h4 w-node-_0a1cfb31-a805-330c-20a3-745c14a31faf-8a0bfe14">How are bespoke projects managed?</div>
+          <div class="rich-text paragraph_large w-richtext">
+            <p>We begin with an in-depth consultation to define your objectives. Our team crafts each solution from the ground up, ensuring it is fully customized, scalable, and exclusively yours. Our process is collaborative, transparent, and focused on delivering measurable value.</p>
+          </div>
+        </div>
+        <div class="divider">
+          <div id="w-node-_77e04b32-a9ec-fd16-d96d-fecfbfd5e8f0-c2725ced" class="heading_h4 w-node-_0a1cfb31-a805-330c-20a3-745c14a31fb5-8a0bfe14">Is AI integration available for legacy systems?</div>
+          <div class="rich-text paragraph_large w-richtext">
+            <p>Absolutely. We specialize in integrating AI into existing infrastructures to automate workflows, enhance data analysis, and optimize processes. Our approach ensures seamless adoption for businesses, educational organizations, and charities.</p>
+          </div>
+        </div>
+        <div class="divider">
+          <div id="w-node-_9b8da06b-c5c2-29a8-5b6b-ad35dd8e7563-c2725ced" class="heading_h4 w-node-_0a1cfb31-a805-330c-20a3-745c14a31fbb-8a0bfe14">How is your pricing structured?</div>
+          <div class="rich-text paragraph_large w-richtext">
+            <p>Our pricing is transparent and reflects the depth of customization and quality we deliver. We provide clear, upfront estimates with no hidden costs, ensuring your investment yields long-term value and operational efficiency.</p>
+          </div>
+        </div>
+      </div>
+      <div class="button-group is-align-center">
+        <a href="#" class="text-button w-inline-block">
+          <div>Get in touch</div>
+          <div class="text-button_icon w-embed"><svg width="100%" height="100%" viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 24H43M43 24L24.28 5M43 24L24.28 43" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg></div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="header">
+        <p class="eyebrow margin-bottom_xsmall">Get in touch</p>
+        <h2 class="heading_h2">Let’s talk about your project</h2>
+        <p class="subheading max-width_large">Contact us for expert guidance on bespoke web solutions, advanced integrations, or AI-driven systems. Our team responds with detailed, actionable insights tailored to your needs.</p>
+      </div>
+      <ul role="list" class="grid_2-col gap-medium w-list-unstyled">
+        <li class="flex_vertical">
+          <div class="icon is-large is-background margin-bottom_xsmall"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+              <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg></div>
+          <h4 class="heading_h5">Email our experts</h4>
+          <p class="text-color_secondary">Share your requirements or questions for a thorough, personalized response from our development and design specialists.</p>
+          <a href="#" class="text-link is-secondary">contact@inteltree.com</a>
+        </li>
+        <li class="flex_vertical">
+          <div class="icon is-large is-background margin-bottom_xsmall"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
+              <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+            </svg></div>
+          <h4 class="heading_h5">Speak with a specialist</h4>
+          <p class="text-color_secondary">Call weekdays, 8am–5pm, for in-depth consultation and immediate support from our experienced team.</p>
+          <a href="#" class="text-link is-secondary">+1 (555) 000-0000</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer class="footer is-secondary">
+    <div class="container">
+      <div class="w-layout-grid grid_2-col margin-bottom_large">
+        <ul role="list" class="margin-bottom_none w-list-unstyled">
+          <li>
+            <a href="#" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">About</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Services</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Work</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Insights</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Contact</div>
+            </a>
+          </li>
+        </ul>
+        <a id="w-node-_447b0386-1e02-51a7-4a70-8e69830f82ee-89bb09b6" href="#" class="logo w-node-_21588c6a-fa94-88f7-593b-3b1bc656c20a-c656c1f2 w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo-footer" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars-footer">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_xlarge margin-bottom_none text_all-caps">IntelTree</div>
+        </a>
+      </div>
+      <div class="w-layout-grid footer_bottom">
+        <div>
+          <p class="text-color_secondary">Powered by Webflow</p>
+        </div>
+        <div class="margin-left_auto">
+          <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">Facebook</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M8,1.441c2.136,0,2.389.009,3.233.047a4.419,4.419,0,0,1,1.485.276,2.472,2.472,0,0,1,.92.6,2.472,2.472,0,0,1,.6.92,4.419,4.419,0,0,1,.276,1.485c.038.844.047,1.1.047,3.233s-.009,2.389-.047,3.233a4.419,4.419,0,0,1-.276,1.485,2.644,2.644,0,0,1-1.518,1.518,4.419,4.419,0,0,1-1.485.276c-.844.038-1.1.047-3.233.047s-2.389-.009-3.233-.047a4.419,4.419,0,0,1-1.485-.276,2.472,2.472,0,0,1-.92-.6,2.472,2.472,0,0,1-.6-.92,4.419,4.419,0,0,1-.276-1.485c-.038-.844-.047-1.1-.047-3.233s.009-2.389.047-3.233a4.419,4.419,0,0,1,.276-1.485,2.472,2.472,0,0,1,.6-.92,2.472,2.472,0,0,1,.92-.6,4.419,4.419,0,0,1,1.485-.276c.844-.038,1.1-.047,3.233-.047M8,0C5.827,0,5.555.009,4.7.048A5.868,5.868,0,0,0,2.76.42a3.908,3.908,0,0,0-1.417.923A3.908,3.908,0,0,0,.42,2.76,5.868,5.868,0,0,0,.048,4.7C.009,5.555,0,5.827,0,8s.009,2.445.048,3.3A5.868,5.868,0,0,0,.42,13.24a3.908,3.908,0,0,0,.923,1.417,3.908,3.908,0,0,0,1.417.923,5.868,5.868,0,0,0,1.942.372C5.555,15.991,5.827,16,8,16s2.445-.009,3.3-.048a5.868,5.868,0,0,0,1.942-.372,4.094,4.094,0,0,0,2.34-2.34,5.868,5.868,0,0,0,.372-1.942c.039-.853.048-1.125.048-3.3s-.009-2.445-.048-3.3A5.868,5.868,0,0,0,15.58,2.76a3.908,3.908,0,0,0-.923-1.417A3.908,3.908,0,0,0,13.24.42,5.868,5.868,0,0,0,11.3.048C10.445.009,10.173,0,8,0Z" fill="currentColor"></path>
+                  <path d="M8,3.892A4.108,4.108,0,1,0,12.108,8,4.108,4.108,0,0,0,8,3.892Zm0,6.775A2.667,2.667,0,1,1,10.667,8,2.667,2.667,0,0,1,8,10.667Z" fill="currentColor"></path>
+                  <circle cx="12.27" cy="3.73" r="0.96" fill="currentColor"></circle>
+                </svg>
+                <div class="screen-reader">Instagram<br></div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M12.3723 1.16992H14.6895L9.6272 6.95576L15.5825 14.829H10.9196L7.26734 10.0539L3.08837 14.829H0.769833L6.18442 8.64037L0.471436 1.16992H5.2528L8.55409 5.53451L12.3723 1.16992ZM11.5591 13.4421H12.843L4.55514 2.48399H3.17733L11.5591 13.4421Z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">X</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">LinkedIn</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">YouTube</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider margin-bottom_small margin-top_small"></div>
+      <div class="footer_bottom">
+        <div class="text-color_secondary">All rights reserved © 2025 IntelTree</div>
+        <div class="text-color_secondary">Made by Taylor Brooks</div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68dd31aebc83b25a8a0bfd82" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
