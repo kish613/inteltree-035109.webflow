@@ -321,6 +321,11 @@
         <nav role="navigation" class="nav_menu w-nav-menu">
           <ul role="list" class="nav_menu-list w-list-unstyled">
             <li class="nav_menu-list-item">
+              <a href="services.html" class="nav_link w-inline-block">
+                <div>Services</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item" style="display: none;">
               <div data-delay="0" data-hover="false" class="nav_dropdown-menu w-dropdown">
                 <div class="nav_link w-dropdown-toggle">
                   <div>Services</div>
@@ -610,7 +615,7 @@
     </section>
     
     <!-- Testimonials Section -->
-    <section class="section" style="background: black; padding: 80px 0 140px 0;">
+    <section class="section testimonials-section" style="background: black; padding: 80px 0 140px 0; position: relative;">
       <div class="container">
         <div class="header is-align-center" style="margin-top: 120px; margin-bottom: 60px;">
           <div class="eyebrow">Client success stories</div>
@@ -737,6 +742,25 @@
     </section>
     
     <style>
+      /* Smooth gradient transition from testimonials to next section */
+      .testimonials-section::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .testimonials-section .container {
+        position: relative;
+        z-index: 2;
+      }
+      
       /* Testimonial cards hover animation */
       .testimonial-container:hover .glass {
         transform: rotate(0deg) !important;
@@ -820,96 +844,103 @@
       }
     </style>
     
-    <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc34f-93acc34e" class="container w-node-af32da60-29d0-b608-2154-e872cdc995e7-8a0bfe14">
-      <div class="header is-align-center">
-        <div class="eyebrow">What we deliver</div>
-        <h2 class="heading_h1">Design. Develop. Transform. Excel.</h2>
-      </div>
-      <div class="w-layout-grid grid_1-col">
-        <div class="w-layout-grid grid_2-col gap-small">
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc352-93acc34e" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995a9-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M9.24998 18.7103C6.60958 17.6271 4.75 15.0307 4.75 12C4.75 8.96938 6.60958 6.37304 9.24997 5.28979" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                    <path d="M14.75 5.28979C17.3904 6.37303 19.25 8.96938 19.25 12.0001C19.25 15.0307 17.3904 17.6271 14.75 18.7103" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                    <path d="M4 19.2501L8.99998 19.2501C9.13805 19.2501 9.24998 19.1381 9.24998 19.0001L9.24997 14" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                    <path d="M20 4.75L15 4.75003C14.8619 4.75003 14.75 4.86196 14.75 5.00003L14.75 10.0001" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc35b-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995a6-8a0bfe14">
-                  <div class="paragraph_large">Bespoke websites for every ambition.</div>
-                  <p class="paragraph_small text-color_secondary">We create visually striking, fully responsive websites engineered to reflect your brand and drive measurable results.</p>
-                </div>
-              </div>
+    <div class="bg-white pt-20 pb-20">
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+        
+        .font-space-grotesk {
+          font-family: 'Space Grotesk', 'Arial', sans-serif;
+        }
+        
+        .font-geist {
+          font-family: 'Inter', 'Helvetica Neue', sans-serif;
+        }
+        
+        .process-card-grid {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 640px) {
+          .process-card-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .process-card-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+      </style>
+      <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+        <div class="max-w-4xl mb-12">
+          <h2 class="sm:text-5xl text-4xl font-semibold text-gray-900 tracking-tight font-space-grotesk">Design. Develop. Transform. Excel.</h2>
+        </div>
+        <div class="process-card-grid">
+          
+          <!-- Card 1: Bespoke Websites -->
+          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="overflow-hidden">
+              <img src="images/black-laptop-screen-dark-room-night.jpg" alt="Modern laptop with dark screen in professional environment" class="sm:h-52 transition-transform duration-300 group-hover:scale-105 w-full h-48 object-cover" />
             </div>
-          </div>
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc360-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995b6" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995b6-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M12.5 18.25C16.2279 18.25 19.25 15.2279 19.25 11.5C19.25 7.77208 16.2279 4.75 12.5 4.75C8.77208 4.75 5.75 7.77208 5.75 11.5C5.75 12.6007 6.01345 13.6398 6.48072 14.5578L5 19L9.71819 17.6519C10.5664 18.0361 11.5082 18.25 12.5 18.25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc366-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995b3-8a0bfe14">
-                  <div class="paragraph_large">Comprehensive full stack solutions.</div>
-                  <p class="paragraph_small text-color_secondary">Our team architects robust, scalable platforms—ranging from simple sites to intricate, enterprise-grade systems.</p>
-                </div>
-              </div>
+            <div class="pt-6 pr-6 pb-6 pl-6">
+              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Bespoke Web Development</h3>
+              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
+                <li>Visually striking, fully responsive websites.</li>
+                <li>Engineered to reflect your brand identity.</li>
+                <li>Optimized for performance and user experience.</li>
+              </ul>
             </div>
-          </div>
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc36b-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995c2" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995c2-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M5.25 6.75H18.75V17.25H5.25V6.75Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                    <path d="M5.25 6.75L12 12L18.75 6.75" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc372-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995bf-8a0bfe14">
-                  <div class="paragraph_large">AI-powered efficiency, seamlessly integrated.</div>
-                  <p class="paragraph_small text-color_secondary">We embed advanced AI to automate processes, optimize workflows, and unlock new opportunities for your organization.</p>
-                </div>
-              </div>
+          </article>
+          
+          <!-- Card 2: Full Stack Solutions -->
+          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="overflow-hidden">
+              <img src="images/ed16a969-4d2d-4277-b197-848cd4d03230.avif" alt="Interface display showing advanced platform capabilities" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
-          </div>
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc377-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995ce" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995ce-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M19.25 12C19.25 16.0041 16.0041 19.25 12 19.25C7.99594 19.25 4.75 16.0041 4.75 12C4.75 7.99594 7.99594 4.75 12 4.75C16.0041 4.75 19.25 7.99594 19.25 12Z" stroke="currentColor" stroke-width="1.5"></path>
-                    <path d="M9 12L11 14L15.5 9.5" stroke="currentColor" stroke-width="1.5"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc37e-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995cb-8a0bfe14">
-                  <div class="paragraph_large">Proprietary systems, uniquely yours.</div>
-                  <p class="paragraph_small text-color_secondary">Every solution is custom-built from the ground up, ensuring exclusivity, security, and a true competitive advantage.</p>
-                </div>
-              </div>
+            <div class="pt-6 pr-6 pb-6 pl-6">
+              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Comprehensive Full Stack</h3>
+              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
+                <li>Robust, scalable platform architecture.</li>
+                <li>Simple sites to enterprise-grade systems.</li>
+                <li>Custom-built to meet your requirements.</li>
+              </ul>
             </div>
-          </div>
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc383-93acc34e" class="ix_card-rotate-left w-node-af32da60-29d0-b608-2154-e872cdc995d9-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M17.3654 5.32894C17.8831 5.54543 18.3534 5.86273 18.7495 6.26274C19.146 6.6625 19.4604 7.13723 19.675 7.65978C19.8895 8.18233 20 8.74246 20 9.30814C20 9.87384 19.8895 10.4339 19.675 10.9565C19.4604 11.4791 19.146 11.9538 18.7495 12.3535L12.0001 19L5.2496 12.3535C4.44951 11.5457 4 10.4501 4 9.3076C4 8.16516 4.44951 7.0695 5.2496 6.26166C6.04975 5.45384 7.13498 5 8.26647 5C9.39804 5 10.4833 5.45384 11.2833 6.26166L12.016 6.99843L12.7158 6.26274C13.112 5.86273 13.5823 5.54543 14.0999 5.32894C14.6176 5.11246 15.1724 5.00103 15.7327 5.00103C16.2929 5.00103 16.8478 5.11246 17.3654 5.32894Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc389-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995d6-8a0bfe14">
-                  <div class="paragraph_large text_all-caps">Clear pricing. Unmatched expertise.</div>
-                  <p class="paragraph_small text-color_secondary">Benefit from transparent, competitive rates while accessing industry-leading design and development talent.</p>
-                </div>
-              </div>
+          </article>
+          
+          <!-- Card 3: AI Integration -->
+          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="overflow-hidden">
+              <img src="images/black-laptop-screen-dark-room-night.jpg" alt="AI-powered automation and workflow optimization" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
             </div>
-          </div>
-          <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc38e-93acc34e" data-w-id="af32da60-29d0-b608-2154-e872cdc995e4" class="ix_card-rotate-right w-node-af32da60-29d0-b608-2154-e872cdc995e4-8a0bfe14">
-            <div class="card card_body">
-              <div class="w-layout-grid grid_1-col gap-medium ratio_16x9">
-                <div class="icon is-xlarge"><svg width="100%" height="100%" viewbox="0 0 24 24" fill="none">
-                    <path d="M4 12C8.41828 12 12 8.41828 12 4C12 8.41828 15.5817 12 20 12C15.5817 12 12 15.5817 12 20C12 15.5817 8.41828 12 4 12Z" stroke-width="1.5" stroke-linejoin="round" stroke="currentColor"></path>
-                  </svg></div>
-                <div id="w-node-_10b0e8b6-8a30-4d11-5b3b-3df793acc394-93acc34e" class="max-width_xsmall w-node-af32da60-29d0-b608-2154-e872cdc995e1-8a0bfe14">
-                  <div class="paragraph_large text_all-caps">Proven results. Trusted partnerships.</div>
-                  <p class="paragraph_small text-color_secondary">Hundreds of UK businesses, schools, and charities rely on us for reliable, future-ready digital solutions.</p>
-                </div>
-              </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">AI-Powered Efficiency</h3>
+              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
+                <li>Advanced AI to automate processes.</li>
+                <li>Optimize workflows and unlock opportunities.</li>
+                <li>Seamless integration with existing systems.</li>
+              </ul>
             </div>
-          </div>
+          </article>
+          
+          <!-- Card 4: Proprietary Systems -->
+          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
+            <div class="overflow-hidden">
+              <img src="images/ed16a969-4d2d-4277-b197-848cd4d03230.avif" alt="Custom-built proprietary platform interface" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Proprietary Systems</h3>
+              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
+                <li>Custom-built from the ground up.</li>
+                <li>Ensuring exclusivity and security.</li>
+                <li>True competitive advantage for your business.</li>
+              </ul>
+            </div>
+          </article>
+          
         </div>
       </div>
     </div>
