@@ -1,0 +1,201 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DesignStudio Hero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body class="antialiased text-slate-100 bg-black">
+  <!-- Background with subtle white gradient -->
+  <div class="fixed inset-0 -z-10">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-black to-black"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex flex-col items-center justify-center px-6 py-20">
+    <div class="text-center max-w-3xl mx-auto sm:pt-16 pt-10">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-slate-100 tracking-tight mt-20">
+        Beautiful websites that convert.
+      </h1>
+    </div>
+
+    <!-- Carousel -->
+    <div class="max-w-6xl mx-auto mt-16 sm:mt-16 px-6 sm:px-8 relative w-full">
+      <div class="h-[500px] sm:h-[600px] relative">
+        <!-- Cards Stack -->
+        <div class="flex absolute inset-0 items-center justify-center" id="cardStack">
+          <!-- Card 1 -->
+          <article class="coach-card absolute w-[90%] sm:w-[680px] aspect-[5/3] rounded-2xl shadow-xl overflow-hidden ring-1 bg-slate-900 shadow-slate-100/10 ring-white/5">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/fa91f7af-c0ee-487e-9b71-34905a5f7414_1600w.webp" alt="E-commerce design">
+            <div class="absolute top-4 right-4">
+              <button class="save-btn rounded-full backdrop-blur px-2.5 py-2 shadow-sm transition bg-black/80 hover:bg-black">
+                <i data-lucide="plus" class="w-5 h-5 text-slate-100" style="stroke-width: 1.5;"></i>
+              </button>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t to-transparent from-slate-100/70 via-slate-100/20">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight text-black">E-commerce Platform</h3>
+              <p class="text-sm sm:text-base mt-1 text-slate-800">Complete online store design</p>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="coach-card absolute w-[90%] sm:w-[680px] aspect-[5/3] rounded-2xl shadow-xl overflow-hidden ring-1 bg-slate-900 shadow-slate-100/10 ring-white/5">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/5929dfb3-6ba0-482e-8054-7c6b716e45bc_1600w.jpg" alt="SaaS dashboard">
+            <div class="absolute top-4 right-4">
+              <button class="save-btn rounded-full backdrop-blur px-2.5 py-2 shadow-sm transition bg-black/80 hover:bg-black">
+                <i data-lucide="plus" class="w-5 h-5 text-slate-100" style="stroke-width: 1.5;"></i>
+              </button>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t to-transparent from-slate-100/70 via-slate-100/20">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight text-black">SaaS Dashboard</h3>
+              <p class="text-sm sm:text-base mt-1 text-slate-800">Modern analytics interface</p>
+            </div>
+          </article>
+
+          <!-- Card 3 (Center) -->
+          <article class="coach-card absolute w-[90%] sm:w-[680px] aspect-[5/3] rounded-2xl shadow-xl overflow-hidden ring-1 bg-slate-900 shadow-slate-100/10 ring-white/5">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/ce6d7146-78eb-4530-bc2a-2885666e1383_1600w.webp" alt="Landing page">
+            <div class="absolute top-4 right-4">
+              <button class="save-btn rounded-full backdrop-blur px-2.5 py-2 shadow-sm transition bg-black/80 hover:bg-black">
+                <i data-lucide="plus" class="w-5 h-5 text-slate-100" style="stroke-width: 1.5;"></i>
+              </button>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t to-transparent from-slate-100/70 via-slate-100/20">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight text-black">Landing Pages</h3>
+              <p class="text-sm sm:text-base mt-1 text-slate-800">High-converting designs</p>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="coach-card absolute w-[90%] sm:w-[680px] aspect-[5/3] rounded-2xl shadow-xl overflow-hidden ring-1 bg-slate-900 shadow-slate-100/10 ring-white/5">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c75a3e33-28d5-4996-97d3-cabbf3908ede_1600w.webp" alt="Mobile app">
+            <div class="absolute top-4 right-4">
+              <button class="save-btn rounded-full backdrop-blur px-2.5 py-2 shadow-sm transition bg-black/80 hover:bg-black">
+                <i data-lucide="plus" class="w-5 h-5 text-slate-100" style="stroke-width: 1.5;"></i>
+              </button>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t to-transparent from-slate-100/70 via-slate-100/20">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight text-black">Mobile App UI</h3>
+              <p class="text-sm sm:text-base mt-1 text-slate-800">Native &amp; responsive experiences</p>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="coach-card absolute w-[90%] sm:w-[680px] aspect-[5/3] rounded-2xl shadow-xl overflow-hidden ring-1 bg-slate-900 shadow-slate-100/10 ring-white/5">
+            <img class="absolute inset-0 w-full h-full object-cover" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c4ba3f45-b7fb-47e5-a442-3c55bd9f9f1c_1600w.webp" alt="Brand identity">
+            <div class="absolute top-4 right-4">
+              <button class="save-btn rounded-full backdrop-blur px-2.5 py-2 shadow-sm transition bg-black/80 hover:bg-black">
+                <i data-lucide="plus" class="w-5 h-5 text-slate-100" style="stroke-width: 1.5;"></i>
+              </button>
+            </div>
+            <div class="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t to-transparent from-slate-100/70 via-slate-100/20">
+              <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight leading-tight text-black">Brand Identity</h3>
+              <p class="text-sm sm:text-base mt-1 text-slate-800">Complete visual systems</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="absolute inset-y-0 -left-2 sm:-left-8 flex items-center">
+          <button id="prevBtn" class="group relative inline-flex items-center justify-center h-11 w-11 rounded-full shadow-md ring-1 hover:shadow-lg transition bg-black ring-slate-800 hover:ring-slate-700">
+            <i data-lucide="chevron-left" class="text-slate-100 group-hover:text-slate-50 w-5 h-5" style="stroke-width: 1.5;"></i>
+          </button>
+        </div>
+        <div class="absolute inset-y-0 -right-2 sm:-right-8 flex items-center">
+          <button id="nextBtn" class="group relative inline-flex items-center justify-center h-11 w-11 rounded-full shadow-md ring-1 hover:shadow-lg transition bg-black ring-slate-800 hover:ring-slate-700">
+            <i data-lucide="chevron-right" class="text-slate-100 group-hover:text-slate-50 w-5 h-5" style="stroke-width: 1.5;"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- CTA Links -->
+      <div class="mt-10 sm:mt-12 flex items-center justify-center gap-4 flex-wrap">
+        <a href="#" class="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-slate-100">
+          <i data-lucide="play-circle" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+          Watch our process
+        </a>
+        <span class="h-4 w-px bg-slate-800"></span>
+        <a href="#" class="inline-flex items-center gap-2 text-sm text-indigo-400 hover:text-indigo-300">
+          View full portfolio
+          <i data-lucide="arrow-right" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons({ strokeWidth: 1.5 });
+
+    // Card carousel logic
+    const cards = Array.from(document.querySelectorAll('.coach-card'));
+    let current = 2; // Center card
+
+    function applyPositions() {
+      const baseX = window.innerWidth < 640 ? 44 : 72;
+      const baseY = window.innerWidth < 640 ? 10 : 14;
+      const baseR = 5;
+
+      cards.forEach((card, i) => {
+        const offset = i - current;
+        const depth = Math.abs(offset);
+
+        if (depth > 2) {
+          card.style.opacity = '0';
+          card.style.pointerEvents = 'none';
+          card.style.transform = 'translate3d(0,0,0) scale(0.9)';
+          card.style.zIndex = '0';
+          return;
+        }
+
+        const translateX = offset * baseX;
+        const translateY = depth * baseY + (offset === 0 ? 0 : 6);
+        const rotate = offset * -baseR;
+        const scale = offset === 0 ? 1 : (depth === 1 ? 0.965 : 0.93);
+
+        card.style.opacity = '1';
+        card.style.pointerEvents = offset === 0 ? 'auto' : 'none';
+        card.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${rotate}deg) scale(${scale})`;
+        card.style.transition = 'transform 400ms cubic-bezier(.2,.7,0,1), opacity 300ms ease';
+        card.style.zIndex = String(100 - depth);
+        card.style.filter = offset === 0 ? 'drop-shadow(0 15px 25px rgba(15,23,42,0.25))' : 'none';
+      });
+    }
+
+    function nextCard() {
+      current = (current + 1) % cards.length;
+      applyPositions();
+    }
+
+    function prevCard() {
+      current = (current - 1 + cards.length) % cards.length;
+      applyPositions();
+    }
+
+    // Button event listeners
+    document.getElementById('nextBtn').addEventListener('click', nextCard);
+    document.getElementById('prevBtn').addEventListener('click', prevCard);
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextCard();
+      if (e.key === 'ArrowLeft') prevCard();
+    });
+
+    // Initialize positions
+    applyPositions();
+
+    // Re-apply positions on resize
+    window.addEventListener('resize', applyPositions);
+  </script>
+
+</body></html>

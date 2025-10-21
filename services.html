@@ -1309,65 +1309,185 @@
     </div>
   </section>
 
-  <!-- Why Choose Us Section -->
-  <section class="section" style="background: linear-gradient(180deg, black 0%, rgba(10, 20, 40, 0.5) 100%); padding: 100px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <div class="eyebrow">Our Advantages</div>
-        <h2 class="heading_h2">Why Choose IntelTree</h2>
-        <p class="subheading" style="max-width: 700px; margin: 20px auto;">We combine technical excellence with business acumen to deliver unmatched value</p>
+  <!-- Showcase Section -->
+  <section class="section" style="background: black; padding: 100px 0;">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Hero Section -->
+    <div class="relative flex flex-col items-center justify-center px-6 py-20" style="max-width: 1200px; margin: 0 auto;">
+      <div class="text-center max-w-3xl mx-auto sm:pt-16 pt-10">
+        <h2 class="heading_h2" style="color: #f1f5f9; margin-bottom: 40px;">Beautiful websites that convert.</h2>
       </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-        <!-- Feature 1 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
+
+      <!-- Carousel -->
+      <div class="max-w-6xl mx-auto mt-16 sm:mt-16 px-6 sm:px-8 relative w-full">
+        <div style="height: 500px; position: relative;">
+          <!-- Cards Stack -->
+          <div class="flex absolute inset-0 items-center justify-center" id="cardStack" style="display: flex; position: absolute; top: 0; left: 0; right: 0; bottom: 0; align-items: center; justify-content: center;">
+             <!-- Card 1 -->
+             <article class="coach-card" style="position: absolute; width: 90%; max-width: 680px; aspect-ratio: 5/3; border-radius: 16px; box-shadow: 0 10px 30px rgba(241, 245, 249, 0.1); overflow: hidden; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.05);">
+               <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" src="https://res.cloudinary.com/dmns9ystn/image/upload/v1761041099/Screenshot_2025-10-21_110340_oqsbrw.png" alt="Crestbourne website">
+               <div style="position: absolute; top: 16px; right: 16px;">
+                 <button class="save-btn" style="border-radius: 9999px; backdrop-filter: blur(12px); padding: 8px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: all 0.3s; background: rgba(0,0,0,0.8); border: none; cursor: pointer;">
+                   <i data-lucide="plus" style="width: 20px; height: 20px; color: #f1f5f9; stroke-width: 1.5;"></i>
+                 </button>
+               </div>
+               <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; background: linear-gradient(to top, rgba(241, 245, 249, 0.7) 0%, rgba(241, 245, 249, 0.2) 60%, transparent 100%);">
+                 <h3 style="font-size: 28px; font-weight: 600; line-height: 1.2; color: #000; margin: 0 0 4px 0;">Crestbourne</h3>
+                 <p style="font-size: 14px; margin: 0; color: #1e293b;">Real estate platform website</p>
+               </div>
+             </article>
+
+            <!-- Card 2 -->
+            <article class="coach-card" style="position: absolute; width: 90%; max-width: 680px; aspect-ratio: 5/3; border-radius: 16px; box-shadow: 0 10px 30px rgba(241, 245, 249, 0.1); overflow: hidden; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.05);">
+              <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" src="https://res.cloudinary.com/dmns9ystn/image/upload/v1761041528/Screenshot_2025-10-21_110527_nayypn.png" alt="ProbeIT website">
+              <div style="position: absolute; top: 16px; right: 16px;">
+                <button class="save-btn" style="border-radius: 9999px; backdrop-filter: blur(12px); padding: 8px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: all 0.3s; background: rgba(0,0,0,0.8); border: none; cursor: pointer;">
+                  <i data-lucide="plus" style="width: 20px; height: 20px; color: #f1f5f9; stroke-width: 1.5;"></i>
+                </button>
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; background: linear-gradient(to top, rgba(241, 245, 249, 0.7) 0%, rgba(241, 245, 249, 0.2) 60%, transparent 100%);">
+                <h3 style="font-size: 28px; font-weight: 600; line-height: 1.2; color: #000; margin: 0 0 4px 0;">SDHB</h3>
+                <p style="font-size: 14px; margin: 0; color: #1e293b;">Home buying company platform</p>
+              </div>
+            </article>
+
+            <!-- Card 3 (Center) -->
+            <article class="coach-card" style="position: absolute; width: 90%; max-width: 680px; aspect-ratio: 5/3; border-radius: 16px; box-shadow: 0 10px 30px rgba(241, 245, 249, 0.1); overflow: hidden; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.05);">
+              <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" src="https://res.cloudinary.com/dmns9ystn/image/upload/v1761042110/cf627715-6201-46d4-b7c0-2954940b66ea_ch08up.png" alt="ProbeIT website">
+              <div style="position: absolute; top: 16px; right: 16px;">
+                <button class="save-btn" style="border-radius: 9999px; backdrop-filter: blur(12px); padding: 8px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: all 0.3s; background: rgba(0,0,0,0.8); border: none; cursor: pointer;">
+                  <i data-lucide="plus" style="width: 20px; height: 20px; color: #f1f5f9; stroke-width: 1.5;"></i>
+                </button>
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; background: linear-gradient(to top, rgba(241, 245, 249, 0.7) 0%, rgba(241, 245, 249, 0.2) 60%, transparent 100%);">
+                <h3 style="font-size: 28px; font-weight: 600; line-height: 1.2; color: #000; margin: 0 0 4px 0;">ProbeIT</h3>
+                <p style="font-size: 14px; margin: 0; color: #1e293b;">Technical services platform</p>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="coach-card" style="position: absolute; width: 90%; max-width: 680px; aspect-ratio: 5/3; border-radius: 16px; box-shadow: 0 10px 30px rgba(241, 245, 249, 0.1); overflow: hidden; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.05);">
+              <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c75a3e33-28d5-4996-97d3-cabbf3908ede_1600w.webp" alt="Mobile app">
+              <div style="position: absolute; top: 16px; right: 16px;">
+                <button class="save-btn" style="border-radius: 9999px; backdrop-filter: blur(12px); padding: 8px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: all 0.3s; background: rgba(0,0,0,0.8); border: none; cursor: pointer;">
+                  <i data-lucide="plus" style="width: 20px; height: 20px; color: #f1f5f9; stroke-width: 1.5;"></i>
+                </button>
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; background: linear-gradient(to top, rgba(241, 245, 249, 0.7) 0%, rgba(241, 245, 249, 0.2) 60%, transparent 100%);">
+                <h3 style="font-size: 28px; font-weight: 600; line-height: 1.2; color: #000; margin: 0 0 4px 0;">Mobile App UI</h3>
+                <p style="font-size: 14px; margin: 0; color: #1e293b;">Native & responsive experiences</p>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="coach-card" style="position: absolute; width: 90%; max-width: 680px; aspect-ratio: 5/3; border-radius: 16px; box-shadow: 0 10px 30px rgba(241, 245, 249, 0.1); overflow: hidden; background: #0f172a; border: 1px solid rgba(255, 255, 255, 0.05);">
+              <img style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/c4ba3f45-b7fb-47e5-a442-3c55bd9f9f1c_1600w.webp" alt="Brand identity">
+              <div style="position: absolute; top: 16px; right: 16px;">
+                <button class="save-btn" style="border-radius: 9999px; backdrop-filter: blur(12px); padding: 8px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.2); transition: all 0.3s; background: rgba(0,0,0,0.8); border: none; cursor: pointer;">
+                  <i data-lucide="plus" style="width: 20px; height: 20px; color: #f1f5f9; stroke-width: 1.5;"></i>
+                </button>
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 24px; background: linear-gradient(to top, rgba(241, 245, 249, 0.7) 0%, rgba(241, 245, 249, 0.2) 60%, transparent 100%);">
+                <h3 style="font-size: 28px; font-weight: 600; line-height: 1.2; color: #000; margin: 0 0 4px 0;">Brand Identity</h3>
+                <p style="font-size: 14px; margin: 0; color: #1e293b;">Complete visual systems</p>
+              </div>
+            </article>
           </div>
-          <h3 style="color: white; font-size: 20px; font-weight: 600; margin: 20px 0 12px;">Lightning Fast</h3>
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.6;">Optimized performance and rapid development cycles to get you to market faster</p>
+
+          <!-- Navigation Controls -->
+          <div style="position: absolute; top: 0; bottom: 0; left: -8px; display: flex; align-items: center;">
+            <button id="prevBtn" style="position: relative; display: inline-flex; align-items: center; justify-content: center; height: 44px; width: 44px; border-radius: 9999px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid #334155; background: #000; cursor: pointer; transition: all 0.3s;">
+              <i data-lucide="chevron-left" style="color: #f1f5f9; width: 20px; height: 20px; stroke-width: 1.5;"></i>
+            </button>
+          </div>
+          <div style="position: absolute; top: 0; bottom: 0; right: -8px; display: flex; align-items: center;">
+            <button id="nextBtn" style="position: relative; display: inline-flex; align-items: center; justify-content: center; height: 44px; width: 44px; border-radius: 9999px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); border: 1px solid #334155; background: #000; cursor: pointer; transition: all 0.3s;">
+              <i data-lucide="chevron-right" style="color: #f1f5f9; width: 20px; height: 20px; stroke-width: 1.5;"></i>
+            </button>
+          </div>
         </div>
-        
-        <!-- Feature 2 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <h3 style="color: white; font-size: 20px; font-weight: 600; margin: 20px 0 12px;">Enterprise Security</h3>
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.6;">Bank-level security protocols to protect your data and ensure compliance</p>
-        </div>
-        
-        <!-- Feature 3 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 style="color: white; font-size: 20px; font-weight: 600; margin: 20px 0 12px;">Expert Team</h3>
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.6;">Dedicated specialists with years of experience in modern web technologies</p>
-        </div>
-        
-        <!-- Feature 4 -->
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-              <line x1="7" y1="7" x2="7.01" y2="7"></line>
-            </svg>
-          </div>
-          <h3 style="color: white; font-size: 20px; font-weight: 600; margin: 20px 0 12px;">Premium Quality</h3>
-          <p style="color: rgba(255, 255, 255, 0.7); font-size: 14px; line-height: 1.6;">Attention to detail and commitment to excellence in every project we deliver</p>
+
+        <!-- CTA Links -->
+        <div style="margin-top: 48px; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap;">
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #cbd5e1; text-decoration: none; transition: color 0.3s;">
+            <i data-lucide="play-circle" style="width: 16px; height: 16px; stroke-width: 1.5;"></i>
+            Watch our process
+          </a>
+          <span style="height: 16px; width: 1px; background: #334155;"></span>
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #818cf8; text-decoration: none; transition: color 0.3s;">
+            View full portfolio
+            <i data-lucide="arrow-right" style="width: 16px; height: 16px; stroke-width: 1.5;"></i>
+          </a>
         </div>
       </div>
     </div>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons({ strokeWidth: 1.5 });
+
+      // Card carousel logic
+      const cards = Array.from(document.querySelectorAll('.coach-card'));
+      let current = 2; // Center card
+
+      function applyPositions() {
+        const baseX = window.innerWidth < 640 ? 44 : 72;
+        const baseY = window.innerWidth < 640 ? 10 : 14;
+        const baseR = 5;
+
+        cards.forEach((card, i) => {
+          const offset = i - current;
+          const depth = Math.abs(offset);
+
+          if (depth > 2) {
+            card.style.opacity = '0';
+            card.style.pointerEvents = 'none';
+            card.style.transform = 'translate3d(0,0,0) scale(0.9)';
+            card.style.zIndex = '0';
+            return;
+          }
+
+          const translateX = offset * baseX;
+          const translateY = depth * baseY + (offset === 0 ? 0 : 6);
+          const rotate = offset * -baseR;
+          const scale = offset === 0 ? 1 : (depth === 1 ? 0.965 : 0.93);
+
+          card.style.opacity = '1';
+          card.style.pointerEvents = offset === 0 ? 'auto' : 'none';
+          card.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotate(${rotate}deg) scale(${scale})`;
+          card.style.transition = 'transform 400ms cubic-bezier(.2,.7,0,1), opacity 300ms ease';
+          card.style.zIndex = String(100 - depth);
+          card.style.filter = offset === 0 ? 'drop-shadow(0 15px 25px rgba(15,23,42,0.25))' : 'none';
+        });
+      }
+
+      function nextCard() {
+        current = (current + 1) % cards.length;
+        applyPositions();
+      }
+
+      function prevCard() {
+        current = (current - 1 + cards.length) % cards.length;
+        applyPositions();
+      }
+
+      // Button event listeners
+      document.getElementById('nextBtn').addEventListener('click', nextCard);
+      document.getElementById('prevBtn').addEventListener('click', prevCard);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextCard();
+        if (e.key === 'ArrowLeft') prevCard();
+      });
+
+      // Initialize positions
+      applyPositions();
+
+      // Re-apply positions on resize
+      window.addEventListener('resize', applyPositions);
+    </script>
   </section>
 
   <!-- Tech Stack Section -->
@@ -1392,64 +1512,6 @@
         <div class="tech-item">Kubernetes</div>
         <div class="tech-item">TailwindCSS</div>
         <div class="tech-item">GraphQL</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="section" style="background: linear-gradient(180deg, black 0%, rgba(10, 20, 40, 0.5) 100%); padding: 100px 0;">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 60px;">
-        <div class="eyebrow">Success Stories</div>
-        <h2 class="heading_h2">What Our Clients Say</h2>
-        <p class="subheading" style="max-width: 700px; margin: 20px auto;">Real results from real partnerships</p>
-      </div>
-      
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="testimonial-text">"IntelTree transformed our online presence with a stunning website that increased our conversions by 250%. Their attention to detail and technical expertise is unmatched."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">JD</div>
-            <div>
-              <div class="testimonial-name">James Davidson</div>
-              <div class="testimonial-role">CEO, TechStart Solutions</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="testimonial-text">"The AI integration they built for us saved our team 20+ hours per week. Professional, responsive, and delivered ahead of schedule. Highly recommended!"</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">SM</div>
-            <div>
-              <div class="testimonial-name">Sarah Mitchell</div>
-              <div class="testimonial-role">CTO, DataFlow Analytics</div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card">
-          <div class="testimonial-stars">
-            ⭐⭐⭐⭐⭐
-          </div>
-          <p class="testimonial-text">"Outstanding work on our e-commerce platform. Revenue increased by 180% in the first quarter. The team is brilliant and a pleasure to work with."</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">MR</div>
-            <div>
-              <div class="testimonial-name">Michael Roberts</div>
-              <div class="testimonial-role">Founder, Urban Lifestyle Co.</div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -1567,19 +1629,20 @@
           <h4 style="margin-bottom: 20px; font-size: 16px;">Company</h4>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 12px;"><a href="index.html" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Home</a></li>
-            <li style="margin-bottom: 12px;"><a href="index.html#about" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">About</a></li>
-            <li style="margin-bottom: 12px;"><a href="index.html#portfolio" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Portfolio</a></li>
-            <li style="margin-bottom: 12px;"><a href="index.html#contact" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Contact</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">About</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Contact</a></li>
           </ul>
         </div>
         <div>
-          <h4 style="margin-bottom: 20px; font-size: 16px;">Contact</h4>
-          <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px; margin-bottom: 8px;">contact@inteltree.com</p>
-          <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">+44 (0) 20 1234 5678</p>
+          <h4 style="margin-bottom: 20px; font-size: 16px;">Legal</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Privacy Policy</a></li>
+            <li style="margin-bottom: 12px;"><a href="#" style="color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 14px;">Terms of Service</a></li>
+          </ul>
         </div>
       </div>
-      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; text-align: center;">
-        <p style="color: rgba(255, 255, 255, 0.4); font-size: 14px; margin: 0;">© 2025 IntelTree. All rights reserved.</p>
+      <div style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center;">
+        <p style="color: rgba(255, 255, 255, 0.6); font-size: 14px;">© 2025 IntelTree. All rights reserved.</p>
       </div>
     </div>
   </footer>

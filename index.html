@@ -92,11 +92,11 @@
     #what-we-deliver-section {
       position: relative;
       overflow: visible !important;
-      background: black !important;
+      background: transparent !important;
     }
     
     #what-we-deliver-section > section {
-      background: black !important;
+      background: transparent !important;
       margin-top: -150px !important;
       padding-top: 0 !important;
     }
@@ -107,19 +107,26 @@
     }
     
     .unicorn-bg {
-      position: absolute;
+      position: absolute !important;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
+      z-index: 1 !important;
       pointer-events: none;
+      background: black;
     }
     
     #what-we-deliver-section .section,
     #what-we-deliver-section .container {
       position: relative;
-      z-index: 2;
+      z-index: 10;
+    }
+    
+    /* Ensure all content sections are above the animated background */
+    #what-we-deliver-section > *:not(.unicorn-bg) {
+      position: relative;
+      z-index: 10;
     }
     
     /* Logo reveal from background animation */
@@ -271,6 +278,7 @@
       transition: opacity 0.3s ease;
     }
   </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body>
   <div class="nav">
@@ -615,9 +623,9 @@
     </section>
     
     <!-- Testimonials Section -->
-    <section class="section testimonials-section" style="background: black; padding: 40px 0 40px 0; position: relative;">
+    <section class="section testimonials-section" style="background: transparent; padding: 80px 0 0 0; position: relative; margin-bottom: 0;">
       <div class="container">
-        <div class="header is-align-center" style="margin-top: 60px; margin-bottom: 40px;">
+        <div class="header is-align-center" style="margin-top: 120px; margin-bottom: 60px;">
           <div class="eyebrow">Client success stories</div>
           <h2 class="heading_h1">Trusted by industry leaders</h2>
           <p class="subheading" style="max-width: 700px; margin: 0 auto;">Discover how our bespoke solutions have transformed businesses across the UK, delivering measurable results through innovative web development and AI integration.</p>
@@ -742,18 +750,9 @@
     </section>
     
     <style>
-      /* Smooth gradient transition from testimonials to next section */
-      .testimonials-section::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 150px;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-        pointer-events: none;
-        z-index: 1;
+      .testimonials-section {
+        padding-bottom: 0 !important;
+        margin-bottom: -50px !important;
       }
       
       .testimonials-section .container {
@@ -844,103 +843,229 @@
       }
     </style>
     
-    <div class="bg-white pt-20 pb-20">
+    <div style="background: transparent; padding: 50px 0 100px 0; margin-top: -50px;">
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
         
-        .font-space-grotesk {
+        .font-space-grotesk-process {
           font-family: 'Space Grotesk', 'Arial', sans-serif;
         }
         
-        .font-geist {
+        .font-geist-process {
           font-family: 'Inter', 'Helvetica Neue', sans-serif;
         }
         
-        .process-card-grid {
+        .process-card-modern {
+          position: relative;
+          overflow: hidden;
+          background: transparent;
+          border: none;
+          border-radius: 1.5rem;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          padding: 0;
+        }
+        
+        .process-card-modern:hover {
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+          transform: translateY(-4px);
+        }
+        
+        .process-card-modern .number-section {
+          background: #000000;
+          padding: 2rem 1.5rem 2.5rem;
+          position: relative;
+          overflow: visible;
+          border-radius: 1.5rem 1.5rem 0 0;
+        }
+        
+        .process-card-modern .number-section::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          height: 60px;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 20%, rgba(0, 0, 0, 0.08) 40%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.85) 85%, #ffffff 100%);
+          pointer-events: none;
+          z-index: 2;
+        }
+        
+        .process-card-modern .number-3d {
+          font-size: 5rem;
+          font-weight: 900;
+          color: #ffffff;
+          text-align: center;
+          line-height: 1;
+          text-shadow: 
+            0 1px 0 #4b5563,
+            0 2px 0 #374151,
+            0 3px 0 #374151,
+            0 4px 0 #374151,
+            0 5px 0 #374151,
+            0 6px 0 #374151,
+            0 7px 0 #374151,
+            0 8px 0 #374151,
+            0 10px 15px rgba(0, 0, 0, 0.4),
+            0 15px 25px rgba(0, 0, 0, 0.3);
+          transition: all 0.3s ease;
+          user-select: none;
+          position: relative;
+          z-index: 1;
+        }
+        
+        .process-card-modern:hover .number-3d {
+          transform: translateY(-8px) scale(1.05);
+          text-shadow: 
+            0 1px 0 #4b5563,
+            0 2px 0 #374151,
+            0 3px 0 #374151,
+            0 4px 0 #374151,
+            0 5px 0 #374151,
+            0 6px 0 #374151,
+            0 7px 0 #374151,
+            0 8px 0 #374151,
+            0 10px 0 #374151,
+            0 12px 0 #374151,
+            0 16px 25px rgba(0, 0, 0, 0.5),
+            0 25px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .process-card-modern .content-section {
+          padding: 1.5rem;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-top: none;
+          border-radius: 0 0 1.5rem 1.5rem;
+          position: relative;
+          transition: border-color 0.3s ease;
+          min-height: 280px;
+          height: 280px;
+          display: flex;
+          flex-direction: column;
+        }
+        
+        .process-card-modern:hover .content-section {
+          border-color: #d1d5db;
+        }
+        
+        .process-card-modern .small-icon {
+          width: 48px;
+          height: 48px;
+          margin: 0 auto 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 12px;
+          color: #6b7280;
+          transition: all 0.3s ease;
+        }
+        
+        .process-card-modern:hover .small-icon {
+          color: white;
+          transform: rotate(5deg) scale(1.1);
+        }
+        
+        .process-grid-modern {
           display: grid;
           gap: 2rem;
           grid-template-columns: 1fr;
+          max-width: 1280px;
+          margin: 0 auto;
         }
         
         @media (min-width: 640px) {
-          .process-card-grid {
+          .process-grid-modern {
             grid-template-columns: repeat(2, 1fr);
           }
         }
         
         @media (min-width: 1024px) {
-          .process-card-grid {
+          .process-grid-modern {
             grid-template-columns: repeat(4, 1fr);
           }
         }
       </style>
-      <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
-        <div class="max-w-4xl mb-12">
-          <h2 class="sm:text-5xl text-4xl font-semibold text-gray-900 tracking-tight font-space-grotesk">Design. Develop. Transform. Excel.</h2>
+      
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">
+          <h2 class="font-space-grotesk-process" style="font-size: 2.5rem; font-weight: 600; color: #ffffff; margin-bottom: 1rem;">Design. Develop. Transform. Excel.</h2>
+          <p class="font-geist-process" style="font-size: 1.125rem; color: rgba(255, 255, 255, 0.7); line-height: 1.6;">A streamlined approach to deliver exceptional results on time and within budget</p>
         </div>
-        <div class="process-card-grid">
-          
-          <!-- Card 1: Bespoke Websites -->
-          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <div class="overflow-hidden">
-              <img src="images/black-laptop-screen-dark-room-night.jpg" alt="Modern laptop with dark screen in professional environment" class="sm:h-52 transition-transform duration-300 group-hover:scale-105 w-full h-48 object-cover" />
+        
+        <div class="process-grid-modern" style="padding: 0 1.5rem;">
+          <!-- Step 1: Bespoke Web Development -->
+          <article class="process-card-modern group">
+            <div class="number-section">
+              <div class="number-3d">01</div>
             </div>
-            <div class="pt-6 pr-6 pb-6 pl-6">
-              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Bespoke Web Development</h3>
-              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
-                <li>Visually striking, fully responsive websites.</li>
-                <li>Engineered to reflect your brand identity.</li>
-                <li>Optimized for performance and user experience.</li>
+            <div class="content-section">
+              <div class="small-icon">
+                <dotlottie-player src="Programming.lottie" background="transparent" speed="1" style="width: 48px; height: 48px;" loop autoplay></dotlottie-player>
+              </div>
+              <h3 class="font-geist-process" style="font-size: 1.125rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem; text-align: center;">Bespoke Web Development</h3>
+              <ul class="font-geist-process" style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #6b7280; line-height: 1.6; list-style-type: disc;">
+                <li style="margin-bottom: 0.5rem;">Striking, responsive websites</li>
+                <li style="margin-bottom: 0.5rem;">Reflects your brand identity</li>
+                <li>Optimized for performance</li>
               </ul>
             </div>
           </article>
           
-          <!-- Card 2: Full Stack Solutions -->
-          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <div class="overflow-hidden">
-              <img src="images/ed16a969-4d2d-4277-b197-848cd4d03230.avif" alt="Interface display showing advanced platform capabilities" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
+          <!-- Step 2: Comprehensive Full Stack -->
+          <article class="process-card-modern group">
+            <div class="number-section">
+              <div class="number-3d">02</div>
             </div>
-            <div class="pt-6 pr-6 pb-6 pl-6">
-              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Comprehensive Full Stack</h3>
-              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
-                <li>Robust, scalable platform architecture.</li>
-                <li>Simple sites to enterprise-grade systems.</li>
-                <li>Custom-built to meet your requirements.</li>
+            <div class="content-section">
+              <div class="small-icon">
+                <dotlottie-player src="PC Coding and Dislay app Mobile.lottie" background="transparent" speed="1" style="width: 48px; height: 48px;" loop autoplay></dotlottie-player>
+              </div>
+              <h3 class="font-geist-process" style="font-size: 1.125rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem; text-align: center;">Comprehensive Full Stack</h3>
+              <ul class="font-geist-process" style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #6b7280; line-height: 1.6; list-style-type: disc;">
+                <li style="margin-bottom: 0.5rem;">Robust, scalable architecture</li>
+                <li style="margin-bottom: 0.5rem;">Simple to enterprise systems</li>
+                <li>Custom-built to your needs</li>
               </ul>
             </div>
           </article>
           
-          <!-- Card 3: AI Integration -->
-          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <div class="overflow-hidden">
-              <img src="images/black-laptop-screen-dark-room-night.jpg" alt="AI-powered automation and workflow optimization" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
+          <!-- Step 3: AI-Powered Efficiency -->
+          <article class="process-card-modern group">
+            <div class="number-section">
+              <div class="number-3d">03</div>
             </div>
-            <div class="p-6">
-              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">AI-Powered Efficiency</h3>
-              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
-                <li>Advanced AI to automate processes.</li>
-                <li>Optimize workflows and unlock opportunities.</li>
-                <li>Seamless integration with existing systems.</li>
+            <div class="content-section">
+              <div class="small-icon">
+                <dotlottie-player src="AI animation.lottie" background="transparent" speed="1" style="width: 48px; height: 48px;" loop autoplay></dotlottie-player>
+              </div>
+              <h3 class="font-geist-process" style="font-size: 1.125rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem; text-align: center;">AI-Powered Efficiency</h3>
+              <ul class="font-geist-process" style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #6b7280; line-height: 1.6; list-style-type: disc;">
+                <li style="margin-bottom: 0.5rem;">Advanced AI automation</li>
+                <li style="margin-bottom: 0.5rem;">Optimize workflows efficiently</li>
+                <li>Seamless system integration</li>
               </ul>
             </div>
           </article>
           
-          <!-- Card 4: Proprietary Systems -->
-          <article class="group overflow-hidden bg-white border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-shadow duration-300">
-            <div class="overflow-hidden">
-              <img src="images/ed16a969-4d2d-4277-b197-848cd4d03230.avif" alt="Custom-built proprietary platform interface" class="w-full h-48 sm:h-52 object-cover transition-transform duration-300 group-hover:scale-105" />
+          <!-- Step 4: Proprietary Systems -->
+          <article class="process-card-modern group">
+            <div class="number-section">
+              <div class="number-3d">04</div>
             </div>
-            <div class="p-6">
-              <h3 class="text-lg font-semibold tracking-tight text-gray-900 font-geist">Proprietary Systems</h3>
-              <ul class="mt-3 list-disc pl-5 text-sm text-gray-600 space-y-2 font-geist">
-                <li>Custom-built from the ground up.</li>
-                <li>Ensuring exclusivity and security.</li>
-                <li>True competitive advantage for your business.</li>
+            <div class="content-section">
+              <div class="small-icon">
+                <dotlottie-player src="DATA SECURITY.lottie" background="transparent" speed="1" style="width: 48px; height: 48px;" loop autoplay></dotlottie-player>
+              </div>
+              <h3 class="font-geist-process" style="font-size: 1.125rem; font-weight: 600; color: #111827; margin-bottom: 0.75rem; text-align: center;">Proprietary Systems</h3>
+              <ul class="font-geist-process" style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem; color: #6b7280; line-height: 1.6; list-style-type: disc;">
+                <li style="margin-bottom: 0.5rem;">Custom-built from scratch</li>
+                <li style="margin-bottom: 0.5rem;">Ensures exclusivity and security</li>
+                <li>True competitive advantage</li>
               </ul>
             </div>
           </article>
-          
         </div>
       </div>
     </div>
@@ -1171,7 +1296,6 @@
       </div>
       <div class="w-layout-grid footer_bottom">
         <div>
-          <p class="text-color_secondary">Powered by Webflow</p>
         </div>
         <div class="margin-left_auto">
           <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
@@ -1218,7 +1342,6 @@
       <div class="divider margin-bottom_small margin-top_small"></div>
       <div class="footer_bottom">
         <div class="text-color_secondary">All rights reserved © 2025 IntelTree</div>
-        <div class="text-color_secondary">Made by Taylor Brooks</div>
       </div>
     </div>
   </footer>
