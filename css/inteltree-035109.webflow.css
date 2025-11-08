@@ -1605,10 +1605,25 @@
   object-fit: fill;
   background-color: #080808;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   display: flex;
   position: relative;
+  padding-top: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--0-75x);
+  padding-bottom: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--0-75x);
+}
+
+.nav > .container {
+  display: flex;
+  align-items: center;
+  gap: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---gap--sm-gap);
+}
+
+.nav_content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav.is-inverse {
@@ -4796,6 +4811,11 @@
 }
 
 .div-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
   transform: perspective(147px)scale(1.2);
 }
 
