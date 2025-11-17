@@ -1181,10 +1181,10 @@
 }
 
 .checkbox_toggle {
-  width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  min-height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  min-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
+  width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  min-height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  min-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
   margin-top: 0;
   margin-right: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--0-75x);
   border-top-left-radius: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---radius--sm-radius);
@@ -2310,10 +2310,10 @@
 }
 
 .radio_toggle {
-  width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  min-height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
-  min-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-5x);
+  width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  min-height: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
+  min-width: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519_sizes---spacing--1-25x);
   border-style: solid;
   border-width: 1px;
   border-top-color: color-mix(in srgb, currentColor 70%, transparent);
