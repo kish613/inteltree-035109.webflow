@@ -194,6 +194,62 @@
       });
     });
     
+    /* Fix navigation overlap - prevent Home toggle from overlapping logo */
+    const style = document.createElement('style');
+    style.textContent = `
+      .nav_container {
+        gap: 1rem !important;
+        min-width: 0 !important;
+      }
+      
+      .nav_left {
+        flex: 0 1 auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        margin-right: auto !important;
+      }
+      
+      .nav_right {
+        flex: 0 0 auto !important;
+        min-width: 0 !important;
+        margin-left: auto !important;
+      }
+      
+      .nav_logo {
+        flex-shrink: 0 !important;
+        min-width: 0 !important;
+      }
+      
+      .nav_logo-icon {
+        flex-shrink: 0 !important;
+      }
+      
+      /* Ensure toggle button doesn't overlap on smaller screens */
+      @media (max-width: 991px) {
+        .nav_right .group {
+          margin-left: 1rem !important;
+        }
+      }
+      
+      /* On very small screens, ensure proper spacing */
+      @media (max-width: 767px) {
+        .nav_container {
+          flex-wrap: wrap !important;
+        }
+        
+        .nav_left {
+          width: 100% !important;
+          margin-bottom: 0.5rem !important;
+        }
+        
+        .nav_right {
+          width: 100% !important;
+          justify-content: flex-end !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+    
     // Logo hover animation replay
     document.addEventListener('DOMContentLoaded', function() {
       const navLogo = document.querySelector('.nav_logo');
@@ -859,6 +915,11 @@
             <li class="nav_menu-list-item">
               <a href="about.html" class="nav_link w-inline-block">
                 <div>About</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="mobile-apps.html" class="nav_link w-inline-block">
+                <div>Mobile Apps</div>
               </a>
             </li>
             <li class="nav_menu-list-item">

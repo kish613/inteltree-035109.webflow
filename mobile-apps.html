@@ -1,0 +1,1058 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  -->
+<html data-wf-page="68dd31afbc83b25a8a0bfe14" data-wf-site="68dd31aebc83b25a8a0bfd82">
+<head>
+  <meta charset="utf-8">
+  <title>IntelTree | Mobile Apps - iOS & Android Development</title>
+  <meta name="description" content="IntelTree delivers bespoke mobile app development for iOS and Android. Custom-built applications with seamless system integration and enterprise-grade security.">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://inteltree.com/mobile-apps.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inteltree.com/mobile-apps.html">
+  <meta property="og:title" content="IntelTree | Mobile Apps - iOS & Android Development">
+  <meta property="og:description" content="IntelTree delivers bespoke mobile app development for iOS and Android. Custom-built applications with seamless system integration and enterprise-grade security.">
+  <meta property="og:image" content="https://inteltree.com/images/inteltree-logo.svg">
+  <meta property="og:site_name" content="IntelTree">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://inteltree.com/mobile-apps.html">
+  <meta name="twitter:title" content="IntelTree | Mobile Apps - iOS & Android Development">
+  <meta name="twitter:description" content="IntelTree delivers bespoke mobile app development for iOS and Android. Custom-built applications with seamless system integration and enterprise-grade security.">
+  <meta name="twitter:image" content="https://inteltree.com/images/inteltree-logo.svg">
+
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Ensure new section backgrounds stay black */
+    body {
+      background: #000 !important;
+    }
+  </style>
+
+  <style>
+    /* Removed scrollbar-suppression to restore reliable scrolling */
+    #phone-container > div {
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 0 0 3px rgba(0,0,0,0.3),
+        0 2px 4px rgba(0,0,0,0.2),
+        0 8px 16px rgba(0,0,0,0.3),
+        0 16px 32px rgba(0,0,0,0.3),
+        0 32px 64px rgba(0,0,0,0.4),
+        inset 0 0 0 1px rgba(255,255,255,0.05),
+        inset 2px 2px 4px rgba(255,255,255,0.03),
+        inset -2px -2px 4px rgba(0,0,0,0.5);
+    }
+    .perspective-container { perspective: 1000px; transform-style: preserve-3d; }
+    
+    /* Feature Cards Styling - Modern Glass Style */
+    .feature-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .feature-card:hover {
+      border-color: rgba(163, 230, 53, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-4px);
+    }
+    
+    .feature-card-visual {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .feature-card-visual dotlottie-player {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .feature-card-visual .feature-icon {
+      position: relative;
+      z-index: 1;
+      color: white;
+      width: 64px;
+      height: 64px;
+      opacity: 0.9;
+    }
+    
+    .feature-card:hover .feature-card-visual .feature-icon {
+      opacity: 1;
+      transform: scale(1.05);
+      transition: all 0.4s ease;
+    }
+    
+    .feature-card-content {
+      padding: 20px;
+    }
+    
+    .feature-card-content h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.02em;
+    }
+    
+    .feature-card-content p {
+      font-size: 14px;
+      color: rgba(148, 163, 184, 1);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* FAQ Styling */
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      margin-bottom: 0;
+    }
+    
+    .faq-question {
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      color: #3b82f6;
+    }
+    
+    .faq-icon {
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding-bottom: 24px;
+    }
+    
+    .faq-answer p {
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* CTA Button Hover */
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+    }
+    
+    /* Nav CTA Button */
+    .nav-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-cta-btn:hover {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+    
+    .nav-cta-arrow {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .nav-cta-btn:hover .nav-cta-arrow {
+      transform: translateX(4px);
+    }
+  </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+  <div class="nav">
+    <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
+      <div class="nav_left">
+        <a href="index.html" class="nav_logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_large margin-bottom_none">IntelTree</div>
+        </a>
+        <nav role="navigation" class="nav_menu w-nav-menu" style="display: none;">
+          <ul role="list" class="nav_menu-list w-list-unstyled">
+            <li class="nav_menu-list-item">
+              <a href="services.html" class="nav_link w-inline-block">
+                <div>Services</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="about.html" class="nav_link w-inline-block">
+                <div>About</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="mobile-apps.html" class="nav_link w-inline-block">
+                <div>Mobile Apps</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="blog/index.html" class="nav_link w-inline-block">
+                <div>Blog</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="faq/index.html" class="nav_link w-inline-block">
+                <div>FAQ</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <div data-delay="0" data-hover="false" class="nav_dropdown-menu w-dropdown">
+                <div class="nav_link w-dropdown-toggle">
+                  <div>Support</div>
+                  <div class="nav-caret w-icon-dropdown-toggle"></div>
+                </div>
+                <div class="nav_dropdown-list w-dropdown-list">
+                  <div class="nav-menu_dropdown-list-wrapper">
+                    <ul role="list" class="flex_vertical margin-bottom_none w-list-unstyled">
+                      <li class="margin-bottom_none">
+                        <a href="contact.html" class="nav_dropdown-link w-inline-block">
+                          <div class="button_label">Contact</div>
+                        </a>
+                      </li>
+                      <li class="margin-bottom_none">
+                        <a href="#" class="nav_dropdown-link w-inline-block">
+                          <div class="button_label">Help</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav_right">
+        <a href="contact.html" class="nav-cta-btn">
+          Get Started
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-cta-arrow">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+      <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+              <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+              <line x1="1" y1="5" x2="23" y2="5"></line>
+              <line x1="1" y1="19" x2="23" y2="19"></line>
+            </g>
+          </svg></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="section" style="background: black; padding: 120px 0 80px 0; text-align: center;">
+    <div class="container">
+      <div class="eyebrow">Mobile Development</div>
+      <h1 class="heading_h1">Custom iOS & Android Apps Built for Your Business</h1>
+      <p class="subheading" style="max-width: 800px; margin: 0 auto; padding-bottom: 20px;">Bespoke mobile applications designed and developed for iOS and Android. We create native and cross-platform apps that seamlessly integrate with your existing systems and deliver exceptional user experiences.</p>
+    </div>
+  </section>
+
+  <!-- Mobile App Content -->
+  <div class="bg-black flex justify-center items-center p-4 font-sans" style="min-height: auto;">
+    <div id="phone-container" class="perspective-container relative w-[375px] h-[812px] transition-transform duration-200 ease-out">
+      <!-- iPhone Frame -->
+      <div id="device-frame" class="relative w-full h-full bg-white rounded-[54px] overflow-hidden shadow-[0_0_60px_rgba(0,0,0,0.8),0_20px_80px_rgba(0,0,0,0.6),inset_0_0_1px_rgba(255,255,255,0.1)] border-[3px] border-gray-900" style="transform-style: preserve-3d; transition: transform 0.12s ease-out; will-change: transform;">
+        <!-- Dynamic Island -->
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[126px] h-[34px] bg-black rounded-b-[18px] z-20 shadow-[0_4px_8px_rgba(0,0,0,0.5),inset_0_-1px_2px_rgba(255,255,255,0.05)]"></div>
+
+        <!-- Status Bar -->
+        <div class="pt-2 px-6 flex justify-between items-center text-sm h-[34px]">
+          <div class="text-black font-medium">9:41</div>
+          <div class="flex space-x-2 items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="stroke-width: 1.5;">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+            </svg>
+            <!-- Battery -->
+            <div class="relative flex items-center">
+              <div class="w-6 h-3 border border-black rounded-sm bg-white relative">
+                <div class="absolute inset-0.5 bg-black rounded-sm w-4/5"></div>
+              </div>
+              <div class="w-0.5 h-1.5 bg-black rounded-r-sm ml-0.5"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- App Content -->
+        <div id="content-container" class="px-6 pt-6 overflow-y-auto h-[calc(100%-34px)] relative bg-white overscroll-contain touch-pan-y" style="-webkit-overflow-scrolling: touch;">
+          <!-- Hero -->
+          <div id="hero" class="relative overflow-hidden rounded-3xl mb-6 ring-1 ring-black/5" style="transform-style: preserve-3d; perspective: 1200px;">
+            <!-- Base gradient -->
+            <div class="absolute inset-0 rounded-3xl bg-gradient-to-br from-black via-neutral-900 to-black"></div>
+
+            <!-- Depth layers (parallax) -->
+            <!-- Grid lines -->
+            <div data-depth="-8" class="absolute -inset-10 rounded-[28px] opacity-20" style="transform: translateZ(-40px) rotate(3deg); background-image:
+              repeating-linear-gradient(0deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 22px),
+              repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 1px, transparent 1px, transparent 22px);"></div>
+
+            <!-- Radial glows -->
+            <div data-depth="14" class="absolute -top-24 -left-24 w-72 h-72 rounded-full blur-3xl opacity-70" style="transform: translateZ(30px); background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.35), rgba(255,255,255,0.0) 60%);"></div>
+            <div data-depth="10" class="absolute -bottom-20 -right-24 w-80 h-80 rounded-full blur-[72px] opacity-60" style="transform: translateZ(24px); background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.22), rgba(255,255,255,0.0) 60%);"></div>
+
+            <!-- Light beam -->
+            <div data-depth="6" class="absolute -inset-8 opacity-50 mix-blend-screen" style="transform: translateZ(16px); background:
+              conic-gradient(from 210deg at 20% 10%, rgba(255,255,255,0.25), rgba(255,255,255,0.0) 30%),
+              conic-gradient(from 30deg at 80% 80%, rgba(255,255,255,0.18), rgba(255,255,255,0.0) 40%); filter: blur(28px);"></div>
+
+            <!-- Edge highlight and vignette -->
+            <div data-depth="2" class="absolute inset-0 rounded-3xl pointer-events-none" style="transform: translateZ(8px); background:
+              radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.18), rgba(255,255,255,0.0) 40%),
+              radial-gradient(120% 100% at 50% 100%, rgba(255,255,255,0.08), rgba(255,255,255,0.0) 40%);"></div>
+            <div class="absolute inset-0 rounded-3xl pointer-events-none" style="box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), inset 0 -60px 120px rgba(0,0,0,0.45);"></div>
+
+            <!-- Content (elevated) -->
+            <div class="relative px-5 pt-6 pb-6">
+              <div class="flex items-center space-x-3" data-elevate="42" style="transform: translateZ(42px); will-change: transform;">
+                <!-- Inline logo bars (elevated, glossy) -->
+                <div class="flex items-end space-x-1.5">
+                  <span class="w-1.5 h-3 rounded-md bg-gradient-to-b from-white to-neutral-200 shadow-[0_2px_8px_rgba(255,255,255,0.15)]" style="transform: translateZ(30px);"></span>
+                  <span class="w-1.5 h-5 rounded-md bg-gradient-to-b from-white to-neutral-200 shadow-[0_2px_8px_rgba(255,255,255,0.15)]" style="transform: translateZ(34px);"></span>
+                  <span class="w-1.5 h-7 rounded-md bg-gradient-to-b from-white to-neutral-200 shadow-[0_2px_8px_rgba(255,255,255,0.15)]" style="transform: translateZ(38px);"></span>
+                  <span class="w-1.5 h-9 rounded-md bg-gradient-to-b from-white to-neutral-200 shadow-[0_2px_8px_rgba(255,255,255,0.15)]" style="transform: translateZ(42px);"></span>
+                  <span class="w-1.5 h-12 rounded-md bg-gradient-to-b from-white to-neutral-200 shadow-[0_2px_8px_rgba(255,255,255,0.15)]" style="transform: translateZ(46px);"></span>
+                </div>
+                <span class="text-white text-xl font-semibold tracking-tight" style="text-shadow: 0 8px 24px rgba(255,255,255,0.15); transform: translateZ(46px); will-change: transform;">INTELTREE</span>
+              </div>
+
+              <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-white mt-4" data-elevate="56" style="transform: translateZ(56px); will-change: transform; text-shadow: 0 10px 40px rgba(255,255,255,0.12);">
+                Bespoke Mobile Experiences — Built for You, Linked to Your Systems
+              </h1>
+              <p class="text-sm text-neutral-300 mt-3 leading-5" data-elevate="48" style="transform: translateZ(48px); will-change: transform;">
+                Custom mobile applications built for iOS and Android with seamless system integration.
+              </p>
+            </div>
+          </div>
+
+          <!-- App Icons Grid -->
+          <div class="grid grid-cols-4 gap-4 px-1">
+            <!-- App Icon 1 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="shopping-cart" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Shop</span>
+            </div>
+            <!-- App Icon 2 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="music" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Music</span>
+            </div>
+            <!-- App Icon 3 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-green-500 to-green-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="message-circle" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Chat</span>
+            </div>
+            <!-- App Icon 4 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-red-500 to-red-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="camera" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Camera</span>
+            </div>
+            <!-- App Icon 5 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="calendar" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Calendar</span>
+            </div>
+            <!-- App Icon 6 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-pink-500 to-pink-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="heart" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Health</span>
+            </div>
+            <!-- App Icon 7 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="sun" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Weather</span>
+            </div>
+            <!-- App Icon 8 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="mail" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Mail</span>
+            </div>
+            <!-- App Icon 9 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="map" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Maps</span>
+            </div>
+            <!-- App Icon 10 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-cyan-500 to-cyan-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="book-open" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Books</span>
+            </div>
+            <!-- App Icon 11 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-lime-500 to-lime-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="wallet" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Wallet</span>
+            </div>
+            <!-- App Icon 12 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="video" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Video</span>
+            </div>
+            <!-- App Icon 13 (row 4) -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="briefcase" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Work</span>
+            </div>
+            <!-- App Icon 14 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="dumbbell" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Fitness</span>
+            </div>
+            <!-- App Icon 15 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-violet-500 to-violet-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="headphones" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Podcast</span>
+            </div>
+            <!-- App Icon 16 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="settings" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Settings</span>
+            </div>
+          </div>
+
+          <!-- Second Row of Apps -->
+          <div class="grid grid-cols-4 gap-4 px-1 mt-4">
+            <!-- App Icon 17 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-sky-500 to-sky-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="cloud" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Cloud</span>
+            </div>
+            <!-- App Icon 18 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-gray-700 to-gray-800 shadow-lg flex items-center justify-center">
+                <i data-lucide="phone" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Phone</span>
+            </div>
+            <!-- App Icon 19 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-slate-500 to-slate-600 shadow-lg flex items-center justify-center">
+                <i data-lucide="file-text" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Notes</span>
+            </div>
+            <!-- App Icon 20 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-red-400 to-red-500 shadow-lg flex items-center justify-center">
+                <i data-lucide="clock" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Clock</span>
+            </div>
+            <!-- App Icon 21 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-blue-400 to-blue-500 shadow-lg flex items-center justify-center">
+                <i data-lucide="compass" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Compass</span>
+            </div>
+            <!-- App Icon 22 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-green-400 to-green-500 shadow-lg flex items-center justify-center">
+                <i data-lucide="percent" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Stocks</span>
+            </div>
+            <!-- App Icon 23 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-orange-400 to-orange-500 shadow-lg flex items-center justify-center">
+                <i data-lucide="newspaper" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">News</span>
+            </div>
+            <!-- App Icon 24 -->
+            <div class="flex flex-col items-center">
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-purple-400 to-purple-500 shadow-lg flex items-center justify-center">
+                <i data-lucide="gamepad-2" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              </div>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Games</span>
+            </div>
+          </div>
+
+          <!-- Dock -->
+          <div class="mt-6 mb-4 px-4">
+            <div class="bg-white/40 backdrop-blur-xl rounded-[28px] px-3 py-3 shadow-lg border border-white/20">
+              <div class="grid grid-cols-4 gap-4">
+                <!-- Dock App 1 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-blue-600 to-blue-700 shadow-lg flex items-center justify-center">
+                    <i data-lucide="globe" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+                  </div>
+                </div>
+                <!-- Dock App 2 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-indigo-600 to-indigo-700 shadow-lg flex items-center justify-center">
+                    <i data-lucide="mail" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+                  </div>
+                </div>
+                <!-- Dock App 3 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-green-600 to-green-700 shadow-lg flex items-center justify-center">
+                    <i data-lucide="message-square" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+                  </div>
+                </div>
+                <!-- Dock App 4 -->
+                <div class="flex flex-col items-center">
+                  <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-purple-600 to-purple-700 shadow-lg flex items-center justify-center">
+                    <i data-lucide="music" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Content -->
+
+        <!-- Dynamic metallic shine overlays -->
+        <div id="rim-gloss" class="pointer-events-none absolute -inset-px rounded-[56px] z-30" style="filter: blur(8px); opacity: 0; mix-blend-mode: screen;"></div>
+        <div id="metal-sheen" class="pointer-events-none absolute inset-0 rounded-[54px] z-30" style="opacity: 0; mix-blend-mode: screen; filter: blur(10px);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Capabilities Strip -->
+  <section class="section" style="background: black; padding: 80px 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div class="eyebrow">What We Offer</div>
+        <h2 class="heading_h2">Mobile App Capabilities</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto;">
+        <!-- iOS Development -->
+        <div class="feature-card">
+          <div class="feature-card-visual" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);">
+            <dotlottie-player 
+              src="PC Coding and Dislay app Mobile.lottie" 
+              background="transparent" 
+              speed="1" 
+              style="width: 100%; height: 100%;" 
+              loop 
+              autoplay>
+            </dotlottie-player>
+          </div>
+          <div class="feature-card-content">
+            <h3>iOS Development</h3>
+            <p>Native Swift and SwiftUI applications optimized for iPhone and iPad with App Store deployment.</p>
+          </div>
+        </div>
+
+        <!-- Android Development -->
+        <div class="feature-card">
+          <div class="feature-card-visual" style="background: linear-gradient(135deg, #1a2f1a 0%, #0d3320 50%, #0f1f0f 100%);">
+            <dotlottie-player 
+              src="Programming.lottie" 
+              background="transparent" 
+              speed="1" 
+              style="width: 100%; height: 100%;" 
+              loop 
+              autoplay>
+            </dotlottie-player>
+          </div>
+          <div class="feature-card-content">
+            <h3>Android Development</h3>
+            <p>Native Kotlin apps built for Android devices with Material Design principles and Play Store deployment.</p>
+          </div>
+        </div>
+
+        <!-- Cross-Platform -->
+        <div class="feature-card">
+          <div class="feature-card-visual" style="background: linear-gradient(135deg, #2d1f3d 0%, #1a1a2e 50%, #16213e 100%);">
+            <dotlottie-player 
+              src="Web Development.lottie" 
+              background="transparent" 
+              speed="1" 
+              style="width: 100%; height: 100%;" 
+              loop 
+              autoplay>
+            </dotlottie-player>
+          </div>
+          <div class="feature-card-content">
+            <h3>Cross-Platform</h3>
+            <p>React Native and Flutter apps for efficient iOS and Android deployment from a single codebase.</p>
+          </div>
+        </div>
+
+        <!-- System Integration -->
+        <div class="feature-card">
+          <div class="feature-card-visual" style="background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f172a 100%);">
+            <dotlottie-player 
+              src="AI animation.lottie" 
+              background="transparent" 
+              speed="1" 
+              style="width: 100%; height: 100%;" 
+              loop 
+              autoplay>
+            </dotlottie-player>
+          </div>
+          <div class="feature-card-content">
+            <h3>System Integration</h3>
+            <p>Seamless connection to your existing backends, APIs, CRMs, and databases.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="background: black; padding: 80px 0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <div class="eyebrow">Questions</div>
+        <h2 class="heading_h2">Frequently Asked Questions</h2>
+        <p class="subheading" style="max-width: 700px; margin: 20px auto;">Everything you need to know about mobile app development</p>
+      </div>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>How long does mobile app development take?</span>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Timeline varies based on complexity and features. A simple app typically takes 8-12 weeks, while more complex applications with advanced features can take 3-6 months. We provide detailed timelines during our discovery phase. Of course, we can accommodate tighter deadlines—even as short as a week for urgent projects—though expedited timelines typically incur an additional fee.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Do you build for both iOS and Android?</span>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We develop native apps for both platforms, as well as cross-platform solutions using React Native or Flutter. We'll recommend the best approach based on your requirements, budget, and timeline.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>What about ongoing maintenance and updates?</span>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>We offer comprehensive maintenance and support packages to keep your app running smoothly. This includes bug fixes, security updates, OS compatibility updates, performance optimization, and feature enhancements.</p>
+          </div>
+        </div>
+        
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Can you integrate with our existing systems?</span>
+            <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! We specialize in integrating mobile apps with existing backends, APIs, databases, and third-party services. Our team has experience with a wide range of technologies and can seamlessly connect your app to your current infrastructure.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section" style="background: black; padding: 0 0 80px 0;">
+    <div class="container">
+      <div class="cta-section" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 80px 40px; text-align: center; margin: 80px 0;">
+        <h2 class="heading_h2">Ready to Build Your Mobile App?</h2>
+        <p class="subheading" style="max-width: 700px; margin: 24px auto;">Let's discuss how a custom mobile application can transform your business. Get in touch for a free consultation.</p>
+        <div style="margin-top: 40px;">
+          <a href="contact.html" class="btn-primary" style="background: white; color: black; padding: 16px 32px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer;">Get Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer is-secondary">
+    <div class="container">
+      <div class="w-layout-grid grid_2-col margin-bottom_large">
+        <ul role="list" class="margin-bottom_none w-list-unstyled">
+          <li>
+            <a href="about.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">About</div>
+            </a>
+          </li>
+          <li>
+            <a href="services.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Services</div>
+            </a>
+          </li>
+          <li>
+            <a href="blog/index.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Blog</div>
+            </a>
+          </li>
+          <li>
+            <a href="faq/index.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">FAQ</div>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Contact</div>
+            </a>
+          </li>
+        </ul>
+        <a id="w-node-_447b0386-1e02-51a7-4a70-8e69830f82ee-89bb09b6" href="index.html" class="logo w-node-_21588c6a-fa94-88f7-593b-3b1bc656c20a-c656c1f2 w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo-footer" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars-footer">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_xlarge margin-bottom_none text_all-caps">IntelTree</div>
+        </a>
+      </div>
+      <div class="w-layout-grid footer_bottom">
+        <div>
+        </div>
+        <div class="margin-left_auto">
+          <ul role="list" aria-label="Social media links" class="footer_icon-group margin_top-auto w-list-unstyled">
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M16,8.048a8,8,0,1,0-9.25,7.9V10.36H4.719V8.048H6.75V6.285A2.822,2.822,0,0,1,9.771,3.173a12.2,12.2,0,0,1,1.791.156V5.3H10.554a1.155,1.155,0,0,0-1.3,1.25v1.5h2.219l-.355,2.312H9.25v5.591A8,8,0,0,0,16,8.048Z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">Facebook</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M8,1.441c2.136,0,2.389.009,3.233.047a4.419,4.419,0,0,1,1.485.276,2.472,2.472,0,0,1,.92.6,2.472,2.472,0,0,1,.6.92,4.419,4.419,0,0,1,.276,1.485c.038.844.047,1.1.047,3.233s-.009,2.389-.047,3.233a4.419,4.419,0,0,1-.276,1.485,2.644,2.644,0,0,1-1.518,1.518,4.419,4.419,0,0,1-1.485.276c-.844.038-1.1.047-3.233.047s-2.389-.009-3.233-.047a4.419,4.419,0,0,1-1.485-.276,2.472,2.472,0,0,1-.92-.6,2.472,2.472,0,0,1-.6-.92,4.419,4.419,0,0,1-.276-1.485c-.038-.844-.047-1.1-.047-3.233s.009-2.389.047-3.233a4.419,4.419,0,0,1,.276-1.485,2.472,2.472,0,0,1,.6-.92,2.472,2.472,0,0,1,.92-.6,4.419,4.419,0,0,1,1.485-.276c.844-.038,1.1-.047,3.233-.047M8,0C5.827,0,5.555.009,4.7.048A5.868,5.868,0,0,0,2.76.42a3.908,3.908,0,0,0-1.417.923A3.908,3.908,0,0,0,.42,2.76,5.868,5.868,0,0,0,.048,4.7C.009,5.555,0,5.827,0,8s.009,2.445.048,3.3A5.868,5.868,0,0,0,.42,13.24a3.908,3.908,0,0,0,.923,1.417,3.908,3.908,0,0,0,1.417.923,5.868,5.868,0,0,0,1.942.372C5.555,15.991,5.827,16,8,16s2.445-.009,3.3-.048a5.868,5.868,0,0,0,1.942-.372,4.094,4.094,0,0,0,2.34-2.34,5.868,5.868,0,0,0,.372-1.942c.039-.853.048-1.125.048-3.3s-.009-2.445-.048-3.3A5.868,5.868,0,0,0,15.58,2.76a3.908,3.908,0,0,0-.923-1.417A3.908,3.908,0,0,0,13.24.42,5.868,5.868,0,0,0,11.3.048C10.445.009,10.173,0,8,0Z" fill="currentColor"></path>
+                  <path d="M8,3.892A4.108,4.108,0,1,0,12.108,8,4.108,4.108,0,0,0,8,3.892Zm0,6.775A2.667,2.667,0,1,1,10.667,8,2.667,2.667,0,0,1,8,10.667Z" fill="currentColor"></path>
+                  <circle cx="12.27" cy="3.73" r="0.96" fill="currentColor"></circle>
+                </svg>
+                <div class="screen-reader">Instagram<br></div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M12.3723 1.16992H14.6895L9.6272 6.95576L15.5825 14.829H10.9196L7.26734 10.0539L3.08837 14.829H0.769833L6.18442 8.64037L0.471436 1.16992H5.2528L8.55409 5.53451L12.3723 1.16992ZM11.5591 13.4421H12.843L4.55514 2.48399H3.17733L11.5591 13.4421Z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">X</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M15.3,0H0.7C0.3,0,0,0.3,0,0.7v14.7C0,15.7,0.3,16,0.7,16h14.7c0.4,0,0.7-0.3,0.7-0.7V0.7 C16,0.3,15.7,0,15.3,0z M4.7,13.6H2.4V6h2.4V13.6z M3.6,5C2.8,5,2.2,4.3,2.2,3.6c0-0.8,0.6-1.4,1.4-1.4c0.8,0,1.4,0.6,1.4,1.4 C4.9,4.3,4.3,5,3.6,5z M13.6,13.6h-2.4V9.9c0-0.9,0-2-1.2-2c-1.2,0-1.4,1-1.4,2v3.8H6.2V6h2.3v1h0c0.3-0.6,1.1-1.2,2.2-1.2 c2.4,0,2.8,1.6,2.8,3.6V13.6z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">LinkedIn</div>
+              </a>
+            </li>
+            <li class="margin-bottom_none">
+              <a href="#" class="footer_icon-link w-inline-block"><svg width="100%" height="100%" viewbox="0 0 16 16">
+                  <path d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z" fill="currentColor"></path>
+                </svg>
+                <div class="screen-reader">YouTube</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider margin-bottom_small margin-top_small"></div>
+      <div class="footer_bottom">
+        <div class="text-color_secondary">All rights reserved © 2025 IntelTree</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('phone-container');
+      const frame = document.getElementById('device-frame');
+      const metalSheen = document.getElementById('metal-sheen');
+      const rimGloss = document.getElementById('rim-gloss');
+
+      // Subtle 3D tilt for the whole device (outer container)
+      document.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const { innerWidth, innerHeight } = window;
+        const rotateX = (clientY / innerHeight - 0.5) * -10;
+        const rotateY = (clientX / innerWidth - 0.5) * 10;
+        container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        // Inner frame: independent perspective + dynamic metallic shine
+        const rect = container.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = clientX - cx;
+        const dy = clientY - cy;
+        const relX = Math.max(-1, Math.min(1, dx / (rect.width / 2)));
+        const relY = Math.max(-1, Math.min(1, dy / (rect.height / 2)));
+
+        const rotateXInner = -relY * 12;
+        const rotateYInner = relX * 12;
+        frame.style.transform = `rotateX(${rotateXInner}deg) rotateY(${rotateYInner}deg)`;
+
+        const intensity = Math.min(1, Math.hypot(relX, relY));
+        const angleDeg = Math.atan2(relY, relX) * (180 / Math.PI);
+
+        // Rim gloss: wraps the metal edge with a rotating conic highlight
+        const glossOpacity = 0.15 + 0.35 * intensity;
+        rimGloss.style.opacity = glossOpacity.toFixed(3);
+        rimGloss.style.background = `
+          conic-gradient(from ${angleDeg + 90}deg at 50% 50%,
+            rgba(255,255,255,0.00) 0%,
+            rgba(255,255,255,${0.12 * intensity}) 8%,
+            rgba(255,255,255,0.00) 18%,
+            rgba(255,255,255,${0.08 * intensity}) 34%,
+            rgba(255,255,255,0.00) 52%,
+            rgba(255,255,255,${0.12 * intensity}) 68%,
+            rgba(255,255,255,0.00) 84%,
+            rgba(255,255,255,${0.06 * intensity}) 94%,
+            rgba(255,255,255,0.00) 100%)
+        `;
+
+        // Metal sheen: specular radial highlight that tracks the cursor direction
+        const px = 50 + relX * 42;
+        const py = 50 - relY * 42;
+        const sheenOpacity = 0.20 + 0.40 * intensity;
+        metalSheen.style.opacity = sheenOpacity.toFixed(3);
+        metalSheen.style.background = `
+          radial-gradient(220px 300px at ${px}% ${py}%,
+            rgba(255,255,255,${0.22 + 0.28 * intensity}),
+            rgba(255,255,255,0.0) 60%)
+        `;
+      });
+
+      // Multiscreen toggle
+      const buttons = document.querySelectorAll('.screen-btn');
+      const screens = document.querySelectorAll('[data-screen]');
+      function setActive(id) {
+        screens.forEach(s => s.classList.toggle('hidden', s.getAttribute('data-screen') !== id));
+        buttons.forEach(b => {
+          const active = b.getAttribute('data-screen-btn') === id;
+          b.classList.toggle('bg-white', active);
+          b.classList.toggle('text-black', active);
+          b.classList.toggle('text-white', !active);
+          b.classList.toggle('text-white/90', !active);
+        });
+      }
+      buttons.forEach(b => b.addEventListener('click', () => setActive(b.getAttribute('data-screen-btn'))));
+      setActive('fintech');
+
+      // Hero parallax: depth-based layer motion
+      const hero = document.getElementById('hero');
+      const depthLayers = hero.querySelectorAll('[data-depth]');
+      const elevateItems = hero.querySelectorAll('[data-elevate]');
+
+      function parallax(e) {
+        const rect = hero.getBoundingClientRect();
+        const x = e.clientX ?? (rect.left + rect.width / 2);
+        const y = e.clientY ?? (rect.top + rect.height / 2);
+        const relX = (x - rect.left) / rect.width - 0.5;
+        const relY = (y - rect.top) / rect.height - 0.5;
+
+        const rotateX = relY * -6;
+        const rotateY = relX * 6;
+
+        depthLayers.forEach(layer => {
+          const d = parseFloat(layer.dataset.depth || 0);
+          const tx = relX * d * 12;
+          const ty = relY * d * 12;
+          const currentZ = layer.style.transform.match(/translateZ\(([-\d.]+)px\)/);
+          const z = currentZ ? parseFloat(currentZ[1]) : 0;
+          layer.style.transform = `translateZ(${z}px) translateX(${tx}px) translateY(${ty}px)`;
+        });
+
+        elevateItems.forEach(el => {
+          const z = parseFloat(el.dataset.elevate || 0);
+          const tx = relX * (z / 12);
+          const ty = relY * (z / 12);
+          el.style.transform = `translateZ(${z}px) translateX(${tx}px) translateY(${ty}px)`;
+        });
+
+        hero.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+
+      document.addEventListener('mousemove', parallax);
+      parallax({}); // initialize to center
+
+      lucide.createIcons();
+    });
+    
+    // FAQ Toggle Function
+    function toggleFaq(element) {
+      const faqItem = element.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Toggle current item
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+  </script>
+
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68dd31aebc83b25a8a0bfd82" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>

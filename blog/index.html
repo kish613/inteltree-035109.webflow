@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html data-wf-page="blog-index" data-wf-site="68dd31aebc83b25a8a0bfd82">
+<head>
+  <meta charset="utf-8">
+  <title>Blog | IntelTree - Web Development & AI Insights</title>
+  <meta name="description" content="Expert insights on bespoke web development, AI integration, digital transformation, and technology trends for UK businesses. Tips, guides, and industry insights.">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  
+  <link rel="canonical" href="https://inteltree.com/blog/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://inteltree.com/blog/index.html">
+  <meta property="og:title" content="Blog | IntelTree - Web Development & AI Insights">
+  <meta property="og:description" content="Expert insights on bespoke web development, AI integration, and digital transformation for UK businesses.">
+  <meta property="og:image" content="https://inteltree.com/images/inteltree-logo.svg">
+  <meta property="og:site_name" content="IntelTree">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://inteltree.com/blog/index.html">
+  <meta name="twitter:title" content="Blog | IntelTree">
+  <meta name="twitter:description" content="Expert insights on web development and AI integration for UK businesses.">
+  <meta name="twitter:image" content="https://inteltree.com/images/inteltree-logo.svg">
+  
+  <link href="../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { 
+      background: #000 !important; 
+      color: white; 
+    }
+    
+    /* Blog Hero Section - Aligned with homepage */
+    .blog-hero-section {
+      background: black;
+      padding: 140px 0 100px 0;
+      text-align: center;
+      position: relative;
+    }
+    
+    .blog-hero-section .breadcrumb {
+      padding: 0 0 30px 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .blog-hero-section .breadcrumb a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .blog-hero-section .breadcrumb a:hover {
+      color: white;
+    }
+    
+    /* Category Filters - Modern rounded buttons */
+    .category-filter {
+      display: flex;
+      gap: 12px;
+      margin: 60px 0 80px 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .category-filter a {
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    
+    .category-filter a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .category-filter a.active {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: white;
+    }
+    
+    /* Blog Grid - Modern card layout */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      margin: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+    
+    /* Blog Card - Glassmorphism with white content area */
+    .blog-card {
+      background: transparent;
+      border: none;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: revealCard 0.6s ease-out forwards;
+    }
+    
+    .blog-card:nth-child(1) { animation-delay: 0.1s; }
+    .blog-card:nth-child(2) { animation-delay: 0.2s; }
+    .blog-card:nth-child(3) { animation-delay: 0.3s; }
+    .blog-card:nth-child(4) { animation-delay: 0.4s; }
+    .blog-card:nth-child(5) { animation-delay: 0.5s; }
+    .blog-card:nth-child(6) { animation-delay: 0.6s; }
+    .blog-card:nth-child(7) { animation-delay: 0.7s; }
+    
+    @keyframes revealCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-8px);
+    }
+    
+    /* Glassmorphism wrapper */
+    .blog-card-glass {
+      background: linear-gradient(rgba(255,255,255,0.1), transparent);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(10px);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .blog-card:hover .blog-card-glass {
+      background: linear-gradient(rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* Card image area */
+    .blog-card-image {
+      width: 100%;
+      height: 240px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .blog-card-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    }
+    
+    /* White content area - like homepage testimonials */
+    .blog-card-content {
+      padding: 2rem;
+      background: white;
+      color: #1f2937;
+      border-radius: 0 0 1.5rem 1.5rem;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .blog-card-category {
+      color: #3b82f6;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .blog-card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: #111827;
+    }
+    
+    .blog-card-title a {
+      color: #111827;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .blog-card-title a:hover {
+      color: #3b82f6;
+    }
+    
+    .blog-card-excerpt {
+      color: #6b7280;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-size: 15px;
+      flex-grow: 1;
+    }
+    
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #9ca3af;
+      font-size: 13px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .blog-card-meta span:not(:last-child)::after {
+      content: '•';
+      margin-left: 12px;
+      color: #d1d5db;
+    }
+    
+    .blog-card-meta span:last-child {
+      margin-left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
+      <div class="nav_left">
+        <a href="../index.html" class="nav_logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_large margin-bottom_none">IntelTree</div>
+        </a>
+        <nav role="navigation" class="nav_menu w-nav-menu">
+          <ul role="list" class="nav_menu-list w-list-unstyled">
+            <li class="nav_menu-list-item">
+              <a href="../services.html" class="nav_link w-inline-block">
+                <div>Services</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../about.html" class="nav_link w-inline-block">
+                <div>About</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../mobile-apps.html" class="nav_link w-inline-block">
+                <div>Mobile Apps</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="index.html" class="nav_link w-inline-block">
+                <div>Blog</div>
+              </a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../faq/index.html" class="nav_link w-inline-block">
+                <div>FAQ</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav_right">
+        <div class="button-group margin-top_none">
+          <a href="../index.html#contact" class="button w-button">Start</a>
+        </div>
+      </div>
+      <div class="nav_mobile-menu-button w-nav-button">
+        <div class="icon w-icon-nav-menu"></div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section - Aligned with homepage style -->
+    <section class="blog-hero-section section">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a> / Blog
+        </div>
+        <div class="header is-align-center">
+          <div class="eyebrow">Expert insights</div>
+          <h1 class="heading_h1">Blog & Insights</h1>
+          <p class="subheading max-width_large">Expert insights on bespoke web development, AI integration, digital transformation, and technology trends for UK businesses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="section">
+      <div class="container">
+        <div class="category-filter">
+          <a href="index.html" class="active">All Posts</a>
+          <a href="web-development/index.html">Web Development</a>
+          <a href="ai-integration/index.html">AI Integration</a>
+          <a href="industry-insights/index.html">Industry Insights</a>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Web Development</div>
+                <h2 class="blog-card-title"><a href="web-development/how-to-choose-web-development-agency-uk.html">How to Choose the Right Web Development Agency in the UK</a></h2>
+                <p class="blog-card-excerpt">A comprehensive guide to selecting the perfect web development partner for your UK business, covering evaluation criteria, key questions to ask, and red flags to avoid.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>5 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">AI Integration</div>
+                <h2 class="blog-card-title"><a href="ai-integration/understanding-ai-integration-costs.html">Understanding AI Integration Costs: Complete Breakdown for UK Businesses</a></h2>
+                <p class="blog-card-excerpt">Everything you need to know about AI integration pricing, cost factors, ROI considerations, and hidden costs for UK businesses considering AI solutions.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Web Development</div>
+                <h2 class="blog-card-title"><a href="web-development/web-development-vs-web-design.html">Web Development vs Web Design: What's the Difference and Why It Matters</a></h2>
+                <p class="blog-card-excerpt">Understanding the key distinctions between web development and web design, when you need each, and how they work together to create exceptional websites.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>6 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Web Development</div>
+                <h2 class="blog-card-title"><a href="web-development/bespoke-vs-wordpress.html">Bespoke vs WordPress: Which is Right for Your UK Business?</a></h2>
+                <p class="blog-card-excerpt">A detailed comparison of bespoke web development versus WordPress, covering pros, cons, use cases, cost comparisons, and decision frameworks.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>8 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Industry Insights</div>
+                <h2 class="blog-card-title"><a href="industry-insights/digital-transformation-education-uk-2025.html">Digital Transformation Trends for UK Education Sector 2025</a></h2>
+                <p class="blog-card-excerpt">Exploring current digital transformation trends in UK education, including case studies and implementation tips for schools and educational institutions.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Industry Insights</div>
+                <h2 class="blog-card-title"><a href="industry-insights/charities-ai-operations-guide.html">How Charities Can Leverage AI for Operations: A Complete Guide</a></h2>
+                <p class="blog-card-excerpt">Practical guide for UK charities and non-profits on AI use cases, cost-effective solutions, and implementation roadmaps for operational efficiency.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>9 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-glass">
+              <div class="blog-card-image"></div>
+              <div class="blog-card-content">
+                <div class="blog-card-category">Industry Insights</div>
+                <h2 class="blog-card-title"><a href="industry-insights/custom-ecommerce-development-uk-retailers.html">The Complete Guide to Custom E-commerce Development for UK Retailers</a></h2>
+                <p class="blog-card-excerpt">Essential features, platform comparisons, and decision frameworks for UK retailers considering custom e-commerce solutions versus template stores.</p>
+                <div class="blog-card-meta">
+                  <span>January 2025</span>
+                  <span>10 min read</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer is-secondary">
+    <div class="container">
+      <div class="w-layout-grid grid_2-col margin-bottom_large">
+        <ul role="list" class="margin-bottom_none w-list-unstyled">
+          <li>
+            <a href="../about.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">About</div>
+            </a>
+          </li>
+          <li>
+            <a href="../services.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Services</div>
+            </a>
+          </li>
+          <li>
+            <a href="index.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Blog</div>
+            </a>
+          </li>
+          <li>
+            <a href="../faq/index.html" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">FAQ</div>
+            </a>
+          </li>
+          <li>
+            <a href="../index.html#contact" class="footer_link w-inline-block">
+              <div class="paragraph_xxlarge">Contact</div>
+            </a>
+          </li>
+        </ul>
+        <a href="../index.html" class="logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo-footer" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars-footer">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+          </svg></div>
+        </a>
+      </div>
+      <div class="footer_bottom">
+        <div class="paragraph_small text-color_secondary">© 2025 IntelTree. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/webflow.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

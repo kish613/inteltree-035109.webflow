@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html data-wf-page="blog-ai-integration" data-wf-site="68dd31aebc83b25a8a0bfd82">
+<head>
+  <meta charset="utf-8">
+  <title>AI Integration Blog | IntelTree - Business AI Insights</title>
+  <meta name="description" content="Expert insights on AI integration, automation, and business AI solutions for UK companies.">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link rel="canonical" href="https://inteltree.com/blog/ai-integration/index.html">
+  <link href="../../css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="../../css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="../../css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
+  <style>
+    body { background: black; color: white; }
+    .blog-hero { background: black; padding: 120px 0 80px 0; text-align: center; }
+    .blog-hero h1 { margin-bottom: 20px; font-size: 3.5rem; }
+    .blog-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin: 60px 0; }
+    .blog-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; overflow: hidden; transition: all 0.3s ease; }
+    .blog-card:hover { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.2); transform: translateY(-5px); }
+    .blog-card-image { width: 100%; height: 200px; background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%); }
+    .blog-card-content { padding: 30px; }
+    .blog-card-category { color: #3b82f6; font-size: 14px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; }
+    .blog-card-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; }
+    .blog-card-title a { color: white; text-decoration: none; }
+    .blog-card-title a:hover { color: #3b82f6; }
+    .blog-card-excerpt { color: rgba(255, 255, 255, 0.7); line-height: 1.6; margin-bottom: 20px; }
+    .blog-card-meta { display: flex; align-items: center; gap: 15px; color: rgba(255, 255, 255, 0.5); font-size: 14px; }
+    .breadcrumb { padding: 20px 0; color: rgba(255, 255, 255, 0.6); font-size: 14px; }
+    .breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="nav_container w-nav">
+      <div class="nav_left">
+        <a href="../../index.html" class="nav_logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+            <text x="150" y="215" font-family="sans-serif" font-size="28" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2" opacity="0">
+              INTELTREE
+              <animate attributeName="opacity" from="0" to="1" dur="1s" begin="0.8s" fill="freeze" />
+            </text>
+          </svg></div>
+          <div data-brand-name="true" class="paragraph_large margin-bottom_none">IntelTree</div>
+        </a>
+        <nav role="navigation" class="nav_menu w-nav-menu">
+          <ul role="list" class="nav_menu-list w-list-unstyled">
+            <li class="nav_menu-list-item">
+              <a href="../../services.html" class="nav_link w-inline-block"><div>Services</div></a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../../about.html" class="nav_link w-inline-block"><div>About</div></a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../../mobile-apps.html" class="nav_link w-inline-block"><div>Mobile Apps</div></a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../index.html" class="nav_link w-inline-block"><div>Blog</div></a>
+            </li>
+            <li class="nav_menu-list-item">
+              <a href="../../faq/index.html" class="nav_link w-inline-block"><div>FAQ</div></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="nav_right">
+        <div class="button-group margin-top_none">
+          <a href="../../index.html#contact" class="button w-button">Start</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="blog-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a> / <a href="../index.html">Blog</a> / AI Integration
+        </div>
+        <h1>AI Integration</h1>
+        <p class="subheading max-width_large" style="color: rgba(255,255,255,0.7); margin-top: 20px;">Expert insights on AI integration, automation, and business AI solutions for UK companies.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="blog-container">
+        <div class="blog-grid">
+          <div class="blog-card">
+            <div class="blog-card-image"></div>
+            <div class="blog-card-content">
+              <div class="blog-card-category">AI Integration</div>
+              <h2 class="blog-card-title"><a href="understanding-ai-integration-costs.html">Understanding AI Integration Costs: Complete Breakdown for UK Businesses</a></h2>
+              <p class="blog-card-excerpt">Everything you need to know about AI integration pricing, cost factors, ROI considerations, and hidden costs.</p>
+              <div class="blog-card-meta">
+                <span>January 2025</span>
+                <span>•</span>
+                <span>7 min read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer is-secondary">
+    <div class="container">
+      <div class="w-layout-grid grid_2-col margin-bottom_large">
+        <ul role="list" class="margin-bottom_none w-list-unstyled">
+          <li><a href="../../about.html" class="footer_link w-inline-block"><div class="paragraph_xxlarge">About</div></a></li>
+          <li><a href="../../services.html" class="footer_link w-inline-block"><div class="paragraph_xxlarge">Services</div></a></li>
+          <li><a href="../index.html" class="footer_link w-inline-block"><div class="paragraph_xxlarge">Blog</div></a></li>
+          <li><a href="../../faq/index.html" class="footer_link w-inline-block"><div class="paragraph_xxlarge">FAQ</div></a></li>
+          <li><a href="../../index.html#contact" class="footer_link w-inline-block"><div class="paragraph_xxlarge">Contact</div></a></li>
+        </ul>
+        <a href="../../index.html" class="logo w-inline-block">
+          <div class="nav_logo-icon"><svg id="inteltree-logo-footer" viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+            <defs>
+              <linearGradient id="barGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#FFFFFF; stop-opacity:1" />
+                <stop offset="60%" style="stop-color:#F0F0F0; stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#D0D0D0; stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g id="bars-footer">
+              <rect x="50" y="150" width="25" height="30" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="30" dur="0.5s" begin="0.1s" fill="freeze" />
+                <animate attributeName="y" from="180" to="150" dur="0.5s" begin="0.1s" fill="freeze" />
+              </rect>
+              <rect x="85" y="130" width="25" height="50" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="50" dur="0.5s" begin="0.2s" fill="freeze" />
+                <animate attributeName="y" from="180" to="130" dur="0.5s" begin="0.2s" fill="freeze" />
+              </rect>
+              <rect x="120" y="110" width="25" height="70" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="70" dur="0.5s" begin="0.3s" fill="freeze" />
+                <animate attributeName="y" from="180" to="110" dur="0.5s" begin="0.3s" fill="freeze" />
+              </rect>
+              <rect x="155" y="100" width="25" height="80" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="80" dur="0.5s" begin="0.4s" fill="freeze" />
+                <animate attributeName="y" from="180" to="100" dur="0.5s" begin="0.4s" fill="freeze" />
+              </rect>
+              <rect x="190" y="80" width="25" height="100" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="100" dur="0.5s" begin="0.5s" fill="freeze" />
+                <animate attributeName="y" from="180" to="80" dur="0.5s" begin="0.5s" fill="freeze" />
+              </rect>
+              <rect x="225" y="60" width="25" height="120" fill="url(#barGradient2)" rx="5">
+                <animate attributeName="height" from="0" to="120" dur="0.5s" begin="0.6s" fill="freeze" />
+                <animate attributeName="y" from="180" to="60" dur="0.5s" begin="0.6s" fill="freeze" />
+              </rect>
+            </g>
+          </svg></div>
+        </a>
+      </div>
+      <div class="footer_bottom">
+        <div class="paragraph_small text-color_secondary">© 2025 IntelTree. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/webflow.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

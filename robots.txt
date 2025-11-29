@@ -1,0 +1,29 @@
+# robots.txt for IntelTree
+# https://inteltree.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin/private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://inteltree.com/sitemap.xml
+
+# Crawl-delay (optional, remove if not needed)
+# Crawl-delay: 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
