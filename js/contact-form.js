@@ -84,7 +84,10 @@
           form.reset();
         } else {
           // Error from API
-          showMessage(result.error || 'Something went wrong. Please try again.', 'error');
+          const errorMsg = result.error || 'Something went wrong. Please try again.';
+          const details = result.details ? ` (${result.details})` : '';
+          console.error('API error:', errorMsg, details);
+          showMessage(errorMsg + details, 'error');
         }
       } catch (error) {
         // Network or other error

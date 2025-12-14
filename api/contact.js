@@ -1,4 +1,14 @@
 export default async function handler(req, res) {
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle preflight requests
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
@@ -6,6 +16,8 @@ export default async function handler(req, res) {
 
   try {
     const { name, email, message } = req.body;
+    
+    console.log('Contact form API called with:', { name, email, hasMessage: !!message });
 
     // Validate required fields
     if (!name || !email) {
@@ -16,7 +28,8 @@ export default async function handler(req, res) {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error('RESEND_API_KEY is not set');
-      return res.status(500).json({ error: 'Email service configuration error' });
+      console.error('Available env vars:', Object.keys(process.env).filter(k => k.includes('RESEND')));
+      return res.status(500).json({ error: 'Email service configuration error - API key missing' });
     }
 
     // Send email via Resend API
@@ -54,7 +67,12 @@ This email was sent from the IntelTree contact form.
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       console.error('Resend API error:', errorData);
-      return res.status(500).json({ error: 'Failed to send email' });
+      console.error('Resend API status:', response.status);
+      console.error('Resend API statusText:', response.statusText);
+      return res.status(500).json({ 
+        error: 'Failed to send email',
+        details: errorData.message || errorData
+      });
     }
 
     const data = await response.json();
@@ -67,6 +85,10 @@ This email was sent from the IntelTree contact form.
 
   } catch (error) {
     console.error('Error processing contact form:', error);
-    return res.status(500).json({ error: 'An unexpected error occurred' });
+    console.error('Error stack:', error.stack);
+    return res.status(500).json({ 
+      error: 'An unexpected error occurred',
+      details: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 }
