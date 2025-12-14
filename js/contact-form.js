@@ -6,9 +6,27 @@
 (function() {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', function() {
+  let formInitialized = false;
+
+  function initContactForm() {
+    // Prevent duplicate initialization
+    if (formInitialized) {
+      const form = document.getElementById('contact-form');
+      if (form && form.dataset.handlerAttached) {
+        return;
+      }
+    }
+
     const form = document.getElementById('contact-form');
-    if (!form) return;
+    if (!form) {
+      console.error('Contact form not found!');
+      return;
+    }
+
+    // Mark as initialized
+    form.dataset.handlerAttached = 'true';
+    formInitialized = true;
+    console.log('Contact form handler initialized');
 
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton ? submitButton.innerHTML : 'Send message';
@@ -16,6 +34,7 @@
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      console.log('Form submitted');
 
       // Get form data
       const formData = new FormData(form);
@@ -24,6 +43,7 @@
         email: formData.get('email'),
         message: formData.get('message') || ''
       };
+      console.log('Form data:', data);
 
       // Validate
       if (!data.name || !data.email) {
@@ -45,6 +65,7 @@
       }
 
       try {
+        console.log('Sending request to /api/contact');
         const response = await fetch('/api/contact', {
           method: 'POST',
           headers: {
@@ -53,7 +74,9 @@
           body: JSON.stringify(data),
         });
 
+        console.log('Response status:', response.status);
         const result = await response.json();
+        console.log('Response data:', result);
 
         if (response.ok && result.success) {
           // Success
@@ -95,5 +118,20 @@
         }, 5000);
       }
     }
-  });
+  }
+
+  // Initialize on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+  } else {
+    initContactForm();
+  }
+
+  // Reinitialize after Barba.js page transitions
+  if (typeof barba !== 'undefined') {
+    document.addEventListener('barba:after', function() {
+      formInitialized = false;
+      setTimeout(initContactForm, 100);
+    });
+  }
 })();
