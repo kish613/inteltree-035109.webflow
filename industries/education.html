@@ -171,8 +171,9 @@
       margin: 80px 0;
     }
   </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
-<body>
+<body data-barba="wrapper">
   <!-- Navigation -->
   <div class="nav">
     <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
@@ -255,81 +256,30 @@
         </nav>
       </div>
       <div class="nav_right">
-        <div class="button-group margin-top_none">
-          <div class="group relative hover:ring-1 rounded-full bg-gradient-to-b p-2.5 shadow-md flex items-center justify-center ring-black/10" style="background: linear-gradient(to bottom, #171717, #262626);">
-            <input class="toggle-checkbox peer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 rounded-md absolute z-10 w-full h-full opacity-0 cursor-pointer" type="checkbox" aria-label="Toggle Home" role="switch" aria-checked="true" style="appearance:none; border-radius:inherit; font:inherit;" checked>
-            
-            <div class="toggle-container transition-colors duration-400 flex items-center relative rounded-full h-10 shadow-inner bg-green-500" style="width: 100px; box-shadow:inset 0 0 2px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.1);">
-              
-              <span class="toggle-text" style="position: absolute; left: 8px; font-size: 12px; font-weight: 600; color: #fff; pointer-events: none; transition: opacity 0.3s; z-index: 1;">Home</span>
-              
-              <div class="toggle-button absolute left-0.5 rounded-full w-9 h-9 flex items-center justify-center transition-all duration-400 bg-gray-800" style="box-shadow:inset 0 -2px 2px rgba(0,0,0,0.1), inset 0 -4px 2px rgba(0,0,0,0.2), inset 0 6px 2px rgba(255,255,255,0.3), 0 4px 4px rgba(0,0,0,0.5); left: 54px;">
-                
-                <div class="toggle-button-circles-container absolute grid grid-cols-3 gap-0.5" style="grid-template-columns:repeat(3, 4px);">
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
-                </div>
-              </div>
-            </div>
-            
-            <style>
-              .toggle-button-circle {
-                background-image: radial-gradient(circle at 50% 0, #f5f5f5, #c4c4c4);
-              }
-              .group:hover .toggle-button {
-                transform: scale(1.05);
-                box-shadow: inset 0 -2px 2px rgba(0,0,0,0.1), inset 0 -4px 2px rgba(0,0,0,0.2), inset 0 6px 2px rgba(255,255,255,0.4), 0 4px 6px rgba(0,0,0,0.6);
-              }
-              .group:hover .toggle-container {
-                box-shadow: inset 0 0 3px rgba(0,0,0,0.3), inset 0 2px 6px rgba(0,0,0,0.2);
-              }
-            </style>
-            
-            <script>
-              (function() {
-                const checkbox = document.querySelector('.toggle-checkbox');
-                const container = document.querySelector('.toggle-container');
-                const button = document.querySelector('.toggle-button');
-                const toggleText = document.querySelector('.toggle-text');
-                const OFF_BG = '#1f2937';
-                const ON_BG = '#10b981';
-                const OFF_LEFT = '2px';
-                const ON_LEFT = '54px';
-                
-                // Set initial state to ON (checked)
-                checkbox.checked = true;
-                
-                function applyState() {
-                  const checked = checkbox.checked;
-                  container.style.backgroundColor = checked ? ON_BG : OFF_BG;
-                  button.style.left = checked ? ON_LEFT : OFF_LEFT;
-                  toggleText.style.opacity = '1';
-                  checkbox.setAttribute('aria-checked', checked ? 'true' : 'false');
-                  
-                  // When toggled OFF (unchecked), go to home
-                  if (!checked) {
-                    setTimeout(function() {
-                      window.location.href = '../index.html';
-                    }, 400);
-                  }
-                }
-                
-                checkbox.addEventListener('change', applyState);
-                applyState();
-              })();
-            </script>
+        <a href="../index.html" class="nav-toggle-link" id="nav-toggle-link" title="Go Home">
+          <div class="nav-toggle-container">
+            <dotlottie-player id="nav-toggle-switch" src="../OnOff Switch 2.json" background="transparent" style="width: 240px; height: 180px; transform: scale(1); margin: -65px -70px;"></dotlottie-player>
           </div>
-        </div>
+        </a>
+        <script>
+          (function() {
+            let playerReady = false, isAnimating = false;
+            function initToggle() {
+              const player = document.getElementById('nav-toggle-switch');
+              const link = document.getElementById('nav-toggle-link');
+              if (!player || !link) return;
+              player.addEventListener('ready', function() { playerReady = true; player.seek(0); });
+              link.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (isAnimating) return; isAnimating = true;
+                if (playerReady) { player.seek(15); player.setSpeed(1.2); player.setDirection(1); player.play(); }
+                setTimeout(function() { window.location.href = '../index.html'; }, 500);
+              });
+            }
+            if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initToggle); } else { initToggle(); }
+          })();
+        </script>
+        <style>.nav-toggle-link{display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;transition:transform .2s ease}.nav-toggle-link:hover{transform:scale(1.05)}.nav-toggle-container{width:100px;height:50px;overflow:hidden;display:flex;align-items:center;justify-content:center}.nav-toggle-link dotlottie-player{pointer-events:none}</style>
       </div>
       <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
@@ -342,7 +292,7 @@
       </div>
     </div>
   </div>
-
+  <div data-barba="container" data-barba-namespace="education">
   <!-- Hero Section -->
   <section class="industry-hero section">
     <div class="container">
@@ -479,7 +429,7 @@
       <a href="../index.html#contact" class="btn-secondary" style="background: rgba(255, 255, 255, 0.1); color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; border: 1px solid rgba(255, 255, 255, 0.2); transition: all 0.3s ease;">Schedule a Consultation</a>
     </div>
   </section>
-
+  </div>
   <footer class="footer is-secondary">
     <div class="container">
       <div class="w-layout-grid grid_2-col margin-bottom_large">
@@ -541,6 +491,9 @@
     </div>
   </footer>
   <script src="../js/webflow.js"></script>
+  <!-- Barba.js Page Transitions -->
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/page-transitions.js"></script>
 </body>
 </html>
 

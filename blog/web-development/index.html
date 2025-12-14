@@ -39,8 +39,9 @@
     .breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
   </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
-<body>
+<body data-barba="wrapper">
   <div class="nav">
     <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
       <div class="nav_left">
@@ -117,16 +118,37 @@
         </nav>
       </div>
       <div class="nav_right">
-        <div class="button-group margin-top_none">
-          <a href="../../index.html#contact" class="button w-button">Start</a>
-        </div>
+        <a href="../../index.html" class="nav-toggle-link" id="nav-toggle-link" title="Go Home">
+          <div class="nav-toggle-container">
+            <dotlottie-player id="nav-toggle-switch" src="../../OnOff Switch 2.json" background="transparent" style="width: 240px; height: 180px; transform: scale(1); margin: -65px -70px;"></dotlottie-player>
+          </div>
+        </a>
+        <script>
+          (function() {
+            let playerReady = false, isAnimating = false;
+            function initToggle() {
+              const player = document.getElementById('nav-toggle-switch');
+              const link = document.getElementById('nav-toggle-link');
+              if (!player || !link) return;
+              player.addEventListener('ready', function() { playerReady = true; player.seek(0); });
+              link.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (isAnimating) return; isAnimating = true;
+                if (playerReady) { player.seek(15); player.setSpeed(1.2); player.setDirection(1); player.play(); }
+                setTimeout(function() { window.location.href = '../../index.html'; }, 500);
+              });
+            }
+            if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initToggle); } else { initToggle(); }
+          })();
+        </script>
+        <style>.nav-toggle-link{display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;transition:transform .2s ease}.nav-toggle-link:hover{transform:scale(1.05)}.nav-toggle-container{width:100px;height:50px;overflow:hidden;display:flex;align-items:center;justify-content:center}.nav-toggle-link dotlottie-player{pointer-events:none}</style>
       </div>
-      <div class="nav_mobile-menu-button w-nav-button">
+      <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
         <div class="icon w-icon-nav-menu"></div>
       </div>
     </div>
   </div>
-
+  <div data-barba="container" data-barba-namespace="blog-webdev">
   <main>
     <section class="blog-hero">
       <div class="container">
@@ -142,7 +164,7 @@
       <div class="blog-container">
         <div class="blog-grid">
           <div class="blog-card">
-            <div class="blog-card-image"></div>
+            <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'); background-size: cover; background-position: center;"></div>
             <div class="blog-card-content">
               <div class="blog-card-category">Web Development</div>
               <h2 class="blog-card-title"><a href="how-to-choose-web-development-agency-uk.html">How to Choose the Right Web Development Agency in the UK</a></h2>
@@ -156,7 +178,7 @@
           </div>
 
           <div class="blog-card">
-            <div class="blog-card-image"></div>
+            <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop'); background-size: cover; background-position: center;"></div>
             <div class="blog-card-content">
               <div class="blog-card-category">Web Development</div>
               <h2 class="blog-card-title"><a href="web-development-vs-web-design.html">Web Development vs Web Design: What's the Difference and Why It Matters</a></h2>
@@ -170,7 +192,7 @@
           </div>
 
           <div class="blog-card">
-            <div class="blog-card-image"></div>
+            <div class="blog-card-image" style="background-image: url('https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop'); background-size: cover; background-position: center;"></div>
             <div class="blog-card-content">
               <div class="blog-card-category">Web Development</div>
               <h2 class="blog-card-title"><a href="bespoke-vs-wordpress.html">Bespoke vs WordPress: Which is Right for Your UK Business?</a></h2>
@@ -186,7 +208,7 @@
       </div>
     </section>
   </main>
-
+  </div>
   <footer class="footer is-secondary">
     <div class="container">
       <div class="w-layout-grid grid_2-col margin-bottom_large">
@@ -262,6 +284,9 @@
   </footer>
 
   <script src="../../js/webflow.js"></script>
+  <!-- Barba.js Page Transitions -->
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../../js/page-transitions.js"></script>
 </body>
 </html>
 

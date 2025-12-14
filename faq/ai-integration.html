@@ -136,8 +136,9 @@
     .breadcrumb a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
     .breadcrumb a:hover { color: white; }
   </style>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
-<body>
+<body data-barba="wrapper">
   <div class="nav">
     <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
       <div class="nav_left">
@@ -214,16 +215,37 @@
         </nav>
       </div>
       <div class="nav_right">
-        <div class="button-group margin-top_none">
-          <a href="../index.html#contact" class="button w-button">Start</a>
-        </div>
+        <a href="../index.html" class="nav-toggle-link" id="nav-toggle-link" title="Go Home">
+          <div class="nav-toggle-container">
+            <dotlottie-player id="nav-toggle-switch" src="../OnOff Switch 2.json" background="transparent" style="width: 240px; height: 180px; transform: scale(1); margin: -65px -70px;"></dotlottie-player>
+          </div>
+        </a>
+        <script>
+          (function() {
+            let playerReady = false, isAnimating = false;
+            function initToggle() {
+              const player = document.getElementById('nav-toggle-switch');
+              const link = document.getElementById('nav-toggle-link');
+              if (!player || !link) return;
+              player.addEventListener('ready', function() { playerReady = true; player.seek(0); });
+              link.addEventListener('click', function(e) {
+                e.preventDefault(); e.stopPropagation();
+                if (isAnimating) return; isAnimating = true;
+                if (playerReady) { player.seek(15); player.setSpeed(1.2); player.setDirection(1); player.play(); }
+                setTimeout(function() { window.location.href = '../index.html'; }, 500);
+              });
+            }
+            if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initToggle); } else { initToggle(); }
+          })();
+        </script>
+        <style>.nav-toggle-link{display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;transition:transform .2s ease}.nav-toggle-link:hover{transform:scale(1.05)}.nav-toggle-container{width:100px;height:50px;overflow:hidden;display:flex;align-items:center;justify-content:center}.nav-toggle-link dotlottie-player{pointer-events:none}</style>
       </div>
-      <div class="nav_mobile-menu-button w-nav-button">
+      <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
         <div class="icon w-icon-nav-menu"></div>
       </div>
     </div>
   </div>
-
+  <div data-barba="container" data-barba-namespace="faq-ai">
   <main>
     <section class="faq-hero">
       <div class="container">
@@ -370,7 +392,7 @@
       </div>
     </section>
   </main>
-
+  </div>
   <footer class="footer is-secondary">
     <div class="container">
       <div class="w-layout-grid grid_2-col margin-bottom_large">
@@ -458,6 +480,9 @@
     }
   </script>
   <script src="../js/webflow.js"></script>
+  <!-- Barba.js Page Transitions -->
+  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
+  <script src="../js/page-transitions.js"></script>
 </body>
 </html>
 

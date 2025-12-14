@@ -2981,7 +2981,7 @@
 }
 
 .nav_link.w--current, .nav_link.w--open {
-  background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519---button--button-secondary-bg-hover);
+  background-color: transparent;
 }
 
 .nav_link.on-accent-primary {
@@ -4747,7 +4747,7 @@
 }
 
 .nav_dropdown-link.w--current, .nav_dropdown-link.w--open {
-  background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519---button--button-secondary-bg-hover);
+  background-color: transparent;
 }
 
 .button_label {
@@ -5167,7 +5167,7 @@
   }
 
   .nav_link.w--current:hover {
-    background-color: var(--ai-gen-82921b10-4b39-48f0-b346-808cf4903d29-1759326642519---button--button-secondary-bg-hover);
+    background-color: transparent;
   }
 
   .nav_link.w--open {
@@ -6564,6 +6564,83 @@
 
   #w-node-bb345b24-a442-2526-c4a6-a1bd0388634c-8a0bfe29 {
     grid-column-end: 7;
+  }
+}
+
+/* =====================================================
+   Barba.js Page Transition Styles
+   ===================================================== */
+
+/* Main content wrapper for transitions */
+[data-barba="container"] {
+  will-change: opacity;
+}
+
+/* Leave transition - fade out */
+.barba-leave-active {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+/* Enter transition - fade in */
+.barba-enter-active {
+  transition: opacity 400ms ease;
+}
+
+/* Prevent scrolling during transition */
+html.is-transitioning {
+  overflow: hidden;
+}
+
+/* Ensure smooth transition for all page content */
+[data-barba="wrapper"] {
+  position: relative;
+}
+
+/* =====================================================
+   Mobile Hamburger Menu - Compact Dropdown Style
+   ===================================================== */
+
+/* Mobile menu dropdown - narrower, right-aligned */
+@media screen and (max-width: 991px) {
+  .nav_menu.w-nav-menu {
+    width: 280px !important;
+    max-width: 85vw !important;
+    right: 0 !important;
+    left: auto !important;
+    background-color: rgba(10, 10, 10, 0.98) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    padding: 16px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .nav_menu-list {
+    flex-direction: column !important;
+    gap: 4px !important;
+  }
+
+  .nav_menu-list-item {
+    width: 100% !important;
+  }
+
+  .nav_link {
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    transition: background-color 0.2s ease !important;
+  }
+
+  .nav_link:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Hide the full-width overlay background */
+  .w-nav-overlay {
+    background: transparent !important;
+    width: auto !important;
+    right: 16px !important;
+    left: auto !important;
   }
 }
 

@@ -1,0 +1,123 @@
+/**
+ * Page Transitions using Barba.js
+ * Smooth fade transitions between pages
+ */
+
+(function() {
+  'use strict';
+
+  // Initialize Barba.js when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Check if Barba is available
+    if (typeof barba === 'undefined') {
+      console.warn('Barba.js not loaded');
+      return;
+    }
+
+    barba.init({
+      // Prevent transitions on same-page anchors and external links
+      prevent: function({ el }) {
+        // Skip if link has data-barba-prevent attribute
+        if (el.hasAttribute('data-barba-prevent')) return true;
+        
+        // Skip external links
+        if (el.hostname !== window.location.hostname) return true;
+        
+        // Skip anchor links on same page
+        if (el.pathname === window.location.pathname && el.hash) return true;
+        
+        // Skip links with target="_blank"
+        if (el.target === '_blank') return true;
+        
+        return false;
+      },
+
+      transitions: [{
+        name: 'fade',
+        
+        // Leave animation - fade out current page
+        leave: function(data) {
+          return new Promise(function(resolve) {
+            var current = data.current.container;
+            current.classList.add('barba-leave-active');
+            
+            // Wait for CSS transition to complete
+            setTimeout(function() {
+              resolve();
+            }, 400);
+          });
+        },
+
+        // Enter animation - fade in new page
+        enter: function(data) {
+          return new Promise(function(resolve) {
+            var next = data.next.container;
+            
+            // Start with opacity 0
+            next.style.opacity = '0';
+            next.classList.add('barba-enter-active');
+            
+            // Trigger reflow to ensure transition works
+            next.offsetHeight;
+            
+            // Fade in
+            next.style.opacity = '1';
+            
+            // Wait for CSS transition to complete
+            setTimeout(function() {
+              next.classList.remove('barba-enter-active');
+              next.style.opacity = '';
+              resolve();
+            }, 400);
+          });
+        },
+
+        // After transition completes
+        after: function(data) {
+          // Scroll to top of page
+          window.scrollTo(0, 0);
+          
+          // Reinitialize any scripts that need to run on new page
+          reinitializeScripts();
+        }
+      }]
+    });
+
+    /**
+     * Reinitialize scripts after page transition
+     * Add any page-specific initialization here
+     */
+    function reinitializeScripts() {
+      // Reinitialize Webflow interactions if available
+      if (window.Webflow) {
+        window.Webflow.destroy();
+        window.Webflow.ready();
+        window.Webflow.require('ix2').init();
+      }
+
+      // Reinitialize any Lottie players
+      var lottiePlayers = document.querySelectorAll('dotlottie-player, lottie-player');
+      lottiePlayers.forEach(function(player) {
+        if (player.load) {
+          player.load();
+        }
+      });
+
+      // Reinitialize video backgrounds
+      var videos = document.querySelectorAll('video[autoplay]');
+      videos.forEach(function(video) {
+        video.play().catch(function() {
+          // Autoplay may be blocked, that's okay
+        });
+      });
+
+      // Reinitialize Lucide icons
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+      }
+    }
+
+  });
+})();
+
