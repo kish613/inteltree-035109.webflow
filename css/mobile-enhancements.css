@@ -1,0 +1,533 @@
+/**
+ * IntelTree Mobile UX Enhancements
+ * This file contains mobile-specific improvements without affecting desktop experience
+ * All styles use max-width media queries to target mobile devices only
+ */
+
+/* ============================================
+   MOBILE TYPOGRAPHY IMPROVEMENTS
+   ============================================ */
+
+/* Mobile - Portrait and Landscape (max 767px) */
+@media screen and (max-width: 767px) {
+
+  /* Improved heading sizes for mobile readability */
+  h1, .heading_h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    line-height: 1.2em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  h2, .heading_h2 {
+    font-size: clamp(1.5rem, 6vw, 2.25rem) !important;
+    line-height: 1.3em !important;
+    margin-bottom: 0.5em !important;
+  }
+
+  h3, .heading_h3 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+    line-height: 1.3em !important;
+  }
+
+  h4, .heading_h4 {
+    font-size: clamp(1.1rem, 4vw, 1.35rem) !important;
+    line-height: 1.4em !important;
+  }
+
+  /* Body text optimization */
+  p, .paragraph, body {
+    font-size: 16px !important;
+    line-height: 1.6em !important;
+  }
+
+  .paragraph_large {
+    font-size: 18px !important;
+    line-height: 1.6em !important;
+  }
+
+  .paragraph_small, .text_sm {
+    font-size: 14px !important;
+    line-height: 1.5em !important;
+  }
+}
+
+/* Small Mobile - Extra small devices (max 479px) */
+@media screen and (max-width: 479px) {
+  h1, .heading_h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem) !important;
+  }
+
+  h2, .heading_h2 {
+    font-size: clamp(1.35rem, 5.5vw, 2rem) !important;
+  }
+
+  p, .paragraph, body {
+    font-size: 15px !important;
+  }
+}
+
+
+/* ============================================
+   TOUCH TARGET IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Ensure all interactive elements meet 44px minimum touch target */
+  a, button, input[type="submit"], input[type="button"],
+  .button, .btn, .nav_link, .w-button {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    padding: 12px 20px !important;
+    touch-action: manipulation;
+  }
+
+  /* Navigation links - larger touch targets */
+  .nav_link, .nav_menu-list-item a {
+    padding: 16px 20px !important;
+    font-size: 18px !important;
+  }
+
+  /* CTA buttons - prominent on mobile */
+  .nav-cta-btn, .button_primary, .cta-button {
+    min-height: 48px !important;
+    padding: 14px 24px !important;
+    font-size: 16px !important;
+    border-radius: 12px !important;
+  }
+
+  /* Form inputs - proper mobile sizing */
+  input[type="text"], input[type="email"], input[type="tel"],
+  input[type="password"], textarea, select {
+    min-height: 48px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+    border-radius: 8px !important;
+  }
+
+  textarea {
+    min-height: 120px !important;
+  }
+
+  /* Mobile menu button - easy to tap */
+  .nav_mobile-menu-button, .w-nav-button {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    padding: 12px !important;
+  }
+}
+
+
+/* ============================================
+   MOBILE SPACING & LAYOUT IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Section padding - better mobile spacing */
+  .section, section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Container padding */
+  .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  /* Card padding improvements */
+  .card, .card_item {
+    padding: 24px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* Grid gap improvements */
+  .grid, .w-layout-grid {
+    gap: 24px !important;
+  }
+
+  /* Stack columns on mobile */
+  .grid_2-col, .grid_3-col, .grid_4-col {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Flex layouts - better mobile wrapping */
+  .w-layout-flex, .flex {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .section, section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .card, .card_item {
+    padding: 20px !important;
+  }
+}
+
+
+/* ============================================
+   MOBILE NAVIGATION IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 991px) {
+
+  /* Fixed navigation improvements */
+  .nav, .nav_container {
+    padding: 12px 20px !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Logo sizing on mobile */
+  .nav_logo-icon {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .nav_logo {
+    margin-top: 0 !important;
+  }
+
+  /* Mobile menu enhancements */
+  .nav_menu {
+    background: rgba(0, 0, 0, 0.98) !important;
+    padding: 20px !important;
+  }
+
+  .nav_menu-list {
+    gap: 8px !important;
+  }
+
+  .nav_menu-list-item {
+    margin-bottom: 8px !important;
+  }
+
+  /* Ensure mobile menu is visible when open */
+  .w-nav-overlay {
+    background: rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .nav, .nav_container {
+    padding: 10px 16px !important;
+  }
+
+  .nav_logo-icon {
+    width: 50px !important;
+    height: 50px !important;
+  }
+}
+
+
+/* ============================================
+   FORM IMPROVEMENTS FOR MOBILE
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Contact form mobile optimization */
+  form {
+    width: 100% !important;
+  }
+
+  .form-field, .field {
+    margin-bottom: 20px !important;
+  }
+
+  label {
+    font-size: 14px !important;
+    margin-bottom: 8px !important;
+    display: block !important;
+  }
+
+  /* Form button - full width on mobile */
+  form button, form input[type="submit"], form .button {
+    width: 100% !important;
+    min-height: 52px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+  }
+
+  /* Select dropdowns */
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px !important;
+  }
+}
+
+
+/* ============================================
+   MOBILE IMAGE & MEDIA IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Responsive images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Gallery grid - better mobile layout */
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  /* Video containers */
+  .background-video-2, .w-background-video {
+    height: 50vh !important;
+    min-height: 300px !important;
+  }
+
+  /* Logo grid - stack on mobile */
+  .div-block {
+    gap: 1.5rem !important;
+  }
+
+  .div-block img {
+    max-width: 120px !important;
+    height: auto !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .background-video-2, .w-background-video {
+    height: 40vh !important;
+    min-height: 250px !important;
+  }
+
+  .div-block img {
+    max-width: 100px !important;
+  }
+}
+
+
+/* ============================================
+   HERO SECTION MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  header.section {
+    min-height: 70vh !important;
+    padding-top: 80px !important;
+  }
+
+  .hero-heading, header h1 {
+    font-size: clamp(2rem, 8vw, 2.75rem) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-subheading, header .paragraph_large {
+    font-size: 18px !important;
+    line-height: 1.5em !important;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  header.section {
+    min-height: 60vh !important;
+    padding-top: 70px !important;
+  }
+}
+
+
+/* ============================================
+   BLOG & CONTENT MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Blog card improvements */
+  .blog-card, .card_blog {
+    margin-bottom: 24px !important;
+  }
+
+  .blog-title {
+    font-size: 20px !important;
+    line-height: 1.3em !important;
+  }
+
+  .blog-excerpt {
+    font-size: 15px !important;
+    line-height: 1.5em !important;
+  }
+
+  /* Category pills */
+  .category-tag, .tag {
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+}
+
+
+/* ============================================
+   MOBILE UTILITY IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* Text alignment on mobile */
+  .mobile-text-center {
+    text-align: center !important;
+  }
+
+  /* Hide desktop-only elements */
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Show mobile-only elements */
+  .show-mobile {
+    display: block !important;
+  }
+
+  /* Margin utilities for mobile */
+  .mobile-mt-0 { margin-top: 0 !important; }
+  .mobile-mb-0 { margin-bottom: 0 !important; }
+  .mobile-mt-1 { margin-top: 1rem !important; }
+  .mobile-mb-1 { margin-bottom: 1rem !important; }
+  .mobile-mt-2 { margin-top: 2rem !important; }
+  .mobile-mb-2 { margin-bottom: 2rem !important; }
+}
+
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS FOR MOBILE
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Reduce animations on mobile for performance */
+  * {
+    animation-duration: 0.3s !important;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better tap highlighting */
+  * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Prevent text size adjustment */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+
+/* ============================================
+   MOBILE-SPECIFIC TABLE IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Make tables scrollable on mobile */
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    white-space: nowrap !important;
+  }
+
+  th, td {
+    padding: 12px 8px !important;
+    font-size: 14px !important;
+  }
+}
+
+
+/* ============================================
+   FOOTER MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  .footer {
+    padding: 40px 20px !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .footer-links {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .footer-link {
+    padding: 12px 0 !important;
+    font-size: 16px !important;
+  }
+}
+
+
+/* ============================================
+   ACCESSIBILITY IMPROVEMENTS FOR MOBILE
+   ============================================ */
+
+@media screen and (max-width: 767px) {
+
+  /* Focus states for keyboard navigation */
+  a:focus, button:focus, input:focus, textarea:focus, select:focus {
+    outline: 2px solid #ffffff !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Ensure sufficient color contrast */
+  ::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+  }
+}
+
+
+/* ============================================
+   LANDSCAPE ORIENTATION ADJUSTMENTS
+   ============================================ */
+
+@media screen and (max-width: 767px) and (orientation: landscape) {
+
+  header.section {
+    min-height: 100vh !important;
+  }
+
+  .section {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+  }
+}
