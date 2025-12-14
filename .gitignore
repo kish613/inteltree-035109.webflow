@@ -15,3 +15,7 @@ Thumbs.db
 *.log
 
 .vercel
+
+# Environment variables
+.env.local
+.env
