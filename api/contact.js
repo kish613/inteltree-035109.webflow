@@ -40,8 +40,9 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: 'onboarding@resend.dev',
+        from: 'enquiries@inteltree.co.uk',
         to: ['jacob@streetle.co.uk'],
+        reply_to: email,
         subject: `New Contact Form Enquiry from ${name}`,
         html: `
           <h2>New Contact Form Enquiry</h2>
