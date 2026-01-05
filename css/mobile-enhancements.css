@@ -380,6 +380,38 @@
   }
 }
 
+/* Desktop: Ensure blog animations work properly */
+@media screen and (min-width: 768px) {
+  body {
+    overflow-x: auto !important;
+  }
+
+  /* Ensure blog cards are visible */
+  .blog-card, .card_blog {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+
+  /* Ensure blog grid works */
+  .blog-grid {
+    display: grid !important;
+    visibility: visible !important;
+  }
+
+  /* Fix eyebrow visibility for blog pages */
+  .eyebrow {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  /* Ensure all blog content is visible */
+  h1, h2, h3, .blog-title, .blog-excerpt,
+  .category-tag, .tag, .category-filter a {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 
 /* ============================================
    MOBILE UTILITY IMPROVEMENTS
@@ -425,7 +457,8 @@
 
   /* Reduce animations on mobile for performance */
   * {
-    animation-duration: 0.3s !important;
+    animation-duration: 0.6s !important;
+    transition-duration: 0.3s !important;
   }
 
   /* Smooth scrolling */

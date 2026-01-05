@@ -216,6 +216,69 @@
       transform: translateX(4px);
     }
   </style>
+
+  <style>
+    /* Fix eyebrow visibility - override problematic color-mix */
+    .eyebrow {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /* Desktop: Ensure proper text rendering and prevent overflow issues */
+    @media screen and (min-width: 768px) {
+      body {
+        overflow-x: auto !important;
+      }
+
+      .container {
+        overflow: visible !important;
+      }
+
+      /* Ensure headings are fully visible */
+      h1, .heading_h1,
+      h2, .heading_h2,
+      h3, .heading_h3,
+      .subheading {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+    }
+
+    /* Desktop Phone Scaling */
+    @media screen and (min-width: 768px) {
+      /* Scale phone for medium screens */
+      #phone-container {
+        transform: scale(1.3);
+        transform-origin: center center;
+      }
+
+      /* Ensure container has enough height for scaled content */
+      .bg-black.flex.justify-center.items-center.p-4 {
+        min-height: 1100px;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      /* Scale phone for larger screens */
+      #phone-container {
+        transform: scale(1.6);
+      }
+
+      .bg-black.flex.justify-center.items-center.p-4 {
+        min-height: 1400px;
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      /* Scale phone for extra-large screens */
+      #phone-container {
+        transform: scale(1.8);
+      }
+
+      .bg-black.flex.justify-center.items-center.p-4 {
+        min-height: 1600px;
+      }
+    }
+  </style>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
 <body data-barba="wrapper">
@@ -1006,13 +1069,25 @@
       const metalSheen = document.getElementById('metal-sheen');
       const rimGloss = document.getElementById('rim-gloss');
 
+      // Get current scale value from computed style (for desktop scaling)
+      function getScale() {
+        const style = window.getComputedStyle(container);
+        const transform = style.transform || style.webkitTransform || style.mozTransform;
+        if (!transform || transform === 'none') return 1;
+        const match = transform.match(/scale\(([-\d.]+)\)/);
+        return match ? parseFloat(match[1]) : 1;
+      }
+
       // Subtle 3D tilt for the whole device (outer container)
       document.addEventListener('mousemove', (e) => {
         const { clientX, clientY } = e;
         const { innerWidth, innerHeight } = window;
         const rotateX = (clientY / innerHeight - 0.5) * -10;
         const rotateY = (clientX / innerWidth - 0.5) * 10;
-        container.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        // Combine scale with rotation to preserve desktop scaling
+        const scale = getScale();
+        container.style.transform = `scale(${scale}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
         // Inner frame: independent perspective + dynamic metallic shine
         const rect = container.getBoundingClientRect();
