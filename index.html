@@ -41,7 +41,7 @@
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "email": "enquiries@inteltree.co.uk",
+      "email": "contact@inteltree.com",
       "contactType": "customer service",
       "areaServed": "GB",
       "availableLanguage": "English"
@@ -74,8 +74,8 @@
       "addressCountry": "GB"
     },
     "priceRange": "££",
-    "telephone": "+44 20 7824 0270",
-    "email": "enquiries@inteltree.co.uk",
+    "telephone": "+1 (555) 000-0000",
+    "email": "contact@inteltree.com",
     "url": "https://inteltree.com",
     "servesCuisine": false,
     "areaServed": {
@@ -186,70 +186,12 @@
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
   <link href="css/webflow.css" rel="stylesheet" type="text/css">
   <link href="css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
-  <link href="css/mobile-enhancements.css" rel="stylesheet" type="text/css">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>@media (min-width:992px) {html.w-mod-js:not(.w-mod-ix) [data-w-id="2330ff9f-f1ed-9407-7bd2-a9ebbefc55bb"] {opacity:0;}}</style>
   <style>
     /* Ensure new section backgrounds stay black */
     body {
       background: #000 !important;
-    }
-    
-    /* Nav CTA Button */
-    .nav-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 500;
-      color: white;
-      text-decoration: none;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 8px;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .nav-cta-btn:hover {
-      background: white;
-      color: black;
-      border-color: white;
-    }
-    
-    .nav-cta-arrow {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .nav-cta-btn:hover .nav-cta-arrow {
-      transform: translateX(4px);
-    }
-    
-    /* Nav Toggle Switch */
-    .nav-toggle-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-    
-    .nav-toggle-link:hover {
-      transform: scale(1.05);
-    }
-    
-    .nav-toggle-container {
-      width: 100px;
-      height: 50px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .nav-toggle-link dotlottie-player {
-      pointer-events: none;
     }
   </style>
   <style>
@@ -500,8 +442,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({  google: {    families: ["PT Serif:400,400italic,700,700italic","Manrope:regular","Montserrat Alternates:regular"]  }});</script>
   <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
-  <link rel="shortcut icon" href="images/favicon.png" type="image/png">
-  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link href="images/inteltree-logo.svg" rel="icon" type="image/svg+xml">
   <link href="images/webclip.png" rel="apple-touch-icon">
   <script type="text/javascript">!function(){if(!window.UnicornStudio){window.UnicornStudio={isInitialized:!1};var i=document.createElement("script");i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js",i.onload=function(){window.UnicornStudio.isInitialized||(UnicornStudio.init(),window.UnicornStudio.isInitialized=!0)},(document.head || document.body).appendChild(i)}}();</script>
   <script>
@@ -618,7 +559,7 @@
   </style>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 </head>
-<body data-barba="wrapper">
+<body>
   <div class="nav">
     <div data-duration="400" data-animation="default" data-easing2="ease" data-easing="ease" data-collapse="all" role="banner" data-no-scroll="1" class="nav_container w-nav">
       <div class="nav_left">
@@ -827,11 +768,6 @@
               </a>
             </li>
             <li class="nav_menu-list-item">
-              <a href="mobile-apps.html" class="nav_link w-inline-block">
-                <div>Mobile Apps</div>
-              </a>
-            </li>
-            <li class="nav_menu-list-item">
               <a href="blog/index.html" class="nav_link w-inline-block">
                 <div>Blog</div>
               </a>
@@ -869,63 +805,77 @@
         </nav>
       </div>
       <div class="nav_right">
-        <a href="contact.html" class="nav-toggle-link" id="nav-toggle-link" title="Get Started">
-          <div class="nav-toggle-container">
-            <dotlottie-player 
-              id="nav-toggle-switch"
-              src="OnOff Switch 2.json" 
-              background="transparent" 
-              style="width: 240px; height: 180px; transform: scale(1); margin: -65px -70px;">
-            </dotlottie-player>
-          </div>
-        </a>
-        <script>
-          (function() {
-            let playerReady = false;
-            let isAnimating = false;
+        <div class="button-group margin-top_none">
+          <div class="group relative hover:ring-1 rounded-full bg-gradient-to-b p-2.5 shadow-md flex items-center justify-center ring-black/10" style="background: linear-gradient(to bottom, #171717, #262626);">
+            <input class="toggle-checkbox peer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/60 rounded-md absolute z-10 w-full h-full opacity-0 cursor-pointer" type="checkbox" aria-label="Toggle Start" role="switch" aria-checked="false" style="appearance:none; border-radius:inherit; font:inherit;">
             
-            function initToggle() {
-              const player = document.getElementById('nav-toggle-switch');
-              const link = document.getElementById('nav-toggle-link');
+            <div class="toggle-container transition-colors duration-400 flex items-center relative rounded-full h-10 shadow-inner bg-gray-800" style="width: 100px; box-shadow:inset 0 0 2px rgba(0,0,0,0.2), inset 0 2px 4px rgba(0,0,0,0.1);">
               
-              if (!player || !link) return;
+              <span class="toggle-text" style="position: absolute; right: 8px; font-size: 12px; font-weight: 600; color: #e5e5e5; pointer-events: none; transition: opacity 0.3s; z-index: 1;">Start</span>
               
-              // Set toggle to OFF position on load
-              player.addEventListener('ready', function() {
-                playerReady = true;
-                player.seek(15); // Frame 15 is the OFF position
-              });
-              
-              // Handle click - play animation then navigate
-              link.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
+              <div class="toggle-button absolute left-0.5 rounded-full w-9 h-9 flex items-center justify-center transition-all duration-400 bg-gray-800" style="box-shadow:inset 0 -2px 2px rgba(0,0,0,0.1), inset 0 -4px 2px rgba(0,0,0,0.2), inset 0 6px 2px rgba(255,255,255,0.3), 0 4px 4px rgba(0,0,0,0.5);">
                 
-                if (isAnimating) return;
-                isAnimating = true;
+                <div class="toggle-button-circles-container absolute grid grid-cols-3 gap-0.5" style="grid-template-columns:repeat(3, 4px);">
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                  <div class="toggle-button-circle rounded-full w-0.5 h-0.5"></div>
+                </div>
+              </div>
+            </div>
+            
+            <style>
+              .toggle-button-circle {
+                background-image: radial-gradient(circle at 50% 0, #f5f5f5, #c4c4c4);
+              }
+              .group:hover .toggle-button {
+                transform: scale(1.05);
+                box-shadow: inset 0 -2px 2px rgba(0,0,0,0.1), inset 0 -4px 2px rgba(0,0,0,0.2), inset 0 6px 2px rgba(255,255,255,0.4), 0 4px 6px rgba(0,0,0,0.6);
+              }
+              .group:hover .toggle-container {
+                box-shadow: inset 0 0 3px rgba(0,0,0,0.3), inset 0 2px 6px rgba(0,0,0,0.2);
+              }
+            </style>
+            
+            <script>
+              (function() {
+                const checkbox = document.querySelector('.toggle-checkbox');
+                const container = document.querySelector('.toggle-container');
+                const button = document.querySelector('.toggle-button');
+                const toggleText = document.querySelector('.toggle-text');
+                const OFF_BG = '#1f2937';
+                const ON_BG = '#10b981';
+                const OFF_LEFT = '2px';
+                const ON_LEFT = '54px';
                 
-                if (playerReady) {
-                  // Play the OFF to ON animation (frames 50-65)
-                  player.seek(50);
-                  player.setSpeed(1.2);
-                  player.setDirection(1);
-                  player.play();
+                function applyState() {
+                  const checked = checkbox.checked;
+                  container.style.backgroundColor = checked ? ON_BG : OFF_BG;
+                  button.style.left = checked ? ON_LEFT : OFF_LEFT;
+                  toggleText.style.opacity = checked ? '0' : '1';
+                  checkbox.setAttribute('aria-checked', checked ? 'true' : 'false');
+                  
+                  if (checked) {
+                    setTimeout(function() {
+                      window.location.href = 'contact.html';
+                    }, 400);
+                  }
                 }
                 
-                // Navigate after animation plays (500ms for the toggle animation)
-                setTimeout(function() {
-                  window.location.href = 'contact.html';
-                }, 500);
-              });
-            }
-            
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', initToggle);
-            } else {
-              initToggle();
-            }
-          })();
-        </script>
+                checkbox.addEventListener('change', applyState);
+                applyState();
+              })();
+            </script>
+          </div>
+        </div>
       </div>
       <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
         <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
@@ -934,11 +884,10 @@
               <line x1="1" y1="5" x2="23" y2="5"></line>
               <line x1="1" y1="19" x2="23" y2="19"></line>
             </g>
-          </svg>        </div>
+          </svg></div>
       </div>
     </div>
   </div>
-  <div data-barba="container" data-barba-namespace="home">
   <header class="section">
     <div class="w-layout-vflex flex-block">
       <div data-poster-url="videos/1006-poster-00001.jpg" data-video-urls="videos/1006-transcode.mp4,videos/1006-transcode.webm" data-autoplay="true" data-loop="true" data-wf-ignore="true" id="herovid" class="background-video-2 w-background-video w-background-video-atom"><video id="f213775c-785b-a1d9-607a-7c0690f32f20-video" autoplay="" loop="" style="background-image:url(&quot;videos/1006-poster-00001.jpg&quot;)" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
@@ -1660,7 +1609,7 @@
             </svg></div>
           <h4 class="heading_h5">Email our experts</h4>
           <p class="text-color_secondary">Share your requirements or questions for a thorough, personalized response from our development and design specialists.</p>
-          <a href="mailto:enquiries@inteltree.co.uk" class="text-link is-secondary">enquiries@inteltree.co.uk</a>
+          <a href="#" class="text-link is-secondary">contact@inteltree.com</a>
         </li>
         <li class="flex_vertical">
           <div class="icon is-large is-background margin-bottom_xsmall"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewbox="0 0 24 24" fill="none">
@@ -1668,13 +1617,12 @@
             </svg></div>
           <h4 class="heading_h5">Speak with a specialist</h4>
           <p class="text-color_secondary">Call weekdays, 8am–5pm, for in-depth consultation and immediate support from our experienced team.</p>
-          <a href="tel:+442078240270" class="text-link is-secondary">0207-824-0270</a>
+          <a href="#" class="text-link is-secondary">+1 (555) 000-0000</a>
         </li>
       </ul>
     </div>
   </section>
   </main>
-  </div>
   <footer class="footer is-secondary">
     <div class="container">
       <div class="w-layout-grid grid_2-col margin-bottom_large">
@@ -1801,8 +1749,5 @@
   </footer>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=68dd31aebc83b25a8a0bfd82" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
-  <!-- Barba.js Page Transitions -->
-  <script src="https://unpkg.com/@barba/core@2.9.7/dist/barba.umd.js"></script>
-  <script src="js/page-transitions.js"></script>
 </body>
 </html>
