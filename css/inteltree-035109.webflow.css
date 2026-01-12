@@ -6574,11 +6574,19 @@
 /* Main content wrapper for transitions */
 [data-barba="container"] {
   will-change: opacity;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+/* When JS has initialized, allow opacity to be controlled */
+[data-barba="container"].is-loaded,
+.barba-ready [data-barba="container"] {
+  opacity: 1;
 }
 
 /* Leave transition - fade out */
 .barba-leave-active {
-  opacity: 0;
+  opacity: 0 !important;
   transition: opacity 400ms ease;
 }
 

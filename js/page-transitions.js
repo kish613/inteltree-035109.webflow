@@ -6,6 +6,27 @@
 (function() {
   'use strict';
 
+  // Initial page fade-in on first load
+  // CSS starts container at opacity: 0, JS fades it in
+  function initPageFadeIn() {
+    var container = document.querySelector('[data-barba="container"]');
+    if (container) {
+      // Small delay to ensure styles are applied, then fade in
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          container.style.opacity = '1';
+        });
+      });
+    }
+  }
+
+  // Run initial fade-in as soon as possible
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageFadeIn);
+  } else {
+    initPageFadeIn();
+  }
+
   // Initialize Barba.js when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
     
@@ -40,7 +61,8 @@
         leave: function(data) {
           return new Promise(function(resolve) {
             var current = data.current.container;
-            current.classList.add('barba-leave-active');
+            current.style.transition = 'opacity 400ms ease';
+            current.style.opacity = '0';
             
             // Wait for CSS transition to complete
             setTimeout(function() {
@@ -56,18 +78,20 @@
             
             // Start with opacity 0
             next.style.opacity = '0';
-            next.classList.add('barba-enter-active');
+            next.style.transition = 'opacity 400ms ease';
             
             // Trigger reflow to ensure transition works
             next.offsetHeight;
             
             // Fade in
-            next.style.opacity = '1';
+            requestAnimationFrame(function() {
+              next.style.opacity = '1';
+            });
             
             // Wait for CSS transition to complete
             setTimeout(function() {
-              next.classList.remove('barba-enter-active');
               next.style.opacity = '';
+              next.style.transition = '';
               resolve();
             }, 400);
           });

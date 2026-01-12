@@ -31,14 +31,23 @@
   <link href="css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
   <script>
-    // Ensure Lucide icons are initialized when script loads
-    window.addEventListener('load', function() {
+    // Hide Lucide icon placeholders until processed
+    (function() {
+      var style = document.createElement('style');
+      style.textContent = '[data-lucide]{display:inline-flex;width:1em;height:1em;vertical-align:middle}[data-lucide]:empty::before{content:"";display:inline-block;width:1em;height:1em}';
+      document.head.appendChild(style);
+    })();
+    
+    // Initialize Lucide icons with retry logic
+    (function initLucide() {
       if (typeof lucide !== 'undefined' && lucide.createIcons) {
         lucide.createIcons();
+      } else {
+        setTimeout(initLucide, 50);
       }
-    });
+    })();
   </script>
 
   <style>
@@ -495,115 +504,118 @@
 
           <!-- App Icons Grid -->
           <div class="grid grid-cols-4 gap-4 px-1">
-            <!-- App Icon 1 -->
+            <!-- App Icon 1 - App Store -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="shopping-cart" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#2997FF] to-[#0071E3] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.5 14.5h-3l-1.5-2.5-1.5 2.5h-3l3-5-3-5h3l1.5 2.5 1.5-2.5h3l-3 5 3 5z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Shop</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">App Store</span>
             </div>
-            <!-- App Icon 2 -->
+            <!-- App Icon 2 - Music -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="music" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center" style="background: linear-gradient(135deg, #FA2D48 0%, #FA233B 50%, #FB5C74 100%);">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Music</span>
             </div>
-            <!-- App Icon 3 -->
+            <!-- App Icon 3 - Messages -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-green-500 to-green-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="message-circle" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5EF67F] to-[#34C759] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Chat</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Messages</span>
             </div>
-            <!-- App Icon 4 -->
+            <!-- App Icon 4 - Camera -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-red-500 to-red-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="camera" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#8E8E93] to-[#636366] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3.2"/><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Camera</span>
             </div>
-            <!-- App Icon 5 -->
+            <!-- App Icon 5 - Calendar -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="calendar" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-white shadow-lg flex flex-col items-center justify-center overflow-hidden">
+                <div class="w-full bg-[#FF3B30] text-white text-[8px] font-bold text-center py-0.5">SUNDAY</div>
+                <span class="text-[#1C1C1E] text-2xl font-light">12</span>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Calendar</span>
             </div>
-            <!-- App Icon 6 -->
+            <!-- App Icon 6 - Photos -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-pink-500 to-pink-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="heart" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center overflow-hidden" style="background: conic-gradient(from 180deg, #FF9500, #FF2D55, #AF52DE, #5856D6, #007AFF, #34C759, #FFCC00, #FF9500);">
+                <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                  <div class="w-6 h-6 rounded-full" style="background: conic-gradient(from 180deg, #FF9500, #FF2D55, #AF52DE, #5856D6, #007AFF, #34C759, #FFCC00, #FF9500);"></div>
+                </div>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Health</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Photos</span>
             </div>
-            <!-- App Icon 7 -->
+            <!-- App Icon 7 - Weather -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="sun" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center" style="background: linear-gradient(180deg, #5AC8FA 0%, #007AFF 100%);">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Weather</span>
             </div>
-            <!-- App Icon 8 -->
+            <!-- App Icon 8 - Mail -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-indigo-500 to-indigo-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="mail" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5AC8FA] to-[#007AFF] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Mail</span>
             </div>
-            <!-- App Icon 9 -->
+            <!-- App Icon 9 - Maps -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-teal-500 to-teal-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="map" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #34C759 0%, #A8E063 50%, #FFE259 100%);">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Maps</span>
             </div>
-            <!-- App Icon 10 -->
+            <!-- App Icon 10 - Safari -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-cyan-500 to-cyan-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="book-open" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5AC8FA] to-[#007AFF] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.9 5.1L14 14l-6.9 2.9L10 10l6.9-2.9z"/><circle cx="12" cy="12" r="1.5"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Books</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Safari</span>
             </div>
-            <!-- App Icon 11 -->
+            <!-- App Icon 11 - Wallet -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-lime-500 to-lime-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="wallet" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#1C1C1E] to-[#2C2C2E] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="4" rx="1" fill="#FF3B30"/><rect x="4" y="10" width="16" height="4" rx="1" fill="#FF9500"/><rect x="4" y="14" width="16" height="4" rx="1" fill="#34C759"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Wallet</span>
             </div>
-            <!-- App Icon 12 -->
+            <!-- App Icon 12 - FaceTime -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-rose-500 to-rose-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="video" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5EF67F] to-[#34C759] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Video</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">FaceTime</span>
             </div>
-            <!-- App Icon 13 (row 4) -->
+            <!-- App Icon 13 - Notes -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-amber-500 to-amber-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="briefcase" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#FFCC00] to-[#FFB800] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Work</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Notes</span>
             </div>
-            <!-- App Icon 14 -->
+            <!-- App Icon 14 - Fitness -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-emerald-500 to-emerald-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="dumbbell" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#1C1C1E] to-[#000000] shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#FF2D55" stroke-width="2.5" stroke-dasharray="42 14"/><circle cx="12" cy="12" r="6" fill="none" stroke="#A8FF00" stroke-width="2.5" stroke-dasharray="28 10"/><circle cx="12" cy="12" r="3" fill="none" stroke="#00D4FF" stroke-width="2.5" stroke-dasharray="14 5"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Fitness</span>
             </div>
-            <!-- App Icon 15 -->
+            <!-- App Icon 15 - Podcasts -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-violet-500 to-violet-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="headphones" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center" style="background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 50%, #6C3483 100%);">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Podcast</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Podcasts</span>
             </div>
-            <!-- App Icon 16 -->
+            <!-- App Icon 16 - Settings -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-fuchsia-500 to-fuchsia-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="settings" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#8E8E93] to-[#636366] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Settings</span>
             </div>
@@ -611,59 +623,59 @@
 
           <!-- Second Row of Apps -->
           <div class="grid grid-cols-4 gap-4 px-1 mt-4">
-            <!-- App Icon 17 -->
+            <!-- App Icon 17 - iCloud -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-sky-500 to-sky-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="cloud" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5AC8FA] to-[#007AFF] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Cloud</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">iCloud</span>
             </div>
-            <!-- App Icon 18 -->
+            <!-- App Icon 18 - Phone -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-gray-700 to-gray-800 shadow-lg flex items-center justify-center">
-                <i data-lucide="phone" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5EF67F] to-[#34C759] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Phone</span>
             </div>
-            <!-- App Icon 19 -->
+            <!-- App Icon 19 - Files -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-slate-500 to-slate-600 shadow-lg flex items-center justify-center">
-                <i data-lucide="file-text" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#5AC8FA] to-[#007AFF] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
               </div>
-              <span class="text-[10px] text-center text-black mt-1 font-medium">Notes</span>
+              <span class="text-[10px] text-center text-black mt-1 font-medium">Files</span>
             </div>
-            <!-- App Icon 20 -->
+            <!-- App Icon 20 - Clock -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-red-400 to-red-500 shadow-lg flex items-center justify-center">
-                <i data-lucide="clock" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#1C1C1E] to-[#000000] shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="12" x2="12" y2="7" stroke="white" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="12" x2="16" y2="12" stroke="#FF9500" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="1" fill="white"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Clock</span>
             </div>
-            <!-- App Icon 21 -->
+            <!-- App Icon 21 - Compass -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-blue-400 to-blue-500 shadow-lg flex items-center justify-center">
-                <i data-lucide="compass" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#1C1C1E] to-[#000000] shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="white" stroke-width="1.5"/><polygon points="12,5 14,12 12,19 10,12" fill="none" stroke-width="0"><animate attributeName="fill" values="white;#FF3B30;white" dur="2s" repeatCount="indefinite"/></polygon><polygon points="12,5 14,12 12,12" fill="#FF3B30"/><polygon points="12,12 10,12 12,19" fill="white"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Compass</span>
             </div>
-            <!-- App Icon 22 -->
+            <!-- App Icon 22 - Stocks -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-green-400 to-green-500 shadow-lg flex items-center justify-center">
-                <i data-lucide="percent" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#1C1C1E] to-[#000000] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24"><polyline points="4,14 8,10 12,13 20,5" fill="none" stroke="#34C759" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="4,18 8,14 12,17 20,9" fill="none" stroke="#FF3B30" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Stocks</span>
             </div>
-            <!-- App Icon 23 -->
+            <!-- App Icon 23 - News -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-orange-400 to-orange-500 shadow-lg flex items-center justify-center">
-                <i data-lucide="newspaper" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-[#FF3B30] to-[#FF2D55] shadow-lg flex items-center justify-center">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">News</span>
             </div>
-            <!-- App Icon 24 -->
+            <!-- App Icon 24 - App Store Games -->
             <div class="flex flex-col items-center">
-              <div class="w-16 h-16 rounded-[18px] bg-gradient-to-br from-purple-400 to-purple-500 shadow-lg flex items-center justify-center">
-                <i data-lucide="gamepad-2" class="w-8 h-8 text-white" style="stroke-width:1.5;"></i>
+              <div class="w-16 h-16 rounded-[18px] shadow-lg flex items-center justify-center" style="background: linear-gradient(135deg, #5856D6 0%, #AF52DE 50%, #FF2D55 100%);">
+                <svg class="w-9 h-9" viewBox="0 0 24 24" fill="white"><path d="M15 7.5V2H9v5.5l3 3 3-3zM7.5 9H2v6h5.5l3-3-3-3zM9 16.5V22h6v-5.5l-3-3-3 3zM16.5 9l-3 3 3 3H22V9h-5.5z"/></svg>
               </div>
               <span class="text-[10px] text-center text-black mt-1 font-medium">Games</span>
             </div>

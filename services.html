@@ -152,6 +152,7 @@
   <link href="css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
   <link rel="icon" href="images/favicon.png" type="image/png">
+  <script src="https://unpkg.com/lucide@0.263.1/dist/umd/lucide.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@2.0.2/dist/lottie-player.js"></script>
   <script>
     function btnMove(e) {
@@ -194,6 +195,24 @@
         });
       });
     });
+    
+    /* Hide Lucide icon placeholders until they're processed */
+    const lucideStyle = document.createElement('style');
+    lucideStyle.textContent = `
+      [data-lucide] {
+        display: inline-flex;
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+      }
+      [data-lucide]:empty::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
+    `;
+    document.head.appendChild(lucideStyle);
     
     /* Fix navigation overlap - prevent Home toggle from overlapping logo */
     const style = document.createElement('style');
@@ -1650,7 +1669,6 @@
 
   <!-- Showcase Section -->
   <section class="section" style="background: black; padding: 100px 0;">
-    <script src="https://unpkg.com/lucide@latest"></script>
     
     <!-- Hero Section -->
     <div class="relative flex flex-col items-center justify-center px-6 py-20" style="max-width: 1200px; margin: 0 auto;">
@@ -1763,8 +1781,15 @@
     </div>
 
     <script>
-      // Initialize Lucide icons
-      lucide.createIcons({ strokeWidth: 1.5 });
+      // Initialize Lucide icons - wait for library to be ready
+      (function initLucide() {
+        if (typeof lucide !== 'undefined' && lucide.createIcons) {
+          lucide.createIcons({ strokeWidth: 1.5 });
+        } else {
+          // Retry if library not loaded yet
+          setTimeout(initLucide, 50);
+        }
+      })();
 
       // Card carousel logic
       const cards = Array.from(document.querySelectorAll('.coach-card'));
