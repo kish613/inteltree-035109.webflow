@@ -24,8 +24,15 @@
   <link href="../css/normalize.css" rel="stylesheet" type="text/css">
   <link href="../css/webflow.css" rel="stylesheet" type="text/css">
   <link href="../css/inteltree-035109.webflow.css" rel="stylesheet" type="text/css">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Prevent FOUC - hide content until styles load */
+    html:not(.loaded) {
+      visibility: hidden;
+    }
+    html.loaded {
+      visibility: visible;
+    }
+    
     body { 
       background: #000 !important; 
       color: white; 
@@ -113,18 +120,26 @@
       border-radius: 1.5rem;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: revealCard 0.6s ease-out forwards;
+      opacity: 1;
+      transform: translateY(0);
     }
     
-    .blog-card:nth-child(1) { animation-delay: 0.1s; }
-    .blog-card:nth-child(2) { animation-delay: 0.2s; }
-    .blog-card:nth-child(3) { animation-delay: 0.3s; }
-    .blog-card:nth-child(4) { animation-delay: 0.4s; }
-    .blog-card:nth-child(5) { animation-delay: 0.5s; }
-    .blog-card:nth-child(6) { animation-delay: 0.6s; }
-    .blog-card:nth-child(7) { animation-delay: 0.7s; }
+    /* Only animate if user hasn't set prefers-reduced-motion */
+    @media (prefers-reduced-motion: no-preference) {
+      .blog-card {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: revealCard 0.6s ease-out forwards;
+      }
+      
+      .blog-card:nth-child(1) { animation-delay: 0.05s; }
+      .blog-card:nth-child(2) { animation-delay: 0.1s; }
+      .blog-card:nth-child(3) { animation-delay: 0.15s; }
+      .blog-card:nth-child(4) { animation-delay: 0.2s; }
+      .blog-card:nth-child(5) { animation-delay: 0.25s; }
+      .blog-card:nth-child(6) { animation-delay: 0.3s; }
+      .blog-card:nth-child(7) { animation-delay: 0.35s; }
+    }
     
     @keyframes revealCard {
       to {
@@ -237,6 +252,18 @@
     }
   </style>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+  <script>
+    // Reveal page once everything is loaded
+    function revealPage() {
+      document.documentElement.classList.add('loaded');
+    }
+    
+    // Wait for window load (all resources including stylesheets)
+    window.addEventListener('load', revealPage);
+    
+    // Fallback: reveal after 500ms regardless
+    setTimeout(revealPage, 500);
+  </script>
 </head>
 <body data-barba="wrapper">
   <div class="nav">
@@ -341,7 +368,13 @@
         <style>.nav-toggle-link{display:flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer;transition:transform .2s ease}.nav-toggle-link:hover{transform:scale(1.05)}.nav-toggle-container{width:100px;height:50px;overflow:hidden;display:flex;align-items:center;justify-content:center}.nav-toggle-link dotlottie-player{pointer-events:none}</style>
       </div>
       <div class="nav_mobile-menu-button w-nav-button" style="display: flex; align-items: center; margin-left: 16px;">
-        <div class="icon w-icon-nav-menu"></div>
+        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+            <g class="nc-icon-wrapper" stroke-linecap="square" stroke-linejoin="miter" stroke-width="1.5" fill="none" stroke="currentColor" stroke-miterlimit="10">
+              <line x1="1" y1="12" x2="23" y2="12" stroke="currentColor"></line>
+              <line x1="1" y1="5" x2="23" y2="5"></line>
+              <line x1="1" y1="19" x2="23" y2="19"></line>
+            </g>
+          </svg></div>
       </div>
     </div>
   </div>

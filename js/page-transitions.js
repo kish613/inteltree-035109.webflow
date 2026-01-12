@@ -89,11 +89,32 @@
      * Add any page-specific initialization here
      */
     function reinitializeScripts() {
+      // Reset mobile nav menu state - remove any stuck inline styles
+      var navMenus = document.querySelectorAll('.w-nav-menu');
+      navMenus.forEach(function(menu) {
+        menu.style.display = '';
+        menu.style.transform = '';
+        menu.style.height = '';
+      });
+      
+      // Reset nav button state
+      var navButtons = document.querySelectorAll('.w-nav-button');
+      navButtons.forEach(function(button) {
+        button.classList.remove('w--open');
+      });
+      
       // Reinitialize Webflow interactions if available
       if (window.Webflow) {
         window.Webflow.destroy();
         window.Webflow.ready();
-        window.Webflow.require('ix2').init();
+        // Reinitialize nav module
+        if (window.Webflow.require) {
+          try {
+            window.Webflow.require('ix2').init();
+          } catch (e) {
+            // ix2 may not be available on all pages
+          }
+        }
       }
 
       // Reinitialize any Lottie players
